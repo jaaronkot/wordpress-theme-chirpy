@@ -1,8 +1,7 @@
 <!-- post list-->
 <div class="post-preview">
     <h1>
-        <?php the_title();  echo "<a href=".get_permalink().">";
-        ?>
+        <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
     </h1>
    <div class="post-content">
         <p>

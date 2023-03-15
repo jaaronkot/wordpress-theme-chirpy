@@ -170,9 +170,10 @@ The Top Bar
                     <!-- Get pinned posts -->
                     <!-- Get default posts -->
                     <div id="post-list">
-                        <?php while(have_posts()) : the_post(); ?>
-                            <?php get_template_part('templates/module','post') ?>
-                        <?php endwhile; ?>
+                        <?php while(have_posts()) : the_post();
+                            get_template_part('templates/module','post');
+                            endwhile;
+                        ?>
                     </div> <!-- #post-list -->
 
 
