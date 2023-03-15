@@ -426,46 +426,15 @@ The Top Bar
                         </ul>
                     </div> <!-- #access-lastmod -->
 
-
+                
                     <div id="access-tags">
                         <div class="panel-heading">热门标签</div>
                         <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-
-
-                            <a class="post-tag" href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>
-
-
-                            <a class="post-tag" href="/tags/webrtc/">WebRTC</a>
-
-
-                            <a class="post-tag" href="/tags/opengl/">OpenGL</a>
-
-
-                            <a class="post-tag" href="/tags/android/">Android</a>
-
-
-                            <a class="post-tag" href="/tags/ffmpeg/">ffmpeg</a>
-
-
-                            <a class="post-tag" href="/tags/ffmpeg/">FFmpeg</a>
-
-
-                            <a class="post-tag" href="/tags/git/">git</a>
-
-
-                            <a class="post-tag" href="/tags/typography/">typography</a>
-
-
-                            <a class="post-tag" href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>
-
-
-                            <a class="post-tag" href="/tags/%E7%9B%B4%E6%92%AD/">直播</a>
-
-
+                            <?php if ( function_exists('wp_tag_cloud') ) : ?>
+                                <?php wp_tag_cloud('smallest=8&largest=22'); ?>
+                            <?php endif; ?>
                         </div>
                     </div>
-
-
                 </div>
 
 
@@ -725,36 +694,41 @@ The Search results
                 <div id="access-tags">
                     <div class="panel-heading">热门标签</div>
                     <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
+                        <?php if ( function_exists('wp_tag_cloud') ) : ?>
+                            <ul>
+                                <li><?php wp_tag_cloud('smallest=8&largest=22'); ?></li>
+                            </ul>
 
+                        <?php endif; ?>
 
-                        <a class="post-tag" href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>
-
-
-                        <a class="post-tag" href="/tags/webrtc/">WebRTC</a>
-
-
-                        <a class="post-tag" href="/tags/opengl/">OpenGL</a>
-
-
-                        <a class="post-tag" href="/tags/android/">Android</a>
-
-
-                        <a class="post-tag" href="/tags/ffmpeg/">ffmpeg</a>
-
-
-                        <a class="post-tag" href="/tags/ffmpeg/">FFmpeg</a>
-
-
-                        <a class="post-tag" href="/tags/git/">git</a>
-
-
-                        <a class="post-tag" href="/tags/typography/">typography</a>
-
-
-                        <a class="post-tag" href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>
-
-
-                        <a class="post-tag" href="/tags/%E7%9B%B4%E6%92%AD/">直播</a>
+<!--                        <a class="post-tag" href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/webrtc/">WebRTC</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/opengl/">OpenGL</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/android/">Android</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/ffmpeg/">ffmpeg</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/ffmpeg/">FFmpeg</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/git/">git</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/typography/">typography</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>-->
+<!---->
+<!---->
+<!--                        <a class="post-tag" href="/tags/%E7%9B%B4%E6%92%AD/">直播</a>-->
 
 
                     </div>
