@@ -1,0 +1,277 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://fifo.site</id>
+  <title>拙巧匠</title>
+  <subtitle>关注实时音视频RTC, 直播, 移动开发的个人博客!</subtitle>
+  <updated>2023-03-14T10:17:14+08:00</updated>
+  <author>
+    <name></name>
+    <uri>https://fifo.site</uri>
+  </author>
+  <link href="/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://fifo.site" rel="alternate" type="text/html" />
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
+  <rights> © 2023  </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>WebRTC 编译</title>
+    <link href="https://fifo.site/posts/webrtc-Mac-M1-compile/" rel="alternate" type="text/html" title="WebRTC 编译" />
+    <published>2023-01-17T15:00:00+08:00</published>
+  
+    <updated>2023-01-19T21:16:20+08:00</updated>
+  
+    <id>https://fifo.site/posts/webrtc-Mac-M1-compile/</id>
+    <content src="https://fifo.site/posts/webrtc-Mac-M1-compile/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="技术笔记" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Mac M1 编译arm64版本 WebRTC
+
+gn gen out/mac --args='target_os="mac" is_debug=false target_cpu="arm64" rtc_include_tests=false enable_dsyms=true is_debug=true' --ide=xcode
+
+
+
+  架构选 target_cpu="arm64"
+  enable_dsyms=true 可以使 WebRTC Xcode工程添加断点调试
+  is_debug=true 生成debug版本工程，断点可查看变量详情
+  rtc_include_tests=false  关闭测试，否成工程工出现大量单元测试文件
+
+
+iOS版本WebRTC Framework编译
+
+若直接编译iOS Apprtc 可以编译成功，但安装时候会报 webrtc  No co...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>新冠症状记录，烧了不止3天</title>
+    <link href="https://fifo.site/posts/xinguan/" rel="alternate" type="text/html" title="新冠症状记录，烧了不止3天" />
+    <published>2022-12-25T11:00:00+08:00</published>
+  
+    <updated>2022-12-25T11:00:00+08:00</updated>
+  
+    <id>https://fifo.site/posts/xinguan/</id>
+    <content src="https://fifo.site/posts/xinguan/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="生活" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      2022-12-18日开始
+
+
+  
+    18 第1天： 早上量体温 37.3， 轻微感觉发热，无不适感觉，可正常生活工作；
+  
+  
+    19 第2天： 嗓子稍微痒，有点痰，体温正常，无其他不适；
+  
+  
+    20 第3天 上午低温，中午体温升高，下午到38度 晚上到39度。嗓子轻微发痒，无鼻涕和痰
+  
+  
+    21 第4天 全天在发烧，出汗，味觉减退，半夜温度又到39度。半夜开始有鼻涕和痰，桑心不疼，轻微发痒，不咳嗽
+  
+  
+    22 第5天 上午38度，下午退烧 37多上下浮动，开始轻微咳嗽；
+  
+  
+    23 第6天 温度37多左右，开始明显咳嗽，有黄痰，虽然咳嗽，但嗓子和肺都没有疼痛感；
+  
+  
+    24 第7天 温度基本正常，还是有些怕冷，咳嗽明显，味觉减退
+  
+  
+    25 第8天 味觉减退，提问正常，容易乏力
+...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>防疫居家，冬瓜炖肉</title>
+    <link href="https://fifo.site/posts/dong-gua-dun-rou/" rel="alternate" type="text/html" title="防疫居家，冬瓜炖肉" />
+    <published>2022-11-24T11:00:00+08:00</published>
+  
+    <updated>2022-11-24T11:37:06+08:00</updated>
+  
+    <id>https://fifo.site/posts/dong-gua-dun-rou/</id>
+    <content src="https://fifo.site/posts/dong-gua-dun-rou/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="生活" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      ​	22年11月份的北京寒意没有去年重，疫情比去年要严重一些，月底的这一周朝阳区一直要求居家办公。这两天早上去超市和大爷大妈们抢了点新鲜蔬菜，说实话蔬菜粮食供应非常充足，也很新鲜，所以不用太紧张。
+
+​	居家的这几天学会了一道菜：冬瓜炖肉，鲜香入味，非常好吃，记录一下：
+
+
+  冬瓜切块，去瓤，洗一下；
+  五花肉切片，2mm厚，肥瘦相间；
+  起锅烧油，油热放五花肉片，煸炒几分钟，至有些变色；
+  放入黄豆酱两大勺，翻炒两分钟，放冬瓜块翻炒两分钟；
+  加水没过冬瓜2厘米，加半勺盐（别太多），加少许酱肉和蚝油；
+  大火烧开转中火，顿20分钟
+
+
+尝试一下吧，非常美味，冬瓜入味，汤汁也浓郁，肉片也没有腥味，非常完美😄！
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>FFmpeg常用格式转换命令</title>
+    <link href="https://fifo.site/posts/some_ffmpeg_format_cmd/" rel="alternate" type="text/html" title="FFmpeg常用格式转换命令" />
+    <published>2022-11-01T20:43:00+08:00</published>
+  
+    <updated>2022-11-01T20:43:00+08:00</updated>
+  
+    <id>https://fifo.site/posts/some_ffmpeg_format_cmd/</id>
+    <content src="https://fifo.site/posts/some_ffmpeg_format_cmd/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="技术笔记" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      做音视频开发可能会用到一些 wav,  pcm, mp4, yuv 等测试文件，整理了一下常用FFmpeg命令，可以从mp4中分离音频未wav, wav可以转成不同采样率的 pcm.
+
+
+  mp4 提取音频为wav
+
+
+ffmpeg -i input.mp4 -acodec pcm_s16le -f s16le -ac 1 -ar 16000 -f wav output.wav
+
+
+
+  mp4 转yuv420
+
+
+ffmpeg -i input.mp4 -s 720x1280 -pix_fmt yuv420p output.yuv
+
+
+
+  wav 转 pcm 16k 16bit
+
+
+ffmpeg -i input.wav -ar 16000 -ac 1 -f s16le output.pcm
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>WebRTC统计之重传包判断</title>
+    <link href="https://fifo.site/posts/webrtc_retransmission/" rel="alternate" type="text/html" title="WebRTC统计之重传包判断" />
+    <published>2022-08-15T11:00:00+08:00</published>
+  
+    <updated>2022-08-15T11:00:00+08:00</updated>
+  
+    <id>https://fifo.site/posts/webrtc_retransmission/</id>
+    <content src="https://fifo.site/posts/webrtc_retransmission/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="技术笔记" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      调用处
+
+bool StreamStatisticianImpl::UpdateOutOfOrder(const RtpPacketReceived&amp;amp; packet,
+                                              int64_t sequence_number,
+                                              int64_t now_ms) {
+  // Check if |packet| is second packet of a stream restart.
+  if (received_seq_out_of_order_) {
+    // Count the previous packet as a received; it was postponed below.
+    -...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
