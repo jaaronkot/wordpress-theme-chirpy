@@ -775,7 +775,7 @@ See: <https://github.com/christian-fei/Simple-Jekyll-Search>
     SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('search-results'),
-        json: '/assets/js/data/search.json',
+        json: '<?php echo get_template_directory_uri(); ?>/assets/js/data/search.json',
         searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
         noResultsText: '<p class="mt-5">搜索结果为空</p>',
         templateMiddleware: function (prop, value, template) {
@@ -815,7 +815,7 @@ JS selector for site.
 <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1.11.6/dayjs.min.js,npm/dayjs@1.11.6/locale/zh.min.js,npm/dayjs@1.11.6/plugin/relativeTime.min.js,npm/dayjs@1.11.6/plugin/localizedFormat.min.js"></script>
 
 
-<script defer src="/assets/js/dist/post.min.js"></script>
+<script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/dist/post.min.js"></script>
 
 
 <!-- commons -->
