@@ -231,71 +231,7 @@ The Top Bar
             <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
 
                 <div class="access">
-
-                    <div id="access-lastmod" class="post">
-                        <div class="panel-heading">最近更新</div>
-                        <ul class="post-content pl-0 pb-1 ml-1 mt-2">
-
-                            <li><a href="/posts/webrtc-Mac-M1-compile/">WebRTC 编译</a></li>
-
-
-                            <li><a href="/posts/MacOS-Big-Sur_GN_WebRTC_iOS_error/">升级MacOS Big
-                                    Sur后GN生成WebRTC-iOS工程报错</a></li>
-
-
-                            <li><a href="/posts/dong-gua-dun-rou/">防疫居家，冬瓜炖肉</a></li>
-
-
-                            <li><a href="/posts/Thinking_about_the_problem/">对于问题的思考</a></li>
-
-
-                            <li><a href="/posts/text-and-typography/">text-and-typography</a></li>
-
-                        </ul>
-                    </div> <!-- #access-lastmod -->
-
-                    <div id="access-tags">
-                        <div class="panel-heading">热门标签</div>
-                        <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-
-
-                            <a class="post-tag" href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>
-
-
-                            <a class="post-tag" href="/tags/webrtc/">WebRTC</a>
-
-
-                            <a class="post-tag" href="/tags/opengl/">OpenGL</a>
-
-
-                            <a class="post-tag" href="/tags/android/">Android</a>
-
-
-                            <a class="post-tag" href="/tags/ffmpeg/">ffmpeg</a>
-
-
-                            <a class="post-tag" href="/tags/ffmpeg/">FFmpeg</a>
-
-
-                            <a class="post-tag" href="/tags/git/">git</a>
-
-
-                            <a class="post-tag" href="/tags/typography/">typography</a>
-
-
-                            <a class="post-tag" href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>
-
-
-                            <a class="post-tag" href="/tags/%E7%9B%B4%E6%92%AD/">直播</a>
-
-
-                        </div>
-                    </div>
-
-
-                </div>
-
-
+                    <?php get_sidebar() ?>
             </div>
 
         </div>

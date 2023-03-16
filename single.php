@@ -401,42 +401,9 @@ The Top Bar
             <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
 
                 <div class="access">
-
-
-                    <div id="access-lastmod" class="post">
-                        <div class="panel-heading">最近更新</div>
-                        <ul class="post-content pl-0 pb-1 ml-1 mt-2">
-
-
-                            <li><a href="/posts/webrtc-Mac-M1-compile/">WebRTC 编译</a></li>
-
-
-                            <li><a href="/posts/MacOS-Big-Sur_GN_WebRTC_iOS_error/">升级MacOS Big
-                                    Sur后GN生成WebRTC-iOS工程报错</a></li>
-
-
-                            <li><a href="/posts/dong-gua-dun-rou/">防疫居家，冬瓜炖肉</a></li>
-
-
-                            <li><a href="/posts/Thinking_about_the_problem/">对于问题的思考</a></li>
-
-
-                            <li><a href="/posts/text-and-typography/">text-and-typography</a></li>
-
-                        </ul>
-                    </div> <!-- #access-lastmod -->
-
                 
-                    <div id="access-tags">
-                        <div class="panel-heading">热门标签</div>
-                        <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-                            <?php if ( function_exists('wp_tag_cloud') ) : ?>
-                                <?php wp_tag_cloud('smallest=8&largest=22'); ?>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-
+                    <?php get_sidebar() ?>
+                    
 
                 <!-- BS-toc.js will be loaded at medium priority -->
                 <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
