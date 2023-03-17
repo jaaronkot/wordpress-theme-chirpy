@@ -7,7 +7,7 @@
                     <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">京ICP备2023001817号 </a>
 
                     © 2023
-                    <a href="https://github.com/gezhaoyou">zhaoyou</a>.
+                    <a href="<?php echo get_bloginfo('url'); ?>"><?php echo get_bloginfo('name'); ?></a>.
 
                     <span data-toggle="tooltip" data-placement="top"
                           title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
@@ -17,10 +17,11 @@
 
             <div class="footer-right">
                 <p class="mb-0">本站由 <a href="/" target="_blank" rel="noopener">wordpress</a> 生成，采用
-                    <a href="/" target="_blank" rel="noopener">Chirpy</a>
+                    <a href="/" target="_blank" rel="noopener">Soda</a>
                     主题。
                 </p>
             </div>
         </div>
     </div>
+    <?php wp_footer(); ?>
 </footer>
