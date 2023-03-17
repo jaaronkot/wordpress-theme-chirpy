@@ -21,6 +21,13 @@
                             endwhile;
                         ?>
                     </div> <!-- #post-list -->
+
+                    <!--
+                    The paginator for post list on HomgPage.
+                  -->
+                    <?php soda_paging(); ?>
+
+
                 </div>
             </div> <!-- #core-wrapper -->
 

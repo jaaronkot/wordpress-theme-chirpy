@@ -1,0 +1,53 @@
+<?php
+//分页功能
+if (!function_exists('soda_paging')) {
+    function soda_paging($pnum = 2)
+    {
+        if (is_singular()) {
+            return;
+        };
+        global $wp_query, $paged;
+        $max_page = $wp_query->max_num_pages;
+        if ($max_page == 1) return;
+        echo '<ul class="pagination align-items-center mt-4 pl-lg-2">';
+        if (empty($paged)) $paged = 1;
+        echo '<li class="page-item disabled">';
+        echo '<a class="page-link btn-box-shadow" href="/" aria-label="previous-page">';
+        echo '<i class="fas fa-angle-left"></i>';
+        echo '</a>';
+        echo '</li>';
+        if ($paged > $pnum + 1) page_link(1);
+        if ($paged > $pnum + 2) echo "<li><a href='javascript:void(0)'>...</a></li>";
+        for ($i = $paged - $pnum; $i <= $paged + $pnum; $i++) {
+            if ($i > 0 && $i <= $max_page) {
+                if ($i == $paged) {
+                    echo '<li class="page-item  active">';
+                    echo "<a class='page-link btn-box-shadow'>{$i}</a>";
+                    echo '</li>';
+                } else {
+                    echo '<li class="page-item">';
+                    page_link($i);
+                    echo '</li>';
+                }
+            }
+        }
+
+        if ($paged < $max_page - $pnum - 1) {
+            echo "<li><a href='javascript:void(0)'>...</a></li>";
+            page_link($max_page);
+        }
+
+        echo '<li class="page-item ">';
+        echo '<a class="page-link btn-box-shadow" href="" aria-label="next-page">';
+        echo '<i class="fas fa-angle-right"></i>';
+        echo '</a>';
+        echo '</ul>';
+    }
+
+    function page_link($i, $title = '')
+    {
+        echo "<a class='page-link btn-box-shadow' href='", esc_html(get_pagenum_link($i)), "'>{$i}</a>";
+    }
+
+}
+?>
