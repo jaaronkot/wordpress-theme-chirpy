@@ -16,8 +16,8 @@
             </div>
 
             <div class="footer-right">
-                <p class="mb-0">本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，采用
-                    <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+                <p class="mb-0">本站由 <a href="/" target="_blank" rel="noopener">wordpress</a> 生成，采用
+                    <a href="/" target="_blank" rel="noopener">Chirpy</a>
                     主题。
                 </p>
             </div>

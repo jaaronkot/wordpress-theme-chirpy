@@ -15,42 +15,6 @@
             <!-- core -->
             <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
                 <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-
-
-                    <!--
-              Refactor the HTML structure.
-            -->
-
-
-                    <!--
-                      In order to allow a wide table to scroll horizontally,
-                      we suround the markdown table with `<div class="table-wrapper">` and `</div>`
-                    -->
-
-
-                    <!--
-                      Fixed kramdown code highlight rendering:
-                      https://github.com/penibelst/jekyll-compress-html/issues/101
-                      https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
-                    -->
-
-
-                    <!-- Change the icon of checkbox -->
-
-
-                    <!-- images -->
-
-
-                    <!-- Add header for code snippets -->
-
-
-                    <!-- Create heading anchors -->
-
-
-                    <!-- Wrap prompt element of blockquote with the <div> tag -->
-
-
-                    <!-- return -->
                     <?php  while (have_posts()) {
                         the_post();
                     } ?>
@@ -214,16 +178,11 @@
         <div class="row">
             <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5">
                 <?php get_template_part('templates/module', 'andb') ?>
-                <?php if (pk_is_checked('page_b_recommend')): ?>
-                    <?php get_template_part('templates/post', 'relevant') ?>
-                <?php endif; ?>
             </div>
         </div>
     </div>
  
-<!-- The Footer -->
-<?php get_footer(); ?>
- 
+
 
 <div id="mask"></div>
 
