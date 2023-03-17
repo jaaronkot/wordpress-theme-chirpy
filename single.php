@@ -2,192 +2,9 @@
 
 <body data-spy="scroll" data-target="#toc" data-topbar-visible="true">
 
-<!--
-The Side Bar
--->
+<?php get_template_part('templates/module', 'sidebar') ?>
 
-<div id="sidebar" class="d-flex flex-column align-items-end">
-    <div class="profile-wrapper text-center">
-        <div id="avatar">
-            <a href="/" class="mx-auto">
-                <img src="/commons/avatar.jpg" alt="avatar" onerror="this.style.display='none'">
-
-            </a>
-        </div>
-
-        <div class="site-title">
-            <a href="/">拙巧匠</a>
-        </div>
-        <div class="site-subtitle font-italic">关注音视频开发的个人博客！</div>
-
-    </div><!-- .profile-wrapper -->
-
-    <ul class="w-100">
-
-        <!-- home -->
-        <li class="nav-item">
-            <a href="/" class="nav-link">
-                <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-                <span>首页</span>
-            </a>
-        </li>
-        <!-- the real tabs -->
-
-        <li class="nav-item">
-            <a href="/categories/" class="nav-link">
-                <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
-
-
-                <span>分类</span>
-            </a>
-        </li> <!-- .nav-item -->
-
-        <li class="nav-item">
-            <a href="/tags/" class="nav-link">
-                <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
-
-
-                <span>标签</span>
-            </a>
-        </li> <!-- .nav-item -->
-
-        <li class="nav-item">
-            <a href="/archives/" class="nav-link">
-                <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
-
-
-                <span>归档</span>
-            </a>
-        </li> <!-- .nav-item -->
-
-        <li class="nav-item">
-            <a href="/about/" class="nav-link">
-                <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
-
-
-                <span>关于</span>
-            </a>
-        </li> <!-- .nav-item -->
-
-
-    </ul> <!-- ul.nav.flex-column -->
-
-    <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
-
-
-        <button class="mode-toggle btn" aria-label="Switch Mode">
-            <i class="fas fa-adjust"></i>
-        </button>
-
-
-        <span class="icon-border"></span>
-
-
-        <a href="https://github.com/gezhaoyou" aria-label="github"
-
-
-           target="_blank"
-
-
-           rel="noopener">
-            <i class="fab fa-github"></i>
-        </a>
-
-
-        <a href="https://twitter.com/" aria-label="twitter"
-
-
-           target="_blank"
-
-
-           rel="noopener">
-            <i class="fab fa-twitter"></i>
-        </a>
-
-
-        <a href="
-          javascript:location.href = 'mailto:' + ['gezhoayou','126.com'].join('@')" aria-label="email"
-
-
-        >
-            <i class="fas fa-envelope"></i>
-        </a>
-
-
-        <a href="/feed.xml" aria-label="rss"
-
-
-        >
-            <i class="fas fa-rss"></i>
-        </a>
-
-
-    </div> <!-- .sidebar-bottom -->
-
-</div><!-- #sidebar -->
-
-
-<!--
-The Top Bar
--->
-
-<div id="topbar-wrapper">
-    <div id="topbar"
-         class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4">
-    <span id="breadcrumb">
-
-
-
-
-
-
-
-
-          <span>
-            <a href="/">
-              首页
-            </a>
-          </span>
-
-
-
-
-
-
-
-
-
-
-
-
-            <span>Android踩坑 Failed to create EGL context:0x3003</span>
-
-
-
-
-
-
-
-
-    </span><!-- endof #breadcrumb -->
-
-        <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
-
-        <div id="topbar-title">
-            文章
-        </div>
-
-        <i id="search-trigger" class="fas fa-search fa-fw"></i>
-        <span id="search-wrapper" class="align-items-center">
-      <i class="fas fa-search fa-fw"></i>
-      <input class="form-control" id="search-input" type="search"
-             aria-label="search" autocomplete="off" placeholder="搜索...">
-    </span>
-        <span id="search-cancel">取消</span>
-    </div>
-
-</div>
-
+<?php get_template_part('templates/module', 'topbar') ?>
 
 <div id="main-wrapper" class="d-flex justify-content-center">
     <div id="main" class="container pl-xl-4 pr-xl-4">
@@ -242,44 +59,27 @@ The Top Bar
                     <div class="post-meta text-muted">
                         <!-- published date -->
                         <span>
-      发表于
-                            <!--
-                        Date format snippet
-                        See: ${JS_ROOT}/utils/locale-dateime.js
-                      -->
-
-
-
-
-
-<em class=""
-    data-ts="1660127940"
-    data-df="YYYY/MM/DD"
-    data-toggle="tooltip" data-placement="bottom">
-  2022/08/10
-</em>
-
-    </span>
-
+                        发表于: 
+                        <em class=""
+                            data-toggle="tooltip" data-placement="bottom">
+                            <?php the_time('Y年n月d日'); ?>
+                        </em>
+                        </span>
                         <!-- lastmod date -->
 
 
                         <div class="d-flex justify-content-between">
                             <!-- author(s) -->
-                            <span>
-
-
-      作者
-
-      <em>
-
-
-          <a href=""></a>
-
-
-
-      </em>
-    </span>
+                        <span>
+                            作者:
+                        <em>
+                            <a href="<?php global $authordata;
+                                if ($authordata) {
+                                    echo get_author_posts_url($authordata->ID,
+                                        $authordata->user_nicename);
+                                } ?>"><?php the_author() ?> </a>
+                        </em>
+                        </span>
 
                             <div>
                                 <!-- page views -->
@@ -297,7 +97,7 @@ The Top Bar
                                 <!-- return element -->
                                 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
                                       title="602 字">
-  <em>3 分钟</em>阅读</span>
+                                    <em><?php echo "100"; ?> </em> 次阅读</span>
 
                             </div>
 
@@ -317,8 +117,11 @@ The Top Bar
 
                         <div class="post-meta mb-3">
                             <i class="far fa-folder-open fa-fw mr-1"></i>
-
-                            <a href='/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/'>技术笔记</a>
+                        <?php  foreach((get_the_category()) as $category)  { 
+                            echo " <a href=''>";
+                             echo $category->cat_name;  
+                             echo "</a>";
+                            }  ?> 
                         </div>
 
 
@@ -402,193 +205,25 @@ The Top Bar
             <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
 
                 <div class="access">
-                
                     <?php get_sidebar() ?>
-                    
-
-                <!-- BS-toc.js will be loaded at medium priority -->
-                <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
-
-                <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
-                    <div class="panel-heading pl-3 pt-2 mb-2">文章内容</div>
-                    <nav id="toc" data-toggle="toc"></nav>
                 </div>
-
-
             </div>
-
-        </div>
 
         <!-- tail -->
 
         <div class="row">
             <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5">
-
                 <?php get_template_part('templates/module', 'andb') ?>
-
-         
                 <?php if (pk_is_checked('page_b_recommend')): ?>
                     <?php get_template_part('templates/post', 'relevant') ?>
                 <?php endif; ?>
-                
-
-
-                <!--  The comments switcher -->
-
-
-                <!-- https://giscus.app/ -->
-                <script type="text/javascript">
-                    $(function () {
-                        const origin = "https://giscus.app";
-                        const iframe = "iframe.giscus-frame";
-                        const lightTheme = "light";
-                        const darkTheme = "dark_dimmed";
-                        let initTheme = lightTheme;
-
-                        if ($("html[data-mode=dark]").length > 0
-                            || ($("html[data-mode]").length == 0
-                                && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-                            initTheme = darkTheme;
-                        }
-
-                        let giscusAttributes = {
-                            "src": "https://giscus.app/client.js",
-                            "data-repo": "gezhaoyou/blog-comments",
-                            "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjcxNjU1NDc=",
-                            "data-category": "General",
-                            "data-category-id": "DIC_kwDOE4Ama84CQupv",
-                            "data-mapping": "url",
-                            "data-reactions-enabled": "1",
-                            "data-emit-metadata": "0",
-                            "data-theme": initTheme,
-                            "data-input-position": "top",
-                            "data-lang": "zh-CN",
-                            "crossorigin": "anonymous",
-                            "async": ""
-                        };
-
-                        let giscusScript = document.createElement("script");
-                        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
-                        document.getElementById("tail-wrapper").appendChild(giscusScript);
-
-                        addEventListener("message", (event) => {
-                            if (event.source === window && event.data &&
-                                event.data.direction === ModeToggle.ID) {
-                                /* global theme mode changed */
-                                const mode = event.data.message;
-                                const theme = (mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme);
-
-                                const message = {
-                                    setConfig: {
-                                        theme: theme
-                                    }
-                                };
-
-                                const giscus = document.querySelector(iframe).contentWindow;
-                                giscus.postMessage({giscus: message}, origin);
-                            }
-
-                        });
-
-                    });
-                </script>
-
-
             </div>
         </div>
-
-
     </div>
-
-    <!--
-The Search results
--->
-    <div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
-        <div class="col-12 col-sm-11 post-content">
-            <div id="search-hints">
-
-
-                <div id="access-tags">
-                    <div class="panel-heading">热门标签</div>
-                    <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-                        <?php if ( function_exists('wp_tag_cloud') ) : ?>
-                            <ul>
-                                <li><?php wp_tag_cloud('smallest=8&largest=22'); ?></li>
-                            </ul>
-
-                        <?php endif; ?>
-
-<!--                        <a class="post-tag" href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/webrtc/">WebRTC</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/opengl/">OpenGL</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/android/">Android</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/ffmpeg/">ffmpeg</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/ffmpeg/">FFmpeg</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/git/">git</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/typography/">typography</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>-->
-<!---->
-<!---->
-<!--                        <a class="post-tag" href="/tags/%E7%9B%B4%E6%92%AD/">直播</a>-->
-
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
-        </div>
-    </div>
-
-
-</div> <!-- #main-wrapper -->
-
+ 
 <!-- The Footer -->
-
-<footer>
-    <div class="container pl-lg-4 pr-lg-4">
-        <div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3">
-            <div class="footer-left">
-                <p class="mb-0">
-                    <!-- 网站备案信息 -->
-                    <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">京ICP备2023001817号 </a>
-
-                    © 2023
-                    <a href="https://github.com/gezhaoyou">zhaoyou</a>.
-
-                    <span data-toggle="tooltip" data-placement="top"
-                          title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
-
-                </p>
-            </div>
-
-            <div class="footer-right">
-                <p class="mb-0">本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，采用
-                    <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
-                    主题。
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
+<?php get_footer(); ?>
+ 
 
 <div id="mask"></div>
 
@@ -596,59 +231,7 @@ The Search results
     <i class="fas fa-angle-up"></i>
 </a>
 
-
-<div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
-     data-animation="true" data-autohide="false">
-    <div class="toast-header">
-        <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="toast-body text-center pt-0">
-        <p class="pl-2 pr-2 mb-3">发现新版本的内容。</p>
-        <button type="button" class="btn btn-primary" aria-label="Update">
-            更新
-        </button>
-    </div>
-</div>
-
-
-<!--
-Jekyll Simple Search loader
-See: <https://github.com/christian-fei/Simple-Jekyll-Search>
--->
-
-
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
-
-<script>
-    SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('search-results'),
-        json: '<?php echo get_template_directory_uri(); ?>/assets/js/data/search.json',
-        searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
-        noResultsText: '<p class="mt-5">搜索结果为空</p>',
-        templateMiddleware: function (prop, value, template) {
-            if (prop === 'categories') {
-                if (value === '') {
-                    return `${value}`;
-                } else {
-                    return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
-                }
-            }
-
-            if (prop === 'tags') {
-                if (value === '') {
-                    return `${value}`;
-                } else {
-                    return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
-                }
-            }
-        }
-    });
-</script>
-
-
+ 
 <!--
 JS selector for site.
 -->

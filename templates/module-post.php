@@ -14,17 +14,20 @@
             <!-- posted date -->
             <i class="far fa-calendar fa-fw"></i>
 
-            <em class=""
-                data-ts="1660127700"
-                data-df="YYYY/MM/DD"
-            >
-                2022/08/10
+            <em class="">
+            <?php the_time('Y年n月d日'); ?>
             </em>
 
             <!-- categories -->
 
             <i class="far fa-folder-open fa-fw"></i>
-            <span> 技术笔记 </span>
+             <?php  foreach((get_the_category()) as $category)  { 
+                    echo "<span>";
+                    echo $category->cat_name;  
+                    echo " </span>";
+                    break;
+            }  ?> 
+                           
         </div>
 
     </div> <!-- .post-meta -->

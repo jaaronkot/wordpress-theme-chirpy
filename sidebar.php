@@ -24,3 +24,6 @@
     </div>
 </div>
 
+<?php if(is_single()) {
+    get_template_part('templates/post', 'toc');
+}?>   

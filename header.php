@@ -42,7 +42,7 @@
 {"@context":"https://schema.org","@type":"WebSite","description":"关注实时音视频RTC, 直播, 移动开发的个人博客!","headline":"拙巧匠","name":"zhaoyou","sameAs":["https://github.com/gezhaoyou"],"url":"https://fifo.site/"}</script>
 <!-- End Jekyll SEO tag -->
 
-<title>拙巧匠 |  关注音视频开发的个人博客！</title>
+<title> <?php echo get_bloginfo('name'); ?> | <?php echo get_bloginfo('description'); ?></title>
 
   <!--
   The Favicons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps
