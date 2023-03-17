@@ -13,11 +13,9 @@
         <div class="mr-auto">
             <!-- posted date -->
             <i class="far fa-calendar fa-fw"></i>
-
-            <em class="">
-            <?php the_time('Y年n月d日'); ?>
-            </em>
-
+            <span class="">
+                <?php the_time('Y年n月d日'); ?>
+            </span>
             <!-- categories -->
 
             <i class="far fa-folder-open fa-fw"></i>
@@ -26,8 +24,13 @@
                     echo $category->cat_name;  
                     echo " </span>";
                     break;
-            }  ?> 
-                           
+            }  ?>
+            <i class="far fa-eye"></i>
+            <span>
+                <?php get_post_views($post -> ID); ?>
+            </span>
+
+
         </div>
 
     </div> <!-- .post-meta -->

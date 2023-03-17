@@ -45,7 +45,7 @@
                             <div>
                                 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
                                       title="602 字">
-                                    <em><?php echo "100"; ?> </em> 次阅读</span>
+                                    <em><?php get_post_views($post -> ID); ?> </em>阅读</span>
                             </div>
                         </div> <!-- .d-flex -->
 
