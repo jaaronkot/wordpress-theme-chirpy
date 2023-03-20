@@ -18,7 +18,7 @@
             </span>
             <!-- categories -->
 
-            <i class="far fa-folder-open fa-fw"></i>
+            <i class="far fa-folder fa-fw"></i>
              <?php  foreach((get_the_category()) as $category)  { 
                     echo "<span>";
                     echo $category->cat_name;  

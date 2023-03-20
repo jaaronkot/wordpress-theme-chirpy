@@ -62,7 +62,7 @@
                         <!-- categories -->
 
                         <div class="post-meta mb-3">
-                            <i class="far fa-folder-open fa-fw mr-1"></i>
+                            <i class="far fa-folder fa-fw mr-1"></i>
                             <?php foreach ((get_the_category()) as $category) {
                                 echo " <a href=''>";
                                 echo $category->cat_name;
@@ -74,7 +74,7 @@
                         <!-- tags -->
 
                         <div class="post-tags">
-                            <i class="fa fa-tags fa-fw mr-1"></i>
+                            <i class="fa fa-hashtag fa-fw mr-1"></i>
 
                             <a href="/tags/opengl/"
                                class="post-tag no-text-decoration">OpenGL</a>
