@@ -64,7 +64,8 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
 }
 
 #sidebar .sidebar-bottom .mode-toggle > i, #sidebar .sidebar-bottom a, #sidebar .nav-item:not(.active) > a, #sidebar .site-title a {
-    transition: color .35s ease-in-out
+    transition: color .35s ease-in-out;
+    color: white;
 }
 
 #sidebar .sidebar-bottom .icon-border, .post-content a.popup, i.far, i.fas, .code-header {
@@ -1448,10 +1449,10 @@ html {
         --checkbox-checked-color: #07a8f7;
         --img-bg: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(249, 249, 249) 100%);
         --shimmer-bg: linear-gradient(90deg, rgba(250, 250, 250, 0) 0%, rgba(232, 230, 230, 1) 50%, rgba(250, 250, 250, 0) 100%);
-        --sidebar-bg: #eeeeee;
-        --sidebar-muted-color: #a2a19f;
-        --sidebar-active-color: #424242;
-        --nav-cursor-color: #757575;
+        --sidebar-bg: linear-gradient(#0b7080,#0ba376);
+        --sidebar-muted-color: rgb(221, 221, 221);
+        --sidebar-active-color: white;
+        --nav-cursor-color: white;
         --sidebar-btn-bg: white;
         --topbar-text-color: rgb(78, 78, 78);
         --topbar-wrapper-bg: white;
@@ -1531,9 +1532,9 @@ html {
         --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
         --shimmer-bg: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(58, 55, 55, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
         --sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
-        --sidebar-muted-color: #6d6c6b;
+        --sidebar-muted-color: white;
         --sidebar-active-color: rgb(255, 255, 255, 0.8);
-        --nav-cursor-color: rgb(183, 182, 182);
+        --nav-cursor-color: white;
         --sidebar-btn-bg: rgb(117, 116, 116, 0.2);
         --topbar-text-color: var(--text-color);
         --topbar-wrapper-bg: rgb(39, 40, 43);
@@ -1657,7 +1658,7 @@ html {
         --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
         --shimmer-bg: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(58, 55, 55, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
         --sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
-        --sidebar-muted-color: #6d6c6b;
+        --sidebar-muted-color: white;
         --sidebar-active-color: rgb(255, 255, 255, 0.8);
         --nav-cursor-color: rgb(183, 182, 182);
         --sidebar-btn-bg: rgb(117, 116, 116, 0.2);
@@ -1781,7 +1782,7 @@ html {
         --sidebar-bg: #eeeeee;
         --sidebar-muted-color: #a2a19f;
         --sidebar-active-color: #424242;
-        --nav-cursor-color: #757575;
+        --nav-cursor-color: white;
         --sidebar-btn-bg: white;
         --topbar-text-color: rgb(78, 78, 78);
         --topbar-wrapper-bg: white;
@@ -2526,7 +2527,7 @@ figure .mfp-title {
     font-weight: 900;
     font-size: 1.5rem;
     letter-spacing: .5px;
-    color: rgba(134, 133, 133, .99)
+    color: white
 }
 
 #sidebar .site-subtitle {
@@ -2547,13 +2548,15 @@ figure .mfp-title {
     font-weight: 600;
     letter-spacing: 1px;
     display: table-cell;
-    vertical-align: middle
+    vertical-align: middle;
+    color: white;
 }
 
 #sidebar .nav-item {
     text-align: center;
     display: table;
-    height: 3rem
+    height: 3rem;
+    color: white;
 }
 
 #sidebar .nav-item.active .nav-link {

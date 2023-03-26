@@ -14,7 +14,7 @@ The Side Bar
         <div class="site-title">
             <a href="<?php echo get_bloginfo('url'); ?>"><?php echo get_bloginfo('name'); ?></a>
         </div>
-        <div class="site-subtitle font-italic"><?php echo get_bloginfo('description'); ?></div>
+        <div class="site-subtitle"><?php echo get_bloginfo('description'); ?></div>
 
     </div><!-- .profile-wrapper -->
 
