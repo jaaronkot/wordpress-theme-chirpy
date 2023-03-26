@@ -49,25 +49,10 @@
 <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">
     <i class="fas fa-angle-up"></i>
 </a>
- 
-<!--
-JS selector for site.
--->
 
-<!-- layout specified -->
-
-
-<script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1.11.6/dayjs.min.js,npm/dayjs@1.11.6/locale/zh.min.js,npm/dayjs@1.11.6/plugin/relativeTime.min.js,npm/dayjs@1.11.6/plugin/localizedFormat.min.js"></script>
-
-
-<script defer src="./assets/js/dist/home.min.js"></script>
-
-
-<!-- commons -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
+<script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/dist/home.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/third_party/localizedFormat.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/third_party/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

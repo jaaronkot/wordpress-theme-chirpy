@@ -7,7 +7,7 @@ The Side Bar
     <div class="profile-wrapper text-center">
         <div id="avatar">
             <a href="/" class="mx-auto">
-                <img src="/commons/avatar.jpg" alt="avatar" onerror="this.style.display='none'">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avatar.jpg" alt="avatar" onerror="this.style.display='none'">
             </a>
         </div>
 
