@@ -11,19 +11,19 @@
 	
 	<?php wp_head(); ?>
 
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/third_party/css2.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/3party/css2.css">
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/third_party/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/3party/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/third_party/all.min.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/third_party/bootstrap-toc.min.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/3party/fontawesome-free-6.3.0-web/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/3party/bootstrap-toc.min.css">
   <!-- Manific Popup -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/third_party/magnific-popup.min.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/3party/magnific-popup.min.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
  
   <!-- JavaScript -->
 
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/third_party/jquery.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/third_party/prettify.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/3party/jquery.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/3party/prettify.min.js"></script>
 </head>

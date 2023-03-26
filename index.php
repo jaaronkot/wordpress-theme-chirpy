@@ -51,8 +51,8 @@
 </a>
 
 <script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/dist/home.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/third_party/localizedFormat.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/third_party/bootstrap.bundle.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/3party/localizedFormat.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/3party/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
