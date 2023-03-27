@@ -88,4 +88,16 @@ function set_post_views () {
 
 }
 add_action('get_header', 'set_post_views');
+
+// 去掉首页文章摘要的中括号
+function theme_excerpt_more($more) {
+    return '...';
+}
+add_filter('excerpt_more', 'theme_excerpt_more');
+
+// 文章摘要长度
+function theme_excerpt_length($length) {
+    return 100;
+}
+add_filter("excerpt_length", "theme_excerpt_length");
 ?>
