@@ -1,0 +1,36 @@
+/*
+    Theme Name: SodaTheme
+    Theme URI: https://fifo.site
+    Description: Soda Theme
+    Author: devzhaoyou
+    Author URI: https://fifo.site
+    details URI: https://fifo.site
+    Version: 0.0.5
+    License: License
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Tags: 
+*/
+
+@import "style.css";
+@import "css/bootstrap.css";
+@import "css/normalize.css";
+@import "css/transition-animations.css";
+@import "css/owl.carousel.css";
+@import "css/magnific-popup.css";
+@import "css/animate.css";
+@import "css/main.css";
+
+@import "js/jquery-2.1.3.min.js";
+@import "js/modernizr.custom.js";
+
+
+@import "js/bootstrap.min.js";
+@import "js/page-transition.js";
+@import "js/imagesloaded.pkgd.min.js";
+@import "js/validator.js";
+@import "js/jquery.shuffle.min.js";
+@import "js/masonry.pkgd.min.js";
+@import "js/owl.carousel.min.js";
+@import "js/jquery.magnific-popup.min.js";
+@import "js/jquery.hoverdir.js";
+@import "js/main.js";
