@@ -1,9 +1,9 @@
 
 
 {
-  "name": "拙巧匠",
-  "short_name": "拙巧匠",
-  "description": "关注实时音视频RTC, 直播, 移动开发的个人博客!",
+  "name": "fifo.site",
+  "short_name": "fifo.site",
+  "description": "关注音视频开发的技术博客，包括音视频采集, 编码, 发送, 渲染开发, 涉及WebRTC, RTMP直播, 短视频, OpenGL, Android, iOS开发, 网络拥塞控制等.",
   "icons": [
     {
       "src": "/assets/img/favicons/android-chrome-192x192.png",

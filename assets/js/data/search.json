@@ -1,294 +1,570 @@
 [
   
   {
-    "title": "WebRTC 编译",
-    "url": "/posts/webrtc-Mac-M1-compile/",
-    "categories": "技术笔记",
-    "tags": "WebRTC",
-    "date": "2023-01-17 15:00:00 +0800",
+    "title": "体验一把微软必应聊天，和ChatGPT还有很大差距",
+    "url": "/afb72ed4.html",
+    "categories": "代码",
+    "tags": "代码",
+    "date": "2023-05-18 10:42:35 +0800",
     
 
 
 
 
 
-    "snippet": "Mac M1 编译arm64版本 WebRTCgn gen out/mac --args='target_os=\"mac\" is_debug=false target_cpu=\"arm64\" rtc_include_tests=false enable_dsyms=true is_debug=true' --ide=xcode  架构选 target_cpu=\"arm64\"  enable_..."
+    
+    "snippet": "今天体验了把微软的AI聊天，其他就是前段时间说的GPT大模型应用，整体体验是可用，离chatgpt的好用还有些距离。必应聊天  让必应聊天写一首赞美春天的诗歌，OK，还可以：编程问题这个问题回答只能说可以，代码也没有高亮，对于原始函数的写法不是很专业，对比下ChatGPT 就可以看出差距ChatGPT的回答ChatGPT 回答和排版明显要好很多",
+    "content": "今天体验了把微软的AI聊天，其他就是前段时间说的GPT大模型应用，整体体验是可用，离chatgpt的好用还有些距离。必应聊天  让必应聊天写一首赞美春天的诗歌，OK，还可以：编程问题这个问题回答只能说可以，代码也没有高亮，对于原始函数的写法不是很专业，对比下ChatGPT 就可以看出差距ChatGPT的回答ChatGPT 回答和排版明显要好很多"
   },
   
   {
-    "title": "新冠症状记录，烧了不止3天",
-    "url": "/posts/xinguan/",
-    "categories": "生活",
-    "tags": "生活",
-    "date": "2022-12-25 11:00:00 +0800",
+    "title": "前端开发笔记：Sass编译 --load-path 参数使用",
+    "url": "/2d4f46f4.html",
+    "categories": "代码",
+    "tags": "代码",
+    "date": "2023-05-17 11:41:33 +0800",
     
 
 
 
 
 
-    "snippet": "2022-12-18日开始      18 第1天： 早上量体温 37.3， 轻微感觉发热，无不适感觉，可正常生活工作；        19 第2天： 嗓子稍微痒，有点痰，体温正常，无其他不适；        20 第3天 上午低温，中午体温升高，下午到38度 晚上到39度。嗓子轻微发痒，无鼻涕和痰        21 第4天 全天在发烧，出汗，味觉减退，半夜温度又到39度。半夜开始有鼻涕和..."
+    
+    "snippet": "  Sass 编译器，推荐使用 dart-sass安装npm install sass sass-loader -g使用基础用法： sass src.scss style.css--load-path 可以让编译器从统根目录做相对路径去 @import 文件：sass src.scss style.css --load-path ~/repos/github/fifo.site/_sass可...",
+    "content": "  Sass 编译器，推荐使用 dart-sass安装npm install sass sass-loader -g使用基础用法： sass src.scss style.css--load-path 可以让编译器从统根目录做相对路径去 @import 文件：sass src.scss style.css --load-path ~/repos/github/fifo.site/_sass可以解决 scss 文件 @import 相对路径无法找到问题原文章原文链接： https://gist.github.com/neekey/4480251SASS的@import是最常用的功能之一，默认我们可以使用相对，绝对路径来以当前目录为根节点进行文件的查找，但是有时候我们需要引入的文件并不在我们的当前目录下（并且文件位置相差很大，特别是很多需要被多个项目共用的框架等，如compass）。针对这样的需求，SASS 可以通过指定--load-path 来添加一个额外用于查找的路径，可以看官方文档：http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#import  Sass looks for other Sass files in the current directory, and the Sass file directory under Rack, Rails, or Merb. Additional search directories may be specified using the :load_paths option, or the –load-path option on the command line.下面举个例子，来说明如何使用:目录假设我们的源码目录结构如下：dir/ | ----- subDir/ | ----- | ----- test.scss | ----- | ----- mod.scss | ----- | ----- sibDir | ----- | ----- | ----- base.scsssibDir/ | ----- base.scss | ----- common.scss我们需要编译的入口文件为/dir/subDir/test.scss，它除了需要import当前目录下的模块外，还需要引入/sibdir下的模块。如果是正常情况下，我们需要在test.scss中使用相对路径:@import \"../../sibDir/common.scss\"那么下面我们用--load-path来简化引用路径。测试针对test.scss文件进行编译，命令为：$ sass test.scss test.css --load-path ~/Dropbox/nodejs/app/sassPathTest/`先把几个文件的内容列一下：sibDir/common.scss:body{ color: red; }sibDir/base.scss:a { color: red; }dir/subDir/mod.scss:div { color: yellow; }dir/subDir/sibDir/base.scss:a { color: yellow; }这边的测试文件特地举出了下面几种情景：  当前目录模块: mod.scss  在外层目录的模块：sibDir/common  在当前目录中引用地址与外层目录模块一致但是内容不一致模块：sibDir/base.scss 和 dir/subDir/sibDir/base.scssOK，下面对几种情况进行测试：首先，引入了外部模块和内部模块：test.scss：@import \"sibDir/common\";@import \"mod\";test.css:body{ color: red; }div { color: yellow; }达到了我们的目的，下面我们再看看如果单签目录和外部目录中出现同名的模块会发生什么：我们将test.scss修改为：@import \"sibDir/common\";@import \"sibDir/base\"@import \"mod\";test.css:body{ color: red; }a { color: yellow }div { color: yellow; }可以看到，SASS优先引入了当前目录的模块总结所以SASS的--load-path的超找原则基本上是  根据@import中给定的路径，先在本地查找  若本地不存在，就在--load-path作为root进行查找另外--load-path可以多次指定，也就说可以指定多个Additional search directories.题外话：想必compass也就是这么将自己引入进来的。"
   },
   
   {
-    "title": "防疫居家，冬瓜炖肉",
-    "url": "/posts/dong-gua-dun-rou/",
-    "categories": "生活",
-    "tags": "生活",
-    "date": "2022-11-24 11:00:00 +0800",
+    "title": "Mac:已损坏，无法打开。你应该将它移到废纸篓",
+    "url": "/f34e01a3.html",
+    "categories": "代码",
+    "tags": "代码",
+    "date": "2023-05-11 17:12:13 +0800",
     
 
 
 
 
 
-    "snippet": "​\t22年11月份的北京寒意没有去年重，疫情比去年要严重一些，月底的这一周朝阳区一直要求居家办公。这两天早上去超市和大爷大妈们抢了点新鲜蔬菜，说实话蔬菜粮食供应非常充足，也很新鲜，所以不用太紧张。​\t居家的这几天学会了一道菜：冬瓜炖肉，鲜香入味，非常好吃，记录一下：  冬瓜切块，去瓤，洗一下；  五花肉切片，2mm厚，肥瘦相间；  起锅烧油，油热放五花肉片，煸炒几分钟，至有些变色；  放入黄..."
+    
+    "snippet": "解决：sudo xattr -r -d com.apple.quarantine + 应用路径如sudo xattr -r -d com.apple.quarantine /Applications/WeChat.app/\t\t/Applications/WeChat.app/为微信路径",
+    "content": "解决：sudo xattr -r -d com.apple.quarantine + 应用路径如sudo xattr -r -d com.apple.quarantine /Applications/WeChat.app/\t\t/Applications/WeChat.app/为微信路径"
+  },
+  
+  {
+    "title": "git push报错:pack exceeds maximum allowed size",
+    "url": "/6c9b86b0.html",
+    "categories": "软件工具",
+    "tags": "git",
+    "date": "2023-05-09 13:48:41 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "git push 仓库报错：枚举对象中: 302521, 完成.对象计数中: 100% (302521/302521), 完成.使用 8 个线程进行压缩压缩对象中: 100% (182739/182739), 完成.remote: fatal: pack exceeds maximum allowed sizeerror: 远程解包失败：index-pack abnormal exitTo ...",
+    "content": "git push 仓库报错：枚举对象中: 302521, 完成.对象计数中: 100% (302521/302521), 完成.使用 8 个线程进行压缩压缩对象中: 100% (182739/182739), 完成.remote: fatal: pack exceeds maximum allowed sizeerror: 远程解包失败：index-pack abnormal exitTo git.xxx.com:webrtc/third_party.git ! [remote rejected]       rtc-105 -&gt; rtc-105 (unpacker error)error: 无法推送一些引用到 'https://xxx.com/webrtc/third_party.git'error: 远程解包失败：index-pack abnormal exit  应该是某些文件超过了git限制。解决找了个脚本，非常好使：REMOTE 改为你要推的远端，我本地仓库对应远端，实际使用改为了upstream，根据需要来# Adjust the following variables as necessaryREMOTE=originBRANCH=$(git rev-parse --abbrev-ref HEAD)BATCH_SIZE=100 # check if the branch exists on the remoteif git show-ref --quiet --verify refs/remotes/$REMOTE/$BRANCH; then    # if so, only push the commits that are not on the remote already    range=$REMOTE/$BRANCH..HEADelse    # else push all the commits    range=HEADfi# count the number of commits to pushn=$(git log --first-parent --format=format:x $range | wc -l) # push each batchfor i in $(seq $n -$BATCH_SIZE 1); do    # get the hash of the commit to push    h=$(git log --first-parent --reverse --format=format:%H --skip $i -n1)    echo \"Pushing $h...\"    git push $REMOTE $h:refs/heads/$BRANCHdone# push the final partial batchgit push $REMOTE HEAD:refs/heads/$BRANCH保存成脚本，放到仓库根目录执行就可以。思想应该就是将仓库分成部分，分批push来解决参考  https://chegva.com/5658.html  https://zhuanlan.zhihu.com/p/354354365"
+  },
+  
+  {
+    "title": "git创建空白分支",
+    "url": "/72b4e1b6.html",
+    "categories": "软件工具",
+    "tags": "Git",
+    "date": "2023-05-09 11:16:24 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Git创建空白分支，即：不基于任何分支创建新分支git checkout --orphan newBranchName\t",
+    "content": "Git创建空白分支，即：不基于任何分支创建新分支git checkout --orphan newBranchName\t"
+  },
+  
+  {
+    "title": "代码问题定位的几个有效策略",
+    "url": "/56191fa9.html",
+    "categories": "代码",
+    "tags": "代码",
+    "date": "2023-05-06 09:40:34 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "",
+    "content": ""
+  },
+  
+  {
+    "title": "Mac-M1上docker运行jekyll服务",
+    "url": "/566c3f40.html",
+    "categories": "代码",
+    "tags": "Jekyll",
+    "date": "2023-05-05 09:47:20 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Jekyll Server可以让你在本地生成静态网页，并起一个服务器，预览站点。Jekyll 官方提供的镜像只有x86版本的，在Mac M1跑起来慢一些，找了个支持arm64的版本。目录切换到站点的根目录，执行：docker run -rm -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve会自动bundle install 安装相关依赖...",
+    "content": "Jekyll Server可以让你在本地生成静态网页，并起一个服务器，预览站点。Jekyll 官方提供的镜像只有x86版本的，在Mac M1跑起来慢一些，找了个支持arm64的版本。目录切换到站点的根目录，执行：docker run -rm -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve会自动bundle install 安装相关依赖，并来一个server，访问以下地址预览站点：http://localhost:4000/"
+  },
+  
+  {
+    "title": "入坑键圈，造了一把机械键盘",
+    "url": "/2fbbfc28.html",
+    "categories": "巧记",
+    "tags": "键盘",
+    "date": "2023-05-05 09:39:26 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "挺喜欢机械键盘，市面上的机械键盘手感达不到自己的要求，要么比较硬，要么声音大，要么布局不喜欢，所以就自己做了一把。75%的布局，基于QMK，支持Via，外壳使用Sharp3D画的，并3D打印的，PCB就是嘉立创的一套。Gasket结构，PCB有开槽，非常软弹，打字音清爽无杂音，满足自己需求。键盘也开源出来，分享给有需要的朋友。Cherish-75Cherish-75，客制化机械键盘，PCB已...",
+    "content": "挺喜欢机械键盘，市面上的机械键盘手感达不到自己的要求，要么比较硬，要么声音大，要么布局不喜欢，所以就自己做了一把。75%的布局，基于QMK，支持Via，外壳使用Sharp3D画的，并3D打印的，PCB就是嘉立创的一套。Gasket结构，PCB有开槽，非常软弹，打字音清爽无杂音，满足自己需求。键盘也开源出来，分享给有需要的朋友。Cherish-75Cherish-75，客制化机械键盘，PCB已打样验证，旨在客制化交流分享，禁止商用！主控: STM32F072CBT6, Type-C分离小板硬件PCB：Flex Cut PCB，阻焊开窗(沉金),  立创工程链接:  https://oshwhub.com/caiyahoho/Cherish-75配列：75%，小门牙配列轴座: 焊接&amp;热插拔RGB: 大写键 RGB软件：QMK &amp; VIA，查看 fireware 目录许可：GPL3.0, 禁止商用外壳: 3D打印，磁吸上下盖设计，确保是否满足个人需要，切勿直接打印使用，查看 3d-model目录感谢：客制化入坑半年，工作加班也比较多，感谢老婆大人的宽容让我有时间折腾成品照黑色PCB布线效果:白色PCB布线效果:USB接口子板:键盘布局：支持Via3D打印外壳PCB打样焊接："
+  },
+  
+  {
+    "title": "Android-WebRTC硬编H264支持分析",
+    "url": "/8c5f9198.html",
+    "categories": "代码",
+    "tags": "代码",
+    "date": "2023-05-04 15:58:56 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Android端Mediacodec 硬编限制比较多，仅支持base和high profile, 而且high profile对处理器做了限制，只支持三星的处理器:codecName.startsWith(\"OMX.Exynos.)\"，level 仅支持3_1，详细可以查看 HardwareVideoEncoderFactory.java 文件。记录下调用的大概流程：h264_profile...",
+    "content": "Android端Mediacodec 硬编限制比较多，仅支持base和high profile, 而且high profile对处理器做了限制，只支持三星的处理器:codecName.startsWith(\"OMX.Exynos.)\"，level 仅支持3_1，详细可以查看 HardwareVideoEncoderFactory.java 文件。记录下调用的大概流程：h264_profile_level_id.ccabsl::optional&lt;std::string&gt; H264ProfileLevelIdToString(    const H264ProfileLevelId&amp; profile_level_id) {  // Handle special case level == 1b.  if (profile_level_id.level == H264Level::kLevel1_b) {    switch (profile_level_id.profile) {      case H264Profile::kProfileConstrainedBaseline:        return {\"42f00b\"};      case H264Profile::kProfileBaseline:        return {\"42100b\"};      case H264Profile::kProfileMain:        return {\"4d100b\"};      // Level 1b is not allowed for other profiles.      default:        return absl::nullopt;    }  }  const char* profile_idc_iop_string;  switch (profile_level_id.profile) {    case H264Profile::kProfileConstrainedBaseline:      profile_idc_iop_string = \"42e0\";      break;    case H264Profile::kProfileBaseline:      profile_idc_iop_string = \"4200\";      break;    case H264Profile::kProfileMain:      profile_idc_iop_string = \"4d00\";      break;    case H264Profile::kProfileConstrainedHigh:      profile_idc_iop_string = \"640c\";      break;    case H264Profile::kProfileHigh:      profile_idc_iop_string = \"6400\";      break;    case H264Profile::kProfilePredictiveHigh444:      profile_idc_iop_string = \"f400\";      break;    // Unrecognized profile.    default:      return absl::nullopt;  }  char str[7];  snprintf(str, 7u, \"%s%02x\", profile_idc_iop_string, profile_level_id.level);  return {str};}webrtc_video_engine.ccbool WebRtcVideoChannel::GetChangedSendParameters(    const VideoSendParameters&amp; params,    ChangedSendParameters* changed_params) const {  if (!ValidateCodecFormats(params.codecs) ||      !ValidateRtpExtensions(params.extensions, send_rtp_extensions_)) {    return false;  }  std::vector&lt;VideoCodecSettings&gt; negotiated_codecs =      SelectSendVideoCodecs(MapCodecs(params.codecs));  // We should only fail here if send direction is enabled.  if (params.is_stream_active &amp;&amp; negotiated_codecs.empty()) {    RTC_LOG(LS_ERROR) &lt;&lt; \"No video codecs supported.\";    return false;  }  // Never enable sending FlexFEC, unless we are in the experiment.  if (!IsEnabled(call_-&gt;trials(), \"WebRTC-FlexFEC-03\")) {    for (VideoCodecSettings&amp; codec : negotiated_codecs)      codec.flexfec_payload_type = -1;  }  if (negotiated_codecs_ != negotiated_codecs) {    if (negotiated_codecs.empty()) {      changed_params-&gt;send_codec = absl::nullopt;    } else if (send_codec_ != negotiated_codecs.front()) {      changed_params-&gt;send_codec = negotiated_codecs.front();    }    changed_params-&gt;negotiated_codecs = std::move(negotiated_codecs);  }  // Handle RTP header extensions.  if (params.extmap_allow_mixed != ExtmapAllowMixed()) {    changed_params-&gt;extmap_allow_mixed = params.extmap_allow_mixed;  }  std::vector&lt;webrtc::RtpExtension&gt; filtered_extensions = FilterRtpExtensions(      params.extensions, webrtc::RtpExtension::IsSupportedForVideo, true,      call_-&gt;trials());  if (send_rtp_extensions_ != filtered_extensions) {    changed_params-&gt;rtp_header_extensions =        absl::optional&lt;std::vector&lt;webrtc::RtpExtension&gt;&gt;(filtered_extensions);  }  if (params.mid != send_params_.mid) {    changed_params-&gt;mid = params.mid;  }  // Handle max bitrate.  if (params.max_bandwidth_bps != send_params_.max_bandwidth_bps &amp;&amp;      params.max_bandwidth_bps &gt;= -1) {    // 0 or -1 uncaps max bitrate.    // TODO(pbos): Reconsider how 0 should be treated. It is not mentioned as a    // special value and might very well be used for stopping sending.    changed_params-&gt;max_bandwidth_bps =        params.max_bandwidth_bps == 0 ? -1 : params.max_bandwidth_bps;  }  // Handle conference mode.  if (params.conference_mode != send_params_.conference_mode) {    changed_params-&gt;conference_mode = params.conference_mode;  }  // Handle RTCP mode.  if (params.rtcp.reduced_size != send_params_.rtcp.reduced_size) {    changed_params-&gt;rtcp_mode = params.rtcp.reduced_size                                    ? webrtc::RtcpMode::kReducedSize                                    : webrtc::RtcpMode::kCompound;  }  return true;}simulcast_encoder_adapter.ccSimulcastEncoderAdapter::FetchOrCreateEncoderContext(    bool is_lowest_quality_stream) const {  bool prefer_temporal_support = fallback_encoder_factory_ != nullptr &amp;&amp;                                 is_lowest_quality_stream &amp;&amp;                                 prefer_temporal_support_on_base_layer_;  // Toggling of `prefer_temporal_support` requires encoder recreation. Find  // and reuse encoder with desired `prefer_temporal_support`. Otherwise, if  // there is no such encoder in the cache, create a new instance.  auto encoder_context_iter =      std::find_if(cached_encoder_contexts_.begin(),                   cached_encoder_contexts_.end(), [&amp;](auto&amp; encoder_context) {                     return encoder_context-&gt;prefer_temporal_support() ==                            prefer_temporal_support;                   });  std::unique_ptr&lt;SimulcastEncoderAdapter::EncoderContext&gt; encoder_context;  if (encoder_context_iter != cached_encoder_contexts_.end()) {    encoder_context = std::move(*encoder_context_iter);    cached_encoder_contexts_.erase(encoder_context_iter);  } else {    std::unique_ptr&lt;VideoEncoder&gt; primary_encoder =        primary_encoder_factory_-&gt;CreateVideoEncoder(video_format_);    std::unique_ptr&lt;VideoEncoder&gt; fallback_encoder;    if (fallback_encoder_factory_ != nullptr) {      fallback_encoder =          fallback_encoder_factory_-&gt;CreateVideoEncoder(video_format_);    }    std::unique_ptr&lt;VideoEncoder&gt; encoder;    VideoEncoder::EncoderInfo primary_info;    VideoEncoder::EncoderInfo fallback_info;    if (primary_encoder != nullptr) {      primary_info = primary_encoder-&gt;GetEncoderInfo();      fallback_info = primary_info;      if (fallback_encoder == nullptr) {        encoder = std::move(primary_encoder);      } else {        encoder = CreateVideoEncoderSoftwareFallbackWrapper(            std::move(fallback_encoder), std::move(primary_encoder),            prefer_temporal_support);      }    } else if (fallback_encoder != nullptr) {      RTC_LOG(LS_WARNING) &lt;&lt; \"Failed to create primary \" &lt;&lt; video_format_.name                          &lt;&lt; \" encoder. Use fallback encoder.\";      fallback_info = fallback_encoder-&gt;GetEncoderInfo();      primary_info = fallback_info;      encoder = std::move(fallback_encoder);    } else {      RTC_LOG(LS_ERROR) &lt;&lt; \"Failed to create primary and fallback \"                        &lt;&lt; video_format_.name &lt;&lt; \" encoders.\";      return nullptr;    }    encoder_context = std::make_unique&lt;SimulcastEncoderAdapter::EncoderContext&gt;(        std::move(encoder), prefer_temporal_support, primary_info,        fallback_info);  }  encoder_context-&gt;encoder().RegisterEncodeCompleteCallback(      encoded_complete_callback_);  return encoder_context;}然后调用到Java层HardwareVideoEncoderFactory.java@Nullable@Overridepublic VideoEncoder createEncoder(VideoCodecInfo input) {  VideoCodecMimeType type = VideoCodecMimeType.valueOf(input.getName());  MediaCodecInfo info = findCodecForType(type);  if (info == null) {    return null;  }  String codecName = info.getName();  String mime = type.mimeType();  Integer surfaceColorFormat = MediaCodecUtils.selectColorFormat(      MediaCodecUtils.TEXTURE_COLOR_FORMATS, info.getCapabilitiesForType(mime));  Integer yuvColorFormat = MediaCodecUtils.selectColorFormat(      MediaCodecUtils.ENCODER_COLOR_FORMATS, info.getCapabilitiesForType(mime));  if (type == VideoCodecMimeType.H264) {    boolean isHighProfile = H264Utils.isSameH264Profile(        input.params, MediaCodecUtils.getCodecProperties(type, /* highProfile= */ true));    boolean isBaselineProfile = H264Utils.isSameH264Profile(        input.params, MediaCodecUtils.getCodecProperties(type, /* highProfile= */ false));    if (!isHighProfile &amp;&amp; !isBaselineProfile) {      return null;    }    if (isHighProfile &amp;&amp; !isH264HighProfileSupported(info)) {      return null;    }  }  return new HardwareVideoEncoder(new MediaCodecWrapperFactoryImpl(), codecName, type,      surfaceColorFormat, yuvColorFormat, input.params, PERIODIC_KEY_FRAME_INTERVAL_S,      getForcedKeyFrameIntervalMs(type, codecName), createBitrateAdjuster(type, codecName),      sharedContext);}HardwareVideoEncoder.java@Overridepublic VideoCodecStatus initEncode(Settings settings, Callback callback) {  encodeThreadChecker.checkIsOnValidThread();  this.callback = callback;  automaticResizeOn = settings.automaticResizeOn;  if (settings.width % REQUIRED_RESOLUTION_ALIGNMENT != 0      || settings.height % REQUIRED_RESOLUTION_ALIGNMENT != 0) {    Logging.e(TAG, \"MediaCodec is only tested with resolutions that are 16x16 aligned.\");    return VideoCodecStatus.ERR_SIZE;  }  this.width = settings.width;  this.height = settings.height;  useSurfaceMode = canUseSurface();  if (settings.startBitrate != 0 &amp;&amp; settings.maxFramerate != 0) {    bitrateAdjuster.setTargets(settings.startBitrate * 1000, settings.maxFramerate);  }  adjustedBitrate = bitrateAdjuster.getAdjustedBitrateBps();  Logging.d(TAG,      \"initEncode: \" + width + \" x \" + height + \". @ \" + settings.startBitrate          + \"kbps. Fps: \" + settings.maxFramerate + \" Use surface mode: \" + useSurfaceMode);  return initEncodeInternal();}"
+  },
+  
+  {
+    "title": "Android-Native-打印日志",
+    "url": "/1be3649c.html",
+    "categories": "代码",
+    "tags": "代码",
+    "date": "2023-05-04 11:19:04 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Android NDK调试，经常需要打日志，日志函数经常忘记，好记性不如烂笔头，整理到这里：头文件#include &lt;android/log.h&gt; 原函数int __android_log_print(int prio, const char* tag, const char* fmt, ...)日志级别typedef enum android_LogPriority {  /*...",
+    "content": "Android NDK调试，经常需要打日志，日志函数经常忘记，好记性不如烂笔头，整理到这里：头文件#include &lt;android/log.h&gt; 原函数int __android_log_print(int prio, const char* tag, const char* fmt, ...)日志级别typedef enum android_LogPriority {  /** For internal use only.  */  ANDROID_LOG_UNKNOWN = 0,  /** The default priority, for internal use only.  */  ANDROID_LOG_DEFAULT, /* only for SetMinPriority() */  /** Verbose logging. Should typically be disabled for a release apk. */  ANDROID_LOG_VERBOSE,  /** Debug logging. Should typically be disabled for a release apk. */  ANDROID_LOG_DEBUG,  /** Informational logging. Should typically be disabled for a release apk. */  ANDROID_LOG_INFO,  /** Warning logging. For use with recoverable failures. */  ANDROID_LOG_WARN,  /** Error logging. For use with unrecoverable failures. */  ANDROID_LOG_ERROR,  /** Fatal logging. For use when aborting. */  ANDROID_LOG_FATAL,  /** For internal use only.  */  ANDROID_LOG_SILENT, /* only for SetMinPriority(); must be last */} android_LogPriority;使用简单使用：int i = 0;__android_log_print(ANDROID_LOG_DEBUG, \"log_tag\", \"this is log:%d\", i++)宏封装：#include &lt;android/log.h&gt;#define TAG \"tagName\" #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,TAG ,__VA_ARGS__) \t// 定义LOGD类型#define LOGI(...) __android_log_print(ANDROID_LOG_INFO,TAG ,__VA_ARGS__) \t\t// 定义LOGI类型 #define LOGW(...) __android_log_print(ANDROID_LOG_WARN,TAG ,__VA_ARGS__) \t\t// 定义LOGW类型 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,TAG ,__VA_ARGS__) \t// 定义LOGE类型 #define LOGF(...) __android_log_print(ANDROID_LOG_FATAL,TAG ,__VA_ARGS__) \t// 定义LOGF类型放到 android_log.h 中，使用时候 #include \"android_log.h\"即可使用：LOGE(\"print a log:%d\", 100); //error log参考@See https://developer.android.com/ndk/reference/group/logging@See https://blog.csdn.net/u012102149/article/details/86356228"
+  },
+  
+  {
+    "title": "晨光烧饼：今天下午休息，明天营业",
+    "url": "/9812e9ea.html",
+    "categories": "生活",
+    "tags": "生活",
+    "date": "2023-05-03 22:32:36 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "经常吃晨光烧饼，味道很不错。清友园附近的晨光烧饼店有时候买不到，老板太洒脱了，卖光了就关门😂，别人使劲做生意，老板顺其自然，卖光就打烊，过的从容不迫！大家应该都希望自己也是这种状态吧，或者说开一家类似的小店。想起自己脱离了996苦海，还在995新海里挣扎，感觉别人才叫生活，我这是生存，可能是为以后积蓄力量吧。",
+    "content": "经常吃晨光烧饼，味道很不错。清友园附近的晨光烧饼店有时候买不到，老板太洒脱了，卖光了就关门😂，别人使劲做生意，老板顺其自然，卖光就打烊，过的从容不迫！大家应该都希望自己也是这种状态吧，或者说开一家类似的小店。想起自己脱离了996苦海，还在995新海里挣扎，感觉别人才叫生活，我这是生存，可能是为以后积蓄力量吧。"
+  },
+  
+  {
+    "title": "Jekyll快速新建文章脚本",
+    "url": "/81e92c74.html",
+    "categories": "巧记",
+    "tags": "Jekyll",
+    "date": "2023-05-03 13:09:39 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Jekyll 新建文章很麻烦，除了粘贴复制头，还要改文章的标题和时间，非常繁琐，下面的脚本可以自动获取文章创建时间，并添加基础信息，非常方便。创建 new-post.sh, 放到jekyll 网站根目录，即和_posts同级目录,内容如下：这是一个模板信息，作者，分类，标签等都可以根据自己的需要修改。#!/usr/bin/env bashDIR=\"${0%/*}\"title=`echo $@...",
+    "content": "Jekyll 新建文章很麻烦，除了粘贴复制头，还要改文章的标题和时间，非常繁琐，下面的脚本可以自动获取文章创建时间，并添加基础信息，非常方便。创建 new-post.sh, 放到jekyll 网站根目录，即和_posts同级目录,内容如下：这是一个模板信息，作者，分类，标签等都可以根据自己的需要修改。#!/usr/bin/env bashDIR=\"${0%/*}\"title=`echo $@ | sed 's/[ ][ ]*/-/g'`post_date=`date  +\"%Y-%m-%d %T\"`post_name=\"`date \"+%Y-%m-%d\"`-${title}.markdown\"random_addr=`openssl rand -hex 8 | md5 | cut -c1-8`cat &gt; ${DIR}/_posts/${post_name} &lt;&lt; EOF---layout: posttitle:  \"${title}\"description: \"\"author: 作者date:   ${post_date} +0800permalink: ${random_addr}.htmlcategories:    - 分类tags:    - 标签---EOF# 创建完打开文章open ${DIR}/_posts/${post_name}如果创建新文章，执行 ./new-post.sh 文章名字 即可"
+  },
+  
+  {
+    "title": "Jekyll中显示包分号包裹的代码",
+    "url": "/4f7b855d.html",
+    "categories": "巧记",
+    "tags": "jekyll",
+    "date": "2023-05-03 10:59:19 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "在 Jekyll中如果markdown显示百分号包裹的代码，会发现代码不显示, 可以用%加{raw解决：解决： stackoverflow: https://stackoverflow.com/questions/17720167/how-do-i-include-in-markdown-file-when-using-jekyll",
+    "content": "在 Jekyll中如果markdown显示百分号包裹的代码，会发现代码不显示, 可以用%加{raw解决：解决： stackoverflow: https://stackoverflow.com/questions/17720167/how-do-i-include-in-markdown-file-when-using-jekyll"
+  },
+  
+  {
+    "title": "Jekyll主题Chirpy简单客制化",
+    "url": "/0e62f112.html",
+    "categories": "巧记",
+    "tags": "Jekyll",
+    "date": "2023-05-02 23:36:17 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "本博客使用Jekyll生成，部署在阿里云服务器上，使用的是Chirpy主题，一款非常简约却又功能丰富的主题。有些地方个人做了少许改动，记录一下。文章列表缩略图增加了文章列表缩略图，三种尺寸 small, medium, large,  效果也可查阅本博客首页。修改内容为:在 _layouts/home.html 的 &lt;div class=\"card-body\"&gt; 标签下增加&lt...",
+    "content": "本博客使用Jekyll生成，部署在阿里云服务器上，使用的是Chirpy主题，一款非常简约却又功能丰富的主题。有些地方个人做了少许改动，记录一下。文章列表缩略图增加了文章列表缩略图，三种尺寸 small, medium, large,  效果也可查阅本博客首页。修改内容为:在 _layouts/home.html 的 &lt;div class=\"card-body\"&gt; 标签下增加&lt;!-- thumb start --&gt; {% if post.image.thumb.enable %}  {% if post.image.thumb.size == 'small' %}    &lt;img class=\"card-thumb-small\" src=\"{{ post.image.path }}\"/&gt;  {% endif %}  {% if post.image.thumb.size == 'medium' %}    &lt;img class=\"card-thumb-medium\" src=\"{{ post.image.path}}\"/&gt;  {% endif %}  {% if post.image.thumb.size == 'large' %}    &lt;img class=\"card-thumb-large\" src=\"{{ post.image.path}}\" /&gt;  {% endif %} {% endif %}&lt;!-- thumb end --&gt;增加自定义css，修改assets/css/style.scss.card-thumb-small {  border-radius: 8px;  margin-right: 20px;  height: 120px;  display: block;  object-fit: cover;  float: left;}.card-thumb-medium {  width: 100%;   margin-bottom: 15px;  border-radius: 8px;  max-height: 125px;  display: block;  object-fit: cover;  float: left;}.card-thumb-large {  width: 100%;   margin-bottom: 15px;  border-radius: 8px;  max-height: 300px;  display: block;  object-fit: cover;  float: left;}@media all and (max-width: 830px) {  .card-thumb-small {    width: 100%;    margin-bottom: 15px;  }}@media all and (min-width: 831px) {  .card-thumb-small {    width: 25%;  }}创建文章头部image标签下增加thumb字段：image:  path: http://io.fifo.site/typora5691682473820.jpg  alt: android &amp; ffmpeg.  thumb:      enable: false    size: 'medium' #small, medium, large代码高亮代码高亮头部改为mac风格有颜色的点, 并且字体颜色稍微调深一点。增加自定义css，修改assets/css/style.scss.highlight {  .lineno {    color: #999999;  }}.code-header {  &amp;::before {    $dot-size: 0.75rem;    $dot-margin: 0.5rem;    background-color: #ED6C5F;    box-shadow: ($dot-size + $dot-margin) 0 0 #F4BF4F,      ($dot-size + $dot-margin) * 2 0 0 #62C655;  }  /* the label block */  span {    /* label icon */    i {      color: #999999;    }        /* label text */    &amp;::after {      color: #999999;    }  }  button {    i {      color: #999999;    }  }}行内代码字体颜色行内代码字体颜色修改为浅红，原来为浅灰不是太显眼增加自定义css，修改assets/css/style.scsscode {  &amp;.highlighter-rouge {    color: #BF2D44;    // background-color: #FCF6E5;  }}总结对原主题的侵入比较小，主要修改了css和少量home.html，后期升级主题也比较方便。整体改完使用效果非常不错，有需要的朋友可以按照上面方法修改一下。"
+  },
+  
+  {
+    "title": "编译Android OpenCV with FFmpeg静态库",
+    "url": "/bian-yi-android-opencv-with-ffmpeg.html",
+    "categories": "巧记",
+    "tags": "opencv, Android",
+    "date": "2023-04-27 08:33:57 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "编译环境  opencv : 4.6.0  ndk: r21e  os: mac m1 &amp; 13.3.1编译脚本修改编译脚本opencv/platforms/android/build_sdk.py 中 build_library(self, abi, do_install)函数改为如下def build_library(self, abi, do_install):  cmd = ...",
+    "content": "编译环境  opencv : 4.6.0  ndk: r21e  os: mac m1 &amp; 13.3.1编译脚本修改编译脚本opencv/platforms/android/build_sdk.py 中 build_library(self, abi, do_install)函数改为如下def build_library(self, abi, do_install):  cmd = [self.cmake_path, \"-GNinja\"]  cmake_vars = dict(      CMAKE_TOOLCHAIN_FILE=self.get_toolchain_file(),      INSTALL_CREATE_DISTRIB=\"ON\",      WITH_OPENCL=\"OFF\",      BUILD_KOTLIN_EXTENSIONS=\"ON\",      WITH_IPP=(\"ON\" if abi.haveIPP() else \"OFF\"),      WITH_TBB=\"ON\",      BUILD_EXAMPLES=\"OFF\",      BUILD_TESTS=\"OFF\",      BUILD_PERF_TESTS=\"OFF\",      BUILD_DOCS=\"OFF\",      BUILD_ANDROID_EXAMPLES=\"OFF\",      INSTALL_ANDROID_EXAMPLES=\"OFF\",      BUILD_ANDROID_PROJECTS=\"OFF\",      WITH_FFMPEG=\"ON\",      OPENCV_FFMPEG_USE_FIND_PACKAGE=\"ON\",      FFMPEG_DIR=\"../\",  )  if self.ninja_path != 'ninja':      cmake_vars['CMAKE_MAKE_PROGRAM'] = self.ninja_path  if self.debug:      cmake_vars['CMAKE_BUILD_TYPE'] = \"Debug\"  if self.debug_info:  # Release with debug info      cmake_vars['BUILD_WITH_DEBUG_INFO'] = \"ON\"  if self.opencl:      cmake_vars['WITH_OPENCL'] = \"ON\"  if self.no_kotlin:      cmake_vars['BUILD_KOTLIN_EXTENSIONS'] = \"OFF\"  if self.config.modules_list is not None:      cmd.append(\"-DBUILD_LIST='%s'\" % self.config.modules_list)  if self.config.extra_modules_path is not None:      cmd.append(\"-DOPENCV_EXTRA_MODULES_PATH='%s'\" % self.config.extra_modules_path)  if self.use_ccache == True:      cmd.append(\"-DNDK_CCACHE=ccache\")  if do_install:      cmd.extend([\"-DBUILD_TESTS=ON\", \"-DINSTALL_TESTS=ON\"])  cmake_vars.update(abi.cmake_vars)  cmd += [ \"-D%s='%s'\" % (k, v) for (k, v) in cmake_vars.items() if v is not None]  cmd.append(self.opencvdir)  execute(cmd)  # full parallelism for C++ compilation tasks  execute([self.ninja_path, \"opencv_modules\"])  # limit parallelism for building samples (avoid huge memory consumption)  if self.no_samples_build:      execute([self.ninja_path, \"install\" if (self.debug_info or self.debug) else \"install/strip\"])  else:      execute([self.ninja_path, \"-j1\" if (self.debug_info or self.debug) else \"-j3\", \"install\" if (self.debug_info or self.debug) else \"install/strip\"])主要是增加一下编译参数放开ffmpeg依赖，以及关闭java相关的编译BUILD_ANDROID_EXAMPLES=\"OFF\",INSTALL_ANDROID_EXAMPLES=\"OFF\",BUILD_ANDROID_PROJECTS=\"OFF\",WITH_FFMPEG=\"ON\",OPENCV_FFMPEG_USE_FIND_PACKAGE=\"ON\",FFMPEG_DIR=\"../\",FFmpeg依赖指定创建 ffmpeg-config.cmake文件，修改为以下内容，放到和编译opencv同级目录，用来指定ffmpeg依赖的静态库的位置和头文件位置。set(FFMPEG_LIBDIR \"${CMAKE_CURRENT_LIST_DIR}/../../../libs/mediautils/android/${CMAKE_ANDROID_ARCH_ABI}/Release/ffmpeg\")set(FFMPEG_INCLUDE_DIRS \"${CMAKE_CURRENT_LIST_DIR}/../../../include/mediautils/ffmpeg\")set(FFMPEG_LIBRARIES    ${FFMPEG_LIBDIR}/libavformat.a    ${FFMPEG_LIBDIR}/libavcodec.a    ${FFMPEG_LIBDIR}/libavutil.a    ${FFMPEG_LIBDIR}/libswscale.a    ${FFMPEG_LIBDIR}/libswresample.a    ${FFMPEG_LIBDIR}/libavfilter.a    ${CMAKE_CURRENT_LIST_DIR}/../../../libs/mediautils/android/${CMAKE_ANDROID_ARCH_ABI}/Release/zpx264/libx264.a    z)set(FFMPEG_libavformat_FOUND TRUE)set(FFMPEG_libavcodec_FOUND TRUE)set(FFMPEG_libavutil_FOUND TRUE)set(FFMPEG_libswscale_FOUND TRUE)set(FFMPEG_libswresample_FOUND TRUE)set(FFMPEG_libavfilter_FOUND TRUE)set(FFMPEG_libavcodec_VERSION 59.18.100)set(FFMPEG_libavfilter_VERSION 8.24.100)set(FFMPEG_libavformat_VERSION 59.16.100)set(FFMPEG_libavutil_VERSION 57.17.100)set(FFMPEG_libswresample_VERSION 4.3.100)set(FFMPEG_libswscale_VERSION 6.4.100)set(FFMPEG_FOUND TRUE)set(FFMPEG_LIBS ${FFMPEG_LIBRARIES})  注意，没有依赖的静态库不要写到脚本中，可能会报错添加编译脚本创建build-android.sh, 内容如下，将此脚本放到和opencv源码同级目录#!/bin/shecho \"start build opencv android platform\"echo \"Current PWD: ${PWD}\"#ndk-buildexport ANDROID_NDK=/Users/admin/works/tools/ndk-r21eexport PATH=$PATH:$ANDROID_NDKrm -rf opencv-buildmkdir opencv-buildcd opencv-buildmkdir static cd staticpython3 ../../opencv/platforms/android/build_sdk.py ./ -Dand\t执行 ./build-android.sh 即可其他编译过程中会下载TBB, 如下载不下来需要配置代理:TBB: Downloading v2020.2.tar.gz from https://github.com/01org/tbb/archive/v2020.2.tar.gz\t参考：https://zhuanlan.zhihu.com/p/472115312?utm_id=0 非常详细"
+  },
+  
+  {
+    "title": "记录下2023年的春天",
+    "url": "/2023-spring.html",
+    "categories": "小记",
+    "tags": "life",
+    "date": "2023-04-26 08:33:57 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "又到了春天，公司楼下有个小花园，画画草草都发芽长大，嫩绿嫩绿的，水池里还有大大小小的锦鲤，非常的赏析悦目。工作累了，或者中午傍晚吃完饭来这里溜达溜达，心情也会变好，疲惫也减轻些。公司楼下凉亭花园藤蔓太阳宫地铁站花花草草水塘锦鲤水塘锦鲤",
+    "content": "又到了春天，公司楼下有个小花园，画画草草都发芽长大，嫩绿嫩绿的，水池里还有大大小小的锦鲤，非常的赏析悦目。工作累了，或者中午傍晚吃完饭来这里溜达溜达，心情也会变好，疲惫也减轻些。公司楼下凉亭花园藤蔓太阳宫地铁站花花草草水塘锦鲤水塘锦鲤"
+  },
+  
+  {
+    "title": "宝塔配置网站404页面",
+    "url": "/bao-ta-pei-zhi-404.html",
+    "categories": "巧记",
+    "tags": "jekyll",
+    "date": "2023-04-24 11:33:57 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "配置jekyll 生成静态博客，对于找不到的页面，直接显示404 not found.需要重定向到网站的404页面，即 404.html找到网站配置文件：    #ERROR-PAGE-START  错误页配置，可以注释、删除或修改    error_page 404 /404.html;    #error_page 502 /502.html;    #ERROR-PAGE-END   ...",
+    "content": "配置jekyll 生成静态博客，对于找不到的页面，直接显示404 not found.需要重定向到网站的404页面，即 404.html找到网站配置文件：    #ERROR-PAGE-START  错误页配置，可以注释、删除或修改    error_page 404 /404.html;    #error_page 502 /502.html;    #ERROR-PAGE-END    #PHP-INFO-START  PHP引用配置，可以注释或修改    将 ` error_page 404 /404.html;`的注释放开，网站根目录下要有 404.html"
+  },
+  
+  {
+    "title": "WebRTC Android FFmpeg软解报错 H264解码找不到",
+    "url": "/webrtc-android-ffmpeg-ruan-jie-bao-cuo-h264jie-ma.html",
+    "categories": "RTC",
+    "tags": "Android, FFMpeg, h264, WebRTC",
+    "date": "2023-04-19 11:20:07 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "报错：  const AVCodec* codec = avcodec_find_decoder(av_context_-&gt;codec_id);  if (!codec) {    // This is an indication that FFmpeg has not been initialized or it has not    // been compiled/initial...",
+    "content": "报错：  const AVCodec* codec = avcodec_find_decoder(av_context_-&gt;codec_id);  if (!codec) {    // This is an indication that FFmpeg has not been initialized or it has not    // been compiled/initialized with the correct set of codecs.    RTC_LOG(LS_ERROR) &lt;&lt; \"FFmpeg H.264 decoder not found.\";    Release();    ReportError();    return false;  }增加编译参数 rtc\\_use\\_h264=true 不管用！修改 ffmpeg_generated.gni找到third_party/ffmpeg/ffmpeg_generated.gniuse\\_linux\\_config，添加 || is\\_android以支持，结果如下use_linux_config = is_linux || is_fuchsia || is_android增加 codec_list parser_list h264 支持修改 arm64, 相应的armv7的改相应目录即可chromium/config/Chrome/android/arm64/config.h 中 CONFIG_H264_DECODER 设置为 1third_party/ffmpeg/chromium/config/Chrome/android/arm64/libavcodec/parser_list.c 添加 &amp;ff_h264_parser,third_party/ffmpeg/chromium/config/Chrome/android/arm64/libavcodec/codec_list.c 添加 &amp;ff_h264_decoder编译参数添加 rtc_use_h264=true ffmpeg_branding=\"Chrome\"参考：https://blog.csdn.net/CSqingchen/article/details/120199702"
+  },
+  
+  {
+    "title": "Xcode运行脚本找不到系统命令",
+    "url": "/xcode-yun-xing-jiao-ben-zhao-bu-dao-xi-tong-ming-l.html",
+    "categories": "巧记",
+    "tags": "xocde",
+    "date": "2023-03-30 11:33:57 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "现象：脚本为通过配置在build的同时运行.sh脚本，出现 xxx：command not found终端中执行正常；解决 1查看命令位置which ninja # 输出 /opt/homebrew/bin/wget Xcode 执行脚本中添加PATH=$PATH:/opt/homebrew/bin/ 解决 2软链ln -s /opt/homebrew/bin/Ninja /usr/loca...",
+    "content": "现象：脚本为通过配置在build的同时运行.sh脚本，出现 xxx：command not found终端中执行正常；解决 1查看命令位置which ninja # 输出 /opt/homebrew/bin/wget Xcode 执行脚本中添加PATH=$PATH:/opt/homebrew/bin/ 解决 2软链ln -s /opt/homebrew/bin/Ninja /usr/local/bin 参考：https://blog.csdn.net/Le_1M/article/details/122673435"
+  },
+  
+  {
+    "title": "WordPress中文博客主题：Soda Theme",
+    "url": "/wordpress-zhong-wen-bo-ke-zhu-tisoda-theme.html",
+    "categories": "巧记",
+    "tags": "wordpress",
+    "date": "2023-03-30 09:39:50 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "预览下载地址：https://github.com/gezhaoyou/soda-theme/releases/功能bug",
+    "content": "预览下载地址：https://github.com/gezhaoyou/soda-theme/releases/功能bug"
+  },
+  
+  {
+    "title": "安卓Bitmap转yuv420p(I420)代码实现",
+    "url": "/bitmap-zi-jie-shu-zuargb8888-zhuan-yuv420pi420-jav.html",
+    "categories": "RTC",
+    "tags": "",
+    "date": "2023-03-13 21:38:04 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "// 获取bitmap     Bitmap b = Bitmap.createBitmap(activity.getWindow().getDecorView().getWidth(),                    activity.getWindow().getDecorView().getHeight(), Bitmap.Config.ARGB_8888);         ...",
+    "content": "// 获取bitmap     Bitmap b = Bitmap.createBitmap(activity.getWindow().getDecorView().getWidth(),                    activity.getWindow().getDecorView().getHeight(), Bitmap.Config.ARGB_8888);            Canvas canvas = new Canvas(b);            activity.getWindow().getDecorView().draw(canvas);      int[] argb = new int[inputWidth * inputHeight];       // Bitmap 获取 argb        b.getPixels(argb, 0, inputWidth, 0, 0, inputWidth, inputHeight);        byte[] yuv = new byte[inputWidth * inputHeight * 3 / 2];        // argb 8888 转 i420        conver_argb_to_i420(yuv, argb, inputWidth, inputHeight); // argb 8888 转 i420 public static void conver_argb_to_i420(byte[] i420, int[] argb, int width, int height) {        final int frameSize = width * height;        int yIndex = 0;                   // Y start index        int uIndex = frameSize;           // U statt index        int vIndex = frameSize*5/4; // V start index: w*h*5/4        int a, R, G, B, Y, U, V;        int index = 0;        for (int j = 0; j &lt; height; j++) {            for (int i = 0; i &lt; width; i++) {                a = (argb[index] &amp; 0xff000000) &gt;&gt; 24; //  is not used obviously                R = (argb[index] &amp; 0xff0000) &gt;&gt; 16;                G = (argb[index] &amp; 0xff00) &gt;&gt; 8;                B = (argb[index] &amp; 0xff) &gt;&gt; 0;                // well known RGB to YUV algorithm                Y = ( (  66 * R + 129 * G +  25 * B + 128) &gt;&gt; 8) +  16;                U = ( ( -38 * R -  74 * G + 112 * B + 128) &gt;&gt; 8) + 128;                V = ( ( 112 * R -  94 * G -  18 * B + 128) &gt;&gt; 8) + 128;                // I420(YUV420p) -&gt; YYYYYYYY UU VV                i420[yIndex++] = (byte) ((Y &lt; 0) ? 0 : ((Y &gt; 255) ? 255 : Y));                if (j % 2 == 0 &amp;&amp; i % 2 == 0) {                    i420[uIndex++] = (byte)((U&lt;0) ? 0 : ((U &gt; 255) ? 255 : U));                    i420[vIndex++] = (byte)((V&lt;0) ? 0 : ((V &gt; 255) ? 255 : V));                }                index ++;            }        }    }"
   },
   
   {
     "title": "FFmpeg常用格式转换命令",
-    "url": "/posts/some_ffmpeg_format_cmd/",
-    "categories": "技术笔记",
-    "tags": "FFmpeg",
-    "date": "2022-11-01 20:43:00 +0800",
+    "url": "/ffmpeg-chang-yong-ge-shi-zhuan-huan-ming-ling.html",
+    "categories": "拙记",
+    "tags": "FFMpeg",
+    "date": "2023-03-12 21:41:56 +0800",
     
 
 
 
 
 
-    "snippet": "做音视频开发可能会用到一些 wav,  pcm, mp4, yuv 等测试文件，整理了一下常用FFmpeg命令，可以从mp4中分离音频未wav, wav可以转成不同采样率的 pcm.  mp4 提取音频为wavffmpeg -i input.mp4 -acodec pcm_s16le -f s16le -ac 1 -ar 16000 -f wav output.wav  mp4 转yuv42..."
+    
+    "snippet": "做音视频开发可能会用到一些 wav, pcm, mp4, yuv 等测试文件，整理了一下常用FFmpeg命令，可以从mp4中分离音频未wav, wav可以转成不同采样率的 pcm.  mp4 提取音频为wavffmpeg -i input.mp4 -acodec pcm_s16le -f s16le -ac 1 -ar 16000 -f wav output.wav  mp4 转yuv420...",
+    "content": "做音视频开发可能会用到一些 wav, pcm, mp4, yuv 等测试文件，整理了一下常用FFmpeg命令，可以从mp4中分离音频未wav, wav可以转成不同采样率的 pcm.  mp4 提取音频为wavffmpeg -i input.mp4 -acodec pcm_s16le -f s16le -ac 1 -ar 16000 -f wav output.wav  mp4 转yuv420ffmpeg -i input.mp4 -s 720x1280 -pix_fmt yuv420p output.yuv  wav 转 pcm 16k 16bitffmpeg -i input.wav -ar 16000 -ac 1 -f s16le output.pcm"
   },
   
   {
-    "title": "WebRTC统计之重传包判断",
-    "url": "/posts/webrtc_retransmission/",
-    "categories": "技术笔记",
-    "tags": "WebRTC",
-    "date": "2022-08-15 11:00:00 +0800",
+    "title": "WebRTC重传包判断",
+    "url": "/webrtc-zhong-chuan-bao-pan-duan.html",
+    "categories": "RTC",
+    "tags": "",
+    "date": "2023-03-12 21:41:17 +0800",
     
 
 
 
 
 
-    "snippet": "调用处bool StreamStatisticianImpl::UpdateOutOfOrder(const RtpPacketReceived&amp; packet,                                              int64_t sequence_number,                                          ..."
+    
+    "snippet": "调用处bool StreamStatisticianImpl::UpdateOutOfOrder(const RtpPacketReceived&amp; packet,                                              int64_t sequence_number,                                          ...",
+    "content": "调用处bool StreamStatisticianImpl::UpdateOutOfOrder(const RtpPacketReceived&amp; packet,                                              int64_t sequence_number,                                              int64_t now_ms) {  // Check if |packet| is second packet of a stream restart.  if (received_seq_out_of_order_) {    // Count the previous packet as a received; it was postponed below.    --cumulative_loss_;    uint16_t expected_sequence_number = *received_seq_out_of_order_ + 1;    received_seq_out_of_order_ = absl::nullopt;    if (packet.SequenceNumber() == expected_sequence_number) {      // Ignore sequence number gap caused by stream restart for packet loss      // calculation, by setting received_seq_max_ to the sequence number just      // before the out-of-order seqno. This gives a net zero change of      // |cumulative_loss_|, for the two packets interpreted as a stream reset.      //      // Fraction loss for the next report may get a bit off, since we don't      // update last_report_seq_max_ and last_report_cumulative_loss_ in a      // consistent way.      last_report_seq_max_ = sequence_number - 2;      received_seq_max_ = sequence_number - 2;      return false;    }  }  if (std::abs(sequence_number - received_seq_max_) &gt;      max_reordering_threshold_) {    // Sequence number gap looks too large, wait until next packet to check    // for a stream restart.    received_seq_out_of_order_ = packet.SequenceNumber();    // Postpone counting this as a received packet until we know how to update    // |received_seq_max_|, otherwise we temporarily decrement    // |cumulative_loss_|. The    // ReceiveStatisticsTest.StreamRestartDoesntCountAsLoss test expects    // |cumulative_loss_| to be unchanged by the reception of the first packet    // after stream reset.    ++cumulative_loss_;    return true;  }  if (sequence_number &gt; received_seq_max_)    return false;  // Old out of order packet, may be retransmit.  if (enable_retransmit_detection_ &amp;&amp; IsRetransmitOfOldPacket(packet, now_ms))    receive_counters_.retransmitted.AddPacket(packet);  return true;}\t\t重传包判断逻辑bool StreamStatisticianImpl::IsRetransmitOfOldPacket(    const RtpPacketReceived&amp; packet,    int64_t now_ms) const {  uint32_t frequency_khz = packet.payload_type_frequency() / 1000;  RTC_DCHECK_GT(frequency_khz, 0);  int64_t time_diff_ms = now_ms - last_receive_time_ms_;  // Diff in time stamp since last received in order.  uint32_t timestamp_diff = packet.Timestamp() - last_received_timestamp_;  uint32_t rtp_time_stamp_diff_ms = timestamp_diff / frequency_khz;  int64_t max_delay_ms = 0;  // Jitter standard deviation in samples.  float jitter_std = std::sqrt(static_cast&lt;float&gt;(jitter_q4_ &gt;&gt; 4));  // 2 times the standard deviation =&gt; 95% confidence.  // And transform to milliseconds by dividing by the frequency in kHz.  max_delay_ms = static_cast&lt;int64_t&gt;((2 * jitter_std) / frequency_khz);  // Min max_delay_ms is 1.  if (max_delay_ms == 0) {    max_delay_ms = 1;  }  return time_diff_ms &gt; rtp_time_stamp_diff_ms + max_delay_ms;}"
   },
   
   {
-    "title": "完整开源一套75配列键盘,STM32F072方案🍻",
-    "url": "/posts/opensource_75_keyboard_cherish/",
-    "categories": "生活",
-    "tags": "生活",
-    "date": "2022-08-12 07:22:00 +0800",
+    "title": "WebRTC中PacedSender工作分析",
+    "url": "/webrtc-zhongpacedsender-gong-zuo-fen-xi.html",
+    "categories": "RTC",
+    "tags": "",
+    "date": "2023-03-12 21:40:20 +0800",
     
 
 
 
 
 
-    "snippet": "造了把键盘，从PCB设计到外壳设计，都有个人完成。 PCB使用嘉立创打样，外壳使用未来工厂3D打印，键盘取名Cherish-75。已开源: https://github.com/gezhaoyou/Cherish-75主控: STM32F072CBT6, Type-C分离小板硬件PCB：Flex Cut PCB，阻焊开窗(沉金),  立创工程链接:  https://oshwhub.com/..."
+    
+    "snippet": "摘抄一段 PacedSender 简介，下面的链接对该模块的工作原理做了详细的介绍，今天大致看了下这个模块的代码，记录一下  在estimator根据网络状态决策出新的通信码率（target bitrate），它会将这个码率设置到pacer当中，要求pacer按照新的码率来计算发包频率。因为在视频通信中，单帧视频可能有上百KB,如果是当视频帧被编码器编码出来后，就立即进行RTP打包发送，瞬时...",
+    "content": "摘抄一段 PacedSender 简介，下面的链接对该模块的工作原理做了详细的介绍，今天大致看了下这个模块的代码，记录一下  在estimator根据网络状态决策出新的通信码率（target bitrate），它会将这个码率设置到pacer当中，要求pacer按照新的码率来计算发包频率。因为在视频通信中，单帧视频可能有上百KB,如果是当视频帧被编码器编码出来后，就立即进行RTP打包发送，瞬时会发送大量的数据到网络上，可能会引起网络衰减和通信恶化。WebRTC引入pacer，pacer会根据estimator评估出来的码率，按照最小单位时间（5ms）做时间分片进行递进发送数据，避免瞬时对网络的冲击。pacer的目的就是让视频数据按照评估码率均匀的分布在各个时间片里发送， 所以在弱网的WiFi环境，pacer是个非常重要的关键步骤  via: http://livevideostack.com/portal.php?mod=view&amp;aid=201PacedSender 发送速率设置GCC 估测的带宽只会通过 SetEstimatedBitrate 方法设置到 PacedSender 中， pacing_bitrate_kbps_ 为 PacedSender 发送媒体包的速率，为GCC估测带宽 乘以了固定系数 kDefaultPaceMultiplier(2.5)void PacedSender::SetEstimatedBitrate(uint32_t bitrate_bps) {  if (bitrate_bps == 0)    LOG(LS_ERROR) &lt;&lt; \"PacedSender is not designed to handle 0 bitrate.\";  CriticalSectionScoped cs(critsect_.get());  estimated_bitrate_bps_ = bitrate_bps;  padding_budget_-&gt;set_target_rate_kbps(estimated_bitrate_bps_ / 1000 );  // 更新 pacing 发送速率，为 estimated_bitrate_bps_/1000 * 2.5;  pacing_bitrate_kbps_ =      max(min_send_bitrate_kbps_, estimated_bitrate_bps_ / 1000) *      kDefaultPaceMultiplier;  alr_detector_-&gt;SetEstimatedBitrate(bitrate_bps);}PacedSender 包缓存队列该方法由 rtp_sender 模块调用，将封装好的视频rtp包的元信息，如 ssrc, sequence_number等封装成Packet数据结构存储到队列中，并未缓存真正的媒体数据。发包时，PacedSender 会通过这些元信息，在rtp_sender中的缓存队列中找到对应的媒体包数据// 将视频包元信息，instert到pacer中void PacedSender::InsertPacket(RtpPacketSender::Priority priority,                               uint32_t ssrc,                               uint16_t sequence_number,                               int64_t capture_time_ms,                               size_t bytes,                               bool retransmission) {  CriticalSectionScoped cs(critsect_.get());  DCHECK(estimated_bitrate_bps_ &gt; 0)        &lt;&lt; \"SetEstimatedBitrate must be called before InsertPacket.\";  int64_t now_ms = clock_-&gt;TimeInMilliseconds();  prober_-&gt;OnIncomingPacket(bytes);  if (capture_time_ms &lt; 0)    capture_time_ms = now_ms;  // 封装 packet 包，放到list中 packets_  packets_-&gt;Push(paced_sender::Packet(priority, ssrc, sequence_number,                                      capture_time_ms, now_ms, bytes,                                      retransmission, packet_counter_++));}发包线程线程发包间隔 5ms 计算PacedSender 发送线程是调用时间间隔为5ms，为什么是5ms, 通过模块中下面的方法计算的：// 计算线程调用的时间间隔，即下面 process() 方法调用的时间间隔 ！！！！int64_t PacedSender::TimeUntilNextProcess() {  CriticalSectionScoped cs(critsect_.get());    //  如果正在探测    if (prober_-&gt;IsProbing()) {    int64_t ret = prober_-&gt;TimeUntilNextProbe(clock_-&gt;TimeInMilliseconds());    if (ret &gt; 0 || (ret == 0 &amp;&amp; !probing_send_failure_))      return ret;  }  // 当前时间 减去 上一次 process（）方法调用的时间，得出时间间隔  int64_t elapsed_time_us = clock_-&gt;TimeInMicroseconds() - time_last_update_us_;  int64_t elapsed_time_ms = (elapsed_time_us + 500) / 1000;      // kMinPacketLimitMs：5ms，即 process() 方法 5m 处理一次  return std::max&lt;int64_t&gt;(kMinPacketLimitMs - elapsed_time_ms, 0);}kMinPacketLimitMs 的值为固定 5ms, elapsed_time_ms从代码中可以看出，为上一次调用 process到现在的时间间隔，两个的时间差即为线程要等待的时长，最大5ms，之后线程会再次调用process 方法发送媒体数据。线程处理方法 process()下面的 process() 方法中处理真正发包逻辑， 每次进入 process 都会调用 UpdateBudgetWithElapsedTime(elapsed_time_ms), 去更新(增加) media_budget_中的 bytes_remaining_ ,bytes_remaining_ 为每次可以发送包的最大字节数：  发包量 = Δt x GCC反馈带宽 x 2.5Δt 即elapsed_time_ms, 最大 5ms。 在下面的while 循环中，只要包队列不为空，就一直尝试用SendPacket去发包。int32_t PacedSender::Process() {  int64_t now_us = clock_-&gt;TimeInMicroseconds();  CriticalSectionScoped cs(critsect_.get());    // elapsed_time_ms: 上一次process和这次process 之间的时间间隔 elapsed_time_ms  ms  int64_t elapsed_time_ms = (now_us - time_last_update_us_ + 500) / 1000;  time_last_update_us_ = now_us;  int target_bitrate_kbps = pacing_bitrate_kbps_; // 拿到最新的 pacer 发送速率  if (!paused_ &amp;&amp; elapsed_time_ms &gt; 0) {    // 缓存的所有的包的大小，按字节算    size_t queue_size_bytes = packets_-&gt;SizeInBytes();    if (queue_size_bytes &gt; 0) {      // Assuming equal size packets and input/output rate, the average packet      // has avg_time_left_ms left to get queue_size_bytes out of the queue, if      // time constraint shall be met. Determine bitrate needed for that.      packets_-&gt;UpdateQueueTime(clock_-&gt;TimeInMilliseconds());      int64_t avg_time_left_ms = std::max&lt;int64_t&gt;(          1, kMaxQueueLengthMs - packets_-&gt;AverageQueueTimeMs()); // 这个地方应该是 已经缓存包时长 = 最大缓存时长 - 剩余队列时长      int min_bitrate_needed_kbps =          static_cast&lt;int&gt;(queue_size_bytes * 8 / avg_time_left_ms);      if (min_bitrate_needed_kbps &gt; target_bitrate_kbps)        target_bitrate_kbps = min_bitrate_needed_kbps; // 如果计算出来的发送速率比上面传入的 目标发送码率大，则更新目标发送码率    }    //  media budget 更新发送速率    media_budget_-&gt;set_target_rate_kbps(target_bitrate_kbps);    // 最大时间间隔 kMaxIntervalTimeMs = 30 ms    elapsed_time_ms = min(kMaxIntervalTimeMs, elapsed_time_ms);    UpdateBudgetWithElapsedTime(elapsed_time_ms);  }  bool is_probing = prober_-&gt;IsProbing();  PacedPacketInfo pacing_info;  size_t bytes_sent = 0;  size_t recommended_probe_size = 0;  if (is_probing) {    pacing_info = prober_-&gt;CurrentCluster();    recommended_probe_size = prober_-&gt;RecommendedMinProbeSize();  }      // 队列不为空的情况下  while (!packets_-&gt;Empty()) {    // Since we need to release the lock in order to send, we first pop the    // element from the priority queue but keep it in storage, so that we can    // reinsert it if send fails.    const paced_sender::Packet&amp; packet = packets_-&gt;BeginPop();    // 去除 队列中的包，并开始发送    if (SendPacket(packet, pacing_info)) {      // Send succeeded, remove it from the queue.      // 发送成功，则记录发送的字节数，并从队列中将包清除      bytes_sent += packet.bytes;      packets_-&gt;FinalizePop(packet);//        探测期间，或发送字节数超过探测的数值了，则跳出循环不再发送   这个地方和探测有关，是否有问题？？？      if (is_probing &amp;&amp; bytes_sent &gt; recommended_probe_size)        break;    } else {      // Send failed, put it back into the queue.      packets_-&gt;CancelPop(packet);      break;    }  }  if (packets_-&gt;Empty() &amp;&amp; !paused_) {    // We can not send padding unless a normal packet has first been sent. If we    // do, timestamps get messed up.    if (packet_counter_ &gt; 0) {    // 计算是否应该发送 padding 包    int padding_needed = static_cast&lt;int&gt;(is_probing ? (recommended_probe_size - bytes_sent) : padding_budget_-&gt;bytes_remaining());                if (padding_needed &gt; 0) {          bytes_sent += SendPadding(padding_needed, pacing_info);        }    }  }      if (is_probing) {    probing_send_failure_ = bytes_sent == 0;    if (!probing_send_failure_)      prober_-&gt;ProbeSent(clock_-&gt;TimeInMilliseconds(), bytes_sent);  }  alr_detector_-&gt;OnBytesSent(bytes_sent, now_us / 1000);  return 0;}发包方法SendPacket()该方法由上面的while发包循环调用，发包后会调用 UpdateBudgetWithBytesSent(packet.bytes) 从 media_budget_ 减去packet.bytes长度的发包预算, 当发博包循环走几次之后，media_budget中的预算长度被消耗完，即 &lt;= 0， 此时 media_budget_-&gt;bytes_remaining() 方法会做 max(0, bytes_remaining_) 处理，即返回0 ，而发包前会判断 media_budget_-&gt;bytes_remaining() == 0 ,满足条件就return false不发了。bool PacedSender::SendPacket(const paced_sender::Packet&amp; packet,                             const PacedPacketInfo&amp; pacing_info) {    // 是否暂停发包    if (paused_)    return false;            //  media  budget 剩余预算字节数为 0，停止发包  if (media_budget_-&gt;bytes_remaining() == 0 &amp;&amp;      pacing_info.probe_cluster_id == PacedPacketInfo::kNotAProbe) {    return false;  }  critsect_-&gt;Enter();  const bool success = packet_sender_-&gt;TimeToSendPacket(      packet.ssrc, packet.sequence_number, packet.capture_time_ms,      packet.retransmission, pacing_info);  critsect_-&gt;Leave();  if (success) {    // TODO(holmer): High priority packets should only be accounted for if we    // are allocating bandwidth for audio.    if (packet.priority != kHighPriority) { // 包的优先级不为最高优先级，更新发送的字节数      // Update media bytes sent.      UpdateBudgetWithBytesSent(packet.bytes);    }  }  return success;}SendPacket 方法最终会调用 rtp_sender中的方法，将ssrc，sequence_number 等参数传递过去，rtp_sender通过这些值找到真正的视频媒体包，最终发送到到网络上。media_budget简介media_budget 是在 PacedSender中封装的一个类，全部代码如下，注释做了解释：class IntervalBudget { public:  explicit IntervalBudget(int initial_target_rate_kbps)      : target_rate_kbps_(initial_target_rate_kbps),        bytes_remaining_(0) {}  void set_target_rate_kbps(int target_rate_kbps) {    //更新发送速率    target_rate_kbps_ = target_rate_kbps;      bytes_remaining_ =        max(-kWindowMs * target_rate_kbps_ / 8, bytes_remaining_);  }  void IncreaseBudget(int64_t delta_time_ms) {    // 估计在 delta 时间， 在带宽为 target_rate_kbps 的情况可以发送出去多少字节    int64_t bytes = target_rate_kbps_ * delta_time_ms / 8;          if (bytes_remaining_ &lt; 0) {      // We overused last interval, compensate this interval.      bytes_remaining_ = bytes_remaining_ + bytes;    } else {      // If we underused last interval we can't use it this interval.      bytes_remaining_ = bytes;    }  }  //更新实际发送的字节数， 从bytes_remaining_减去  void UseBudget(size_t bytes) {    bytes_remaining_ = max(bytes_remaining_ - static_cast&lt;int&gt;(bytes),                                -kWindowMs * target_rate_kbps_ / 8);  }  // 几次发送循环后，发送的总字节数大于开始的 bytes_remaining_，bytes_remaining_ &lt;= 0，改方法返回0  size_t bytes_remaining() const {    return static_cast&lt;size_t&gt;(max(0, bytes_remaining_));  }  int target_rate_kbps() const { return target_rate_kbps_; } private:  static const int kWindowMs = 500; // window 500 ms  int target_rate_kbps_;  int bytes_remaining_;};PacedSender 原理总结到这可以知道PacedSender工作原理了, 每次发包前会更新media_budget中预算bytes_remaining_ 的大小，而每次发送时间(&lt;= 5ms)内最多发送 bytes_remaining_ 字节数，从而达到限制和平滑带宽的目的，PacedSender 中 padding发送的原理和此类似。"
   },
   
   {
-    "title": "Android bitmap 字节数组Argb8888 转 yuv420p(I420) java 代码实现",
-    "url": "/posts/android_bitmap_argb8888_to_yuv420_I420_java_code/",
-    "categories": "技术笔记",
-    "tags": "Android",
-    "date": "2022-08-10 18:44:00 +0800",
+    "title": "OpenCV VideoWriter录制mp4并修改视频码率",
+    "url": "/opencv-videowriter-lu-zhimp4bing-xiu-gai-shi-pin-m.html",
+    "categories": "拙记",
+    "tags": "OpenCV",
+    "date": "2023-03-12 21:39:29 +0800",
     
 
 
 
 
 
-    "snippet": "// 获取bitmap     Bitmap b = Bitmap.createBitmap(activity.getWindow().getDecorView().getWidth(),                    activity.getWindow().getDecorView().getHeight(), Bitmap.Config.ARGB_8888);         ..."
-  },
-  
-  {
-    "title": "Android踩坑 Failed to create EGL context:0x3003",
-    "url": "/posts/Android%E8%B8%A9%E5%9D%91-Failed-to-create-EGL-context-0x3003/",
-    "categories": "技术笔记",
-    "tags": "OpenGL",
-    "date": "2022-08-10 18:39:00 +0800",
     
-
-
-
-
-
-    "snippet": "情况1：最近线上Android 线上App有大量用户报Failed to create EGL context: 0x3003opengl context 创建代码，崩溃的地为 Failed to create EGL context: 0x处：  // Return an EGLConfig, or die trying.  private static EGLContext create..."
-  },
-  
-  {
-    "title": "WebRTC中PacedSender工作原理和代码分析",
-    "url": "/posts/webrtc_pacedsender/",
-    "categories": "技术笔记",
-    "tags": "WebRTC",
-    "date": "2022-08-10 18:35:00 +0800",
-    
-
-
-
-
-
-    "snippet": "摘抄一段 PacedSender 简介，下面的链接对该模块的工作原理做了详细的介绍，今天大致看了下这个模块的代码，记录一下  在estimator根据网络状态决策出新的通信码率（target bitrate），它会将这个码率设置到pacer当中，要求pacer按照新的码率来计算发包频率。因为在视频通信中，单帧视频可能有上百KB,如果是当视频帧被编码器编码出来后，就立即进行RTP打包发送，瞬时..."
+    "snippet": "OpenCV版本 opencv-4.5.3封装设置视频码率逻辑修改opencv源码 modules/videoio/include/opencv2/videoio.hpp修改 197行, 添加 VIDEOWRITER_PROP_BITRATE = 9,enum VideoWriterProperties {  VIDEOWRITER_PROP_QUALITY = 1,    //!&lt; ...",
+    "content": "OpenCV版本 opencv-4.5.3封装设置视频码率逻辑修改opencv源码 modules/videoio/include/opencv2/videoio.hpp修改 197行, 添加 VIDEOWRITER_PROP_BITRATE = 9,enum VideoWriterProperties {  VIDEOWRITER_PROP_QUALITY = 1,    //!&lt; Current quality (0..100%) of the encoded videostream. Can be adjusted dynamically in some codecs.  VIDEOWRITER_PROP_FRAMEBYTES = 2, //!&lt; (Read-only): Size of just encoded video frame. Note that the encoding order may be different from representation order.  VIDEOWRITER_PROP_NSTRIPES = 3,   //!&lt; Number of stripes for parallel encoding. -1 for auto detection.  VIDEOWRITER_PROP_IS_COLOR = 4,   //!&lt; If it is not zero, the encoder will expect and encode color frames, otherwise it                                   //!&lt; will work with grayscale frames.  VIDEOWRITER_PROP_DEPTH = 5,      //!&lt; Defaults to CV_8U.  VIDEOWRITER_PROP_HW_ACCELERATION = 6, //!&lt; (**open-only**) Hardware acceleration type (see #VideoAccelerationType). Setting supported only via `params` parameter in VideoWriter constructor / .open() method. Default value is backend-specific.  VIDEOWRITER_PROP_HW_DEVICE       = 7, //!&lt; (**open-only**) Hardware device index (select GPU if multiple available). Device enumeration is acceleration type specific.  VIDEOWRITER_PROP_HW_ACCELERATION_USE_OPENCL= 8, //!&lt; (**open-only**) If non-zero, create new OpenCL context and bind it to current thread. The OpenCL context created with Video Acceleration context attached it (if not attached yet) for optimized GPU data copy between cv::UMat and HW accelerated encoder.  VIDEOWRITER_PROP_BITRATE = 9,#ifndef CV_DOXYGEN  CV__VIDEOWRITER_PROP_LATEST#endif};修改 modules/videoio/src/cap_avfoundation.mm 228行左右，获取码率参数:cv::Ptr&lt;cv::IVideoWriter&gt; cv::create_AVFoundation_writer(const std::string&amp; filename, int fourcc,                                                         double fps, const cv::Size &amp;frameSize,                                                         const cv::VideoWriterParameters&amp; params){    CvSize sz = { frameSize.width, frameSize.height };    const bool isColor = params.get(VIDEOWRITER_PROP_IS_COLOR, true);    const int bitrate = params.get(VIDEOWRITER_PROP_BITRATE, 600000);    CvVideoWriter_AVFoundation* wrt = new CvVideoWriter_AVFoundation(filename.c_str(), fourcc, fps, sz, bitrate, isColor);    return cv::makePtr&lt;cv::LegacyWriter&gt;(wrt);}修改1202行左右，修改 CvVideoWriter_AVFoundation构造函数，添加 int bitrate 参数：CvVideoWriter_AVFoundation::CvVideoWriter_AVFoundation(const char* filename, int fourcc,        double fps, CvSize frame_size,        int bitrate, int is_color) {修改 1306行左右，将码率设置给 AVAssetWriterInputNSDictionary* videoCompressionSetting = [NSDictionary dictionaryWithObjectsAndKeys:        [NSNumber numberWithInteger:bitrate], AVVideoAverageBitRateKey,        nil]; // 设置 AVAssetWriterInput 编码码率NSDictionary *videoSettings = [NSDictionary dictionaryWithObjectsAndKeys:        codec, AVVideoCodecKey,        [NSNumber numberWithInt:movieSize.width], AVVideoWidthKey,        [NSNumber numberWithInt:movieSize.height], AVVideoHeightKey,        videoCompressionSetting, AVVideoCompressionPropertiesKey,        nil]; mMovieWriterInput = [[AVAssetWriterInput        assetWriterInputWithMediaType:AVMediaTypeVideo        outputSettings:videoSettings] retain];所有修改完成编译iOS OpenCVopencv源码根目录执行python platforms/ios/build_framework.py ios --iphoneos_archs armv7,arm64 --iphonesimulator_archs i386,x86_64使用创建配置 cv::VideoWriter 并设置视频码率cv::VideoWriter writer;cv::Size size = cv::Size(480, 640);  int myFourcc = cv::VideoWriter::fourcc('H', '2', '6', '4');  double fps = 30;  std::vector&lt;int&gt; vect;  vect.push_back(cv::VIDEOWRITER_PROP_BITRATE);  vect.push_back(450*1000); // 更改 video 码率  // outputPath = @\"document/video.mp4\" 存储路径  writer.open([outputPath UTF8String], cv::CAP_AVFOUNDATION, myFourcc, fps, size, vect);之后可以愉快的录制mp4文件，并且可以控制生成文件码率参考：  AVAssetWriter视频数据编码  AVAssetWriter 实现高分辨率录制视频，生成低体积的视频文件  iOS 编译OpenCV"
   },
   
   {
     "title": "Compile ffmpeg 4.2.1 for mac os with openssl",
-    "url": "/posts/Compile-ffmpeg-4.2.1-for-mac-os-with-openssl/",
-    "categories": "技术笔记",
-    "tags": "ffmpeg",
-    "date": "2022-08-10 18:31:00 +0800",
+    "url": "/compile-ffmpeg-421-for-mac-os-with-openssl.html",
+    "categories": "拙记",
+    "tags": "",
+    "date": "2023-03-12 21:38:58 +0800",
     
 
 
 
 
 
-    "snippet": "编译环境：mac os x 10.15.3 ， ffmpeg 4.2.1./configure --target-os=darwin \\            --disable-programs  \\            --libdir=./ffmpegbuild/lib \\            --incdir=./ffmpegbuild/include  \\           ..."
-  },
-  
-  {
-    "title": "对于问题的思考",
-    "url": "/posts/Thinking_about_the_problem/",
-    "categories": "生活",
-    "tags": "生活",
-    "date": "2022-08-10 18:26:00 +0800",
     
-
-
-
-
-
-    "snippet": "对于问题，我们不应过度直接面对问题本身，而是把形成问题的要素一个个抽掉，问题自然崩塌！"
+    "snippet": "编译环境：mac os x 10.15.3 ， ffmpeg 4.2.1./configure --target-os=darwin \\            --disable-programs  \\            --libdir=./ffmpegbuild/lib \\            --incdir=./ffmpegbuild/include  \\           ...",
+    "content": "编译环境：mac os x 10.15.3 ， ffmpeg 4.2.1./configure --target-os=darwin \\            --disable-programs  \\            --libdir=./ffmpegbuild/lib \\            --incdir=./ffmpegbuild/include  \\            --extra-cflags=-mmacosx-version-min=10.8 \\            --extra-ldflags=-mmacosx-version-min=10.8  \\            --enable-pic \\            --enable-dct \\            --enable-dwt \\            --enable-lsp \\            --enable-mdct \\            --enable-rdft \\            --enable-fft \\            --enable-runtime-cpudetect \\            --disable-ffmpeg \\            --disable-ffplay \\            --disable-ffprobe \\            --disable-doc \\            --disable-symver \\            --disable-protocols \\            --enable-small \\            --enable-gpl --enable-nonfree --enable-version3 --disable-iconv \\            --disable-decoders --enable-decoder=vp9 --enable-decoder=h264 --enable-decoder=mpeg4 --enable-decoder=aac --enable-decoder=mp3 --enable-decoder=flac --enable-decoder=pcm_s16le \\            --disable-encoders \\            --disable-demuxers --enable-demuxer=rtsp --enable-demuxer=rtp --enable-demuxer=flv --enable-demuxer=h264 --enable-demuxer=wav --enable-demuxer=aac \\            --enable-demuxer=hls --enable-demuxer=mp3 --enable-muxer=ogg --enable-demuxer=flac \\            --enable-demuxer=amr --enable-decoder=amrwb --enable-decoder=amrnb --enable-demuxer=wav --enable-decoder=wavpack --enable-demuxer=avi \\            --disable-muxers --enable-muxer=rtsp --enable-muxer=rtp --enable-muxer=flv --enable-muxer=h264 --enable-muxer=mp4 --enable-muxer=wav --enable-muxer=adts \\            --disable-parsers --enable-parser=mpeg4video --enable-parser=aac --enable-parser=h264 --enable-parser=vp9 \\            --enable-decoder=jpeg2000 \\            --enable-decoder=jpegls \\            --enable-decoder=mjpeg \\            --enable-decoder=mjpegb \\            --enable-muxer=mjpeg \\            --enable-demuxer=mjpeg \\            --enable-encoder=png \\            --enable-decoder=png \\            --enable-parser=png \\            --enable-protocol=http --enable-protocol=https \\            --enable-protocol=rtmp --enable-protocol=rtp --enable-protocol=tcp --enable-protocol=udp --enable-protocol=file \\            --disable-bsfs \\            --disable-indevs --enable-indev=v4l2 \\            --disable-outdevs \\            --disable-postproc \\            --enable-openssl --enable-protocol=crypto --enable-protocol=tls_openssl \\            --extra-cflags=-I/Users/gezhaoyou/repos/libs/ffmpeg/mac/openssl/include \\            --extra-ldflags=-L/Users/gezhaoyou/repos/libs/ffmpeg/mac/openssl/lib \\openssl 需要提前编译好，可以参考 Compile Openssl for mac--extra-cflags 和 --extra-ldflags 指定了opensll 头文件路径和库文件路径ffmpeg` 编译输出路径为：`--libdir=./ffmpegbuild/lib上面的ffmpeg配置选项支持常见封装的解码播放，如mp3， mp4, hls，支持 https, 若要支持编码，需自行添加相关参数和库依赖"
   },
   
   {
-    "title": "iOS端OpenCV VideoWriter录制mp4并修改视频码率",
-    "url": "/posts/ios_opencv_video_writer_mp4/",
+    "title": "Mac M1 编译arm64版本 WebRTC",
+    "url": "/mac-m1-bian-yiarm64ban-ben-webrtc.html",
     "categories": "RTC",
-    "tags": "技术笔记",
-    "date": "2022-08-10 18:21:00 +0800",
+    "tags": "RTC",
+    "date": "2023-03-12 21:37:40 +0800",
     
 
 
 
 
 
-    "snippet": "OpenCV版本 opencv-4.5.3封装设置视频码率逻辑修改opencv源码 modules/videoio/include/opencv2/videoio.hpp修改 197行, 添加 VIDEOWRITER_PROP_BITRATE = 9,enum VideoWriterProperties {  VIDEOWRITER_PROP_QUALITY = 1,    //!&lt; ..."
+    
+    "snippet": "Mac M1 编译arm64版本 WebRTCgn gen out/mac --args='target_os=\"mac\" is_debug=false target_cpu=\"arm64\" rtc_include_tests=false enable_dsyms=true is_debug=true' --ide=xcode  架构选 target_cpu=\"arm64\"  enable_...",
+    "content": "Mac M1 编译arm64版本 WebRTCgn gen out/mac --args='target_os=\"mac\" is_debug=false target_cpu=\"arm64\" rtc_include_tests=false enable_dsyms=true is_debug=true' --ide=xcode  架构选 target_cpu=\"arm64\"  enable_dsyms=true 可以使 WebRTC Xcode工程添加断点调试  is_debug=true 生成debug版本工程，断点可查看变量详情  rtc_include_tests=false  关闭测试，否成工程工出现大量单元测试文件iOS版本WebRTC Framework编译若直接编译iOS Apprtc 可以编译成功，但安装时候会报 webrtc  No code signature foundgn gen out/ios-framework --args='target_os=\"ios\" is_debug=false target_cpu=\"arm64\" rtc_include_tests=false ios_enable_code_signing=false' --ide=xcode最终我没解决，可以使用另外一种方式，新建一个xcode工程，将rtc demo的代码导入到新创建的工程中，然后链接WebRTC.frameworkWebRTC Framework编译gn gen out/ios-framework --args='target_os=\"ios\" is_debug=false target_cpu=\"arm64\" rtc_include_tests=false ios_enable_code_signing=false rtc_enable_symbol_export=true' --ide=xcodeninja -C out/ios-framework framework_objc抽出来的demo在这 https://github.com/gezhaoyou/apprtc-demo ，可以直接跑，也可以自己编译WebRTC.framework替换"
   },
   
   {
-    "title": "一种鮰鱼做法",
-    "url": "/posts/a_way_cook_fish/",
-    "categories": "生活",
-    "tags": "生活",
-    "date": "2022-08-10 18:21:00 +0800",
+    "title": "MacOS Big Sur后GN生成WebRTC工程报错",
+    "url": "/macos-big-sur-hougn-sheng-chengwebrtc-gong-cheng-b.html",
+    "categories": "RTC",
+    "tags": "",
+    "date": "2023-03-12 21:36:32 +0800",
     
 
 
 
 
 
-    "snippet": "  三分之一小碗油，加热至轻微冒烟；  鮰鱼放淀粉胡椒粉，盐抓匀；  煎炸鱼到金黄；  放两个洋葱；  加甜面酱；  加蚝油 + 加生抽；  加少量水  煮 10分钟 加豆腐 加绿叶菜；  再煮10分钟，关火焖一会"
+    
+    "snippet": "生成工程命令：  gn gen out/ios_64_debug –args=’target_os=”ios” target_cpu=”arm64” ios_enable_code_signing=false’ –ide=xcode报错:ERROR at //build/config/mac/mac_sdk.gni:106:7: Script returned non-zero exit c...",
+    "content": "生成工程命令：  gn gen out/ios_64_debug –args=’target_os=”ios” target_cpu=”arm64” ios_enable_code_signing=false’ –ide=xcode报错:ERROR at //build/config/mac/mac_sdk.gni:106:7: Script returned non-zero exit code.      exec_script(\"//build/mac/find_sdk.py\", find_sdk_args, \"list lines\")      ^----------Current dir: /Users/admin/Repos/webrtc_all/webrtc/src/out/ios_64_debug/Command: python /Users/admin/Repos/webrtc_all/webrtc/src/build/mac/find_sdk.py --print_sdk_path --print_bin_path 10.12Returned 1.stderr:Traceback (most recent call last):  File \"/Users/admin/Repos/webrtc_all/webrtc/src/build/mac/find_sdk.py\", line 97, in &lt;module&gt;    print(main())  File \"/Users/admin/Repos/webrtc_all/webrtc/src/build/mac/find_sdk.py\", line 80, in main    raise Exception('No %s+ SDK found' % min_sdk_version)Exception: No 10.12+ SDK foundSee //build/toolchain/mac/BUILD.gn:15:1: whence it was imported.import(\"//build/config/mac/mac_sdk.gni\")^--------------------------------------See //BUILD.gn:29:3: which caused the file to be included.  group(\"default\") {  ^-----------------Exception: No 10.12+ SDK found, 大意就是10.12+ 的SDK找不到，报错文件webrtc/src/build/mac/find_sdk.py 80行。代码如下：  if not os.path.isdir(sdk_dir):    raise SdkError('Install Xcode, launch it, accept the license ' +      'agreement, and run `sudo xcode-select -s /path/to/Xcode.app` ' +      'to continue.')  sdks = [re.findall('^MacOSX(10\\.\\d+)\\.sdk$', s) for s in os.listdir(sdk_dir)]  sdks = [s[0] for s in sdks if s]  # [['10.5'], ['10.6']] =&gt; ['10.5', '10.6']  sdks = [s for s in sdks  # ['10.5', '10.6'] =&gt; ['10.6']          if parse_version(s) &gt;= parse_version(min_sdk_version)]  if not sdks:    raise Exception('No %s+ SDK found' % min_sdk_version)  best_sdk = sorted(sdks, key=parse_version)[0]因为MacOS Big Sur版本号改为了11.x，程序搜索的版本号是10开头的，所以查找不到，改为11后 work fine：  sdks = [re.findall('^MacOSX(11\\.\\d+)\\.sdk$', s) for s in os.listdir(sdk_dir)]"
   },
   
   {
-    "title": "Android美颜OpenGL GLReadpixles耗时的一种解决方案",
-    "url": "/posts/Android_GLReadpixles/",
-    "categories": "技术笔记",
-    "tags": "OpenGL",
-    "date": "2022-08-10 18:14:00 +0800",
+    "title": "RTMP直播协议实现注意事项",
+    "url": "/rtmp-zhi-bo-xie-yi-shi-xian-zhu-yi-shi-xiang.html",
+    "categories": "开发",
+    "tags": "",
+    "date": "2023-03-12 21:34:29 +0800",
     
 
 
 
 
 
-    "snippet": "Android美颜Pipeline:相机 -&gt; YUV Raw-&gt; 美颜库处理 -&gt; YUV Raw -&gt; 编码 方案在Android 某些系统会遇到glreadpixles 耗时严重;可改为:相机 -&gt;texture -&gt; 美颜 -&gt; texure -&gt;mediacodec方案"
+    
+    "snippet": "2018年8月4日第三次更新，详细介绍了RTMP协议与遇到的坑，另外纯Java重写了RTMP协议，做了个Android 推流项目，包含安卓相机采集，编码和RTMP推流，上传到github了。项目地址：https://github.com/gezhaoyou/SimpleLivePublisherLite参考文章：      Android RTMP直播推流Demo： https://www....",
+    "content": "2018年8月4日第三次更新，详细介绍了RTMP协议与遇到的坑，另外纯Java重写了RTMP协议，做了个Android 推流项目，包含安卓相机采集，编码和RTMP推流，上传到github了。项目地址：https://github.com/gezhaoyou/SimpleLivePublisherLite参考文章：      Android RTMP直播推流Demo： https://www.jianshu.com/p/0318ff29ac32    带你吃透RTMP：http://mingyangshang.github.io/2016/03/06/RTMP%E5%8D%8F%E8%AE%AE/  1. 简介RTMP协议是Real Time Message Protocol(实时信息传输协议)的缩写，它是由Adobe公司提出的一种应用层的协议，用来解决多媒体数据传输流的多路复用（Multiplexing）和分包（packetizing）的问题。随着VR技术的发展，视频直播等领域逐渐活跃起来，RTMP作为业内广泛使用的协议也重新被相关开发者重视起来。本文主要分享对RTMP的一些简介和实际开发中遇到的一些状况。RTMP协议基本特点：• 基于TCP协议的应用层协议• 默认通信端口1935RTMP URL格式：rtmp://ip:[port]/appName/streamName例如： rtmp://192.168.178.218:1935/live/devzhaoyou  参考：https://blog.csdn.net/ai2000ai/article/details/727714612. RTMP 握手RTMP 握手分为简单握手和复杂握手，现在Adobe公司使用RTMP协议的产品用复杂握手的较多，不做介绍。握手包格式： 0 1 2 3 4 5 6 7+-+-+-+-+-+-+-+-+|     version   |+-+-+-+-+-+-+-+-+ C0 and S0 bitsC0和S0：1个字节，包含了RTMP版本, 当前RTMP协议的版本为 3 0                   1                   2                   3 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                           time (4 bytes)                      |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                           zero (4 bytes)                      |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                           random bytes                        |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+|                           random bytes                        ||                               (cont)                          ||                               ....                            |+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                        C1 and S1 bitsC1和S1：4字节时间戳，4字节的0，1528字节的随机数  0                   1                   2                   3  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |                          time (4 bytes)                       | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |                          time2 (4 bytes)                      | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |                          random echo                          | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |                          random echo                          | |                             (cont)                            | |                              ....                             | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                            C2 and S2 bitsC2和S2：4字节时间戳，4字节从对端读到的时间戳，1528字节随机数RTMP握手基本过程：+-------------+                            +-------------+|   Client    |      TCP/IP Network        |     Server  |+-------------+             |              +-------------+       |                    |                     |Uninitialized               |                Uninitialized       |        C0          |                     |       |-------------------&gt;|           C0        |       |                    |--------------------&gt;|       |        C1          |                     |       |-------------------&gt;|           S0        |       |                    |&lt;--------------------|       |                    |           S1        |  Version sent              |&lt;--------------------|       |        S0          |                     |       |&lt;-------------------|                     |       |        S1          |                     |       |&lt;-------------------|               Version sent       |                    |           C1        |       |                    |--------------------&gt;|       |        C2          |                     |       |-------------------&gt;|           S2        |       |                    |&lt;--------------------|    Ack sent                |                   Ack Sent       |        S2          |                     |       |&lt;-------------------|                     |       |                    |           C2        |       |                    |--------------------&gt;|Handshake Done              |               Handshake Done      |                     |                     |          Pictorial Representation of Handshake握手开始于客户端发送C0、C1块。服务器收到C0或C1后发送S0和S1。当客户端收齐S0和S1后，开始发送C2。当服务器收齐C0和C1后，开始发送S2。当客户端和服务器分别收到S2和C2后，握手完成。注意事项： 在实际工程应用中，一般是客户端先将C0, C1块同时发出，服务器在收到C1 之后同时将S0, S1, S2发给客户端。S2的内容就是收到的C1块的内容。之后客户端收到S1块，并原样返回给服务器，简单握手完成。按照RTMP协议个要求，客户端需要校验C1块的内容和S2块的内容是否相同，相同的话才彻底完成握手过程，实际编写程序用一般都不去做校验。RTMP握手的这个过程就是完成了两件事：校验客户端和服务器端RTMP协议版本号是发了一堆随机数据，校验网络状况。3. RTMP 消息RTMP消息格式：  0                   1                   2                   3  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ | Message Type |               Payload length                   | |   (1 byte)   |                   (3 bytes)                    | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |                          Timestamp                            | |                          (4 bytes)                            | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |                          Stream ID            | |                          (3 bytes)            | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                         Message Header• 1字节消息类型• 3字节负载消息长度• 4字节时间戳• 3字节 Stream ID，区分消息流注意事项： 实际RTMP通信中并未按照上述格式去发送RTMP消息，而是将RTMP 消息分块发送，之后将介绍RTMP消息分块。RTMP 消息分块（chunking）而对于基于TCP的RTMP协议而言，协议显得特别繁琐，但是有没有更好的替代方案。同时创建RTMP消息分块是比较复杂的地方，涉及到了AFM（也是Adobe家的东西）格式数据的数据。3.1RTMP消息块格式： +--------------+----------------+--------------------+--------------+ | Basic Header | Message Header | Extended Timestamp |  Chunk Data  | +--------------+----------------+--------------------+--------------+ |                                                    | |&lt;------------------- Chunk Header -----------------&gt;|                            Chunk FormatRTMP消息块构成：• Basic Header• Message Header• Extended Timestamp• Chunk DataChunk Basic header格式有3种:格式1：   0 1 2 3 4 5 6 7  +-+-+-+-+-+-+-+-+  |fmt|   cs id   |  +-+-+-+-+-+-+-+-+ Chunk basic header 1格式2：  0                      1  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |fmt|      0    |  cs id - 64   | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+      Chunk basic header 2格式3：  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |fmt|         1 |          cs id - 64           | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+             Chunk basic header 3注意事项：fmt: 用于指定Chunk Header 里面 Message Header的类型，后面会介绍到cs id: 是chunk stream id的缩写，同一个RTMP消息拆成的 chunk 块拥有相同的 cs id, 用于区分chunk所属的RTMP消息, chunk basic header 的类型cs id占用的字节数来确定Message Header格式：Message Header的类型通过上文chunk basic header中的fmt指定，共4种:格式0:  0                   1                   2                   3  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |                          timestamp            | message length| +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |      message length (cont)    |message type id| msg stream id | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |          message stream id (cont)             | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                Chunk Message Header - Type 0Message Header占用11个字节， 在chunk stream的开始的第一个chunk的时候必须采用这种格式。• timestamp：3个字节，因此它最多能表示到16777215=0xFFFFFF=2^24-1, 当它的值超过这个最大值时，这三个字节都置为1，实际的timestamp会转存到Extended Timestamp字段中，接受端在判断timestamp字段24个位都为1时就会去Extended timestamp中解析实际的时间戳。• message length：3个字节，表示实际发送的消息的数据如音频帧、视频帧等数据的长度，单位是字节。注意这里是Message的长度，也就是chunk属于的Message的总数据长度，而不是chunk本身Data的数据的长度。• message type id：1个字节，表示实际发送的数据的类型，如8代表音频数据、9代表视频数据。• msg stream id：4个字节，表示该chunk所在的流的ID，和Basic Header的CSID一样，它采用小端存储的方式格式1：  0                   1                   2                   3  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |                          timestamp            | message length| +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |      message length (cont)    |message type id|   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                 Chunk Message Header - Type 1 Message Header占用7个字节，省去了表示msg stream id的4个字节，表示此chunk和上一次发的chunk所在的流相同。• timestamp delta：3个字节，注意这里和格式0时不同，存储的是和上一个chunk的时间差。类似上面提到的timestamp，当它的值超过3个字节所能表示的最大值时，三个字节都置为1，实际的时间戳差值就会转存到Extended Timestamp字段中，接受端在判断timestamp delta字段24个位都为1时就会去Extended timestamp中解析时机的与上次时间戳的差值。格式2：  0                   1                   2       0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+  |                          timestamp            |   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+           Chunk Message Header - Type 2 Message Header占用3个字节，相对于格式1，又省去了表示消息长度的3个字节和表示消息类型的1个字节，表示此chunk和上一次发送的chunk所在的流、消息的长度和消息的类型都相同。余下的这三个字节表示timestamp delta，使用同格式1。格式3：0字节，它表示这个chunk的Message Header和上一个是完全相同的，无需再次传送Extended Timestamp（扩展时间戳）：在chunk中会有时间戳timestamp和时间戳差timestamp delta， 只有这两者之一大于3个字节能表示的最大数值0xFFFFFF＝16777215时，才会用这个字段来表示真正的时间戳，否则这个字段不传（感谢评论区 @hijiang指出错误）。扩展时间戳占4个字节，能表示的最大数值就是0xFFFFFFFF＝4294967295。当扩展时间戳启用时，timestamp字段或者timestamp delta要全置为1，表示应该去扩展时间戳字段来提取真正的时间戳或者时间戳差。注意扩展时间戳存储的是完整值，而不是减去时间戳或者时间戳差的值。Chunk Data（块数据）： 用户层面上真正想要发送的与协议无关的数据，长度在(0,chunkSize]之间, chunk size默认为128字节。RTMP 消息分块注意事项• Chunk Size:RTMP是按照chunk size进行分块，chunk size 指的是 chunk的payload部分的大小，不包括chunk basic header 和 chunk message header长度。客户端和服务器端各自维护了两个chunk size, 分别是自身分块的chunk size 和 对端 的chunk size, 默认的这两个chunk size都是128字节。通过向对端发送set chunk size 消息可以告知对方更改了 chunk size的大小。• Chunk Type:RTMP消息分成的Chunk有4种类型，可以通过 chunk basic header的高两位(fmt)指定，一般在拆包的时候会把一个RTMP消息拆成以格式0开始的chunk，之后的包拆成格式3 类型的chunk，我查看了有不少代码也是这样实现的，这样也是最简单的实现。如果第二个message和第一个message的message stream ID 相同，并且第二个message的长度也大于了chunk size，那么该如何拆包？当时查了很多资料，都没有介绍。后来看了一些源码，如 SRS，FFMPEG中的实现，发现第二个message可以拆成Type_1类型一个chunk， message剩余的部分拆成Type_3类型的chunk。FFMPEG中就是这么做的。3.2 RTMP 交互消息推流RTMP消息交互流程：          pic_2.png  关于推流的过程，RTMP的协议文档上给了上图示例，说一下推流注意事项：3.2.1 Connect 消息RTMP 命令消息格式： +----------------+---------+---------------------------------------+ |  Field Name    |   Type  |               Description             | +--------------- +---------+---------------------------------------+ |   Command Name | String  | Name of the command. Set to \"connect\".| +----------------+---------+---------------------------------------+ | Transaction ID | Number  |            Always set to 1.           | +----------------+---------+---------------------------------------+ | Command Object | Object  |  Command information object which has | |                |         |           the name-value pairs.       | +----------------+---------+---------------------------------------+ | Optional User  | Object  |       Any optional information        | |   Arguments    |         |                                       | +----------------+---------+---------------------------------------+RTMP握手之后先发送一个connect命令消息，命令里面包含什么东西，协议中没有具体规定，实际通信中要携带 rtmp url 中的 appName 字段，并且指定一些编解码的信息，并以AMF格式发送, 下面是用wireshake抓取connect命令需要包含的参数信息：          pic_3.png  这些信息协议中并没有特别详细说明, 在librtmp，srs-librtmp这些源码中，以及用wireshark 抓包的时候可以看到。服务器返回的是一个_result命令类型消息，这个消息的payload length一般不会大于128字节，但是在最新的nginx-rtmp中返回的消息长度会大于128字节。消息的transactionID是用来标识command类型的消息的，服务器返回的_result消息可以通过transactionID来区分是对哪个命令的回应，connect 命令发完之后还要发送其他命令消息，要保证他们的transactionID不相同。发送完connect命令之后一般会发一个 set chunk size消息来设置chunk size的大小，也可以不发。Window Acknowledgement Size 是设置接收端消息窗口大小，一般是2500000字节，即告诉对端在收到设置的窗口大小长度的数据之后要返回一个ACK消息。在实际做推流的时候推流端要接收很少的服务器数据，远远到达不了窗口大小，所以这个消息可以不发。而对于服务器返回的ACK消息一般也不做处理，默认服务器都已经收到了所有消息了。之后要等待服务器对于connect消息的回应的，一般是把服务器返回的chunk都读完，组包成完整的RTMP消息，没有错误就可以进行下一步了。3.2.2 Create Stream 消息创建完RTMP连接之后就可以创建RTMP流，客户端要想服务器发送一个releaseStream命令消息，之后是FCPublish命令消息，在之后是createStream命令消息。当发送完createStream消息之后，解析服务器返回的消息会得到一个stream ID。          pic_4.png  这个ID也就是以后和服务器通信的 message stream ID, 一般返回的是1，不固定。3.2.3 Publish Stream推流准备工作的最后一步是Publish Stream，即向服务器发一个publish命令消息，消息中会带有流名称字段，即rtmp url中的 streamName，这个命令的message stream ID 就是上面 create stream 之后服务器返回的stream ID，发完这个命令一般不用等待服务器返回的回应，直接发送音视频类型的RTMP数据包即可。有些rtmp库还会发setMetaData消息，这个消息可以发也可以不发，里面包含了一些音视频meta data的信息，如视频的分辨率等等。整个推流过程rtmp 消息抓包          rtmp_pulish_message.png  4. 推送音视频当以上工作都完成的时候，就可以发送音视频了。音视频RTMP消息的Payload(消息体)中都放的是按照FLV-TAG格式封的音视频包，具体可以参照FLV封装的协议文档。格式必须封装正确，否则会造成播放端不能正常拿到音视频数据，无法播放音视频。5. 关于RTMP的时间戳RTMP的时间戳单位是毫秒ms，在发送音视频之前一直为零，发送音视频消息包后时候必须保证时间戳是单调递增的，时间戳必须打准确，否则播放端可能出现音视频不同步的情况。Srs-librtmp的源码中，如果推的是视频文件的话，发现他们是用H264的dts作为时间戳的。实时音视频传输的时候是先获取了下某一时刻系统时间作为基准，然后每次相机采集到的视频包，与起始的基准时间相减，得到时间戳，这样可以保证时间戳的正确性。6. 关于Chunk Stream IDRTMP 的Chunk Steam ID是用来区分某一个chunk是属于哪一个message的 ，0和1是保留的。每次在发送一个不同类型的RTMP消息时都要有不用的chunk stream ID, 如上一个Message 是command类型的，之后要发送视频类型的消息，视频消息的chunk stream ID 要保证和上面 command类型的消息不同。每一种消息类型的起始chunk 的类型必须是 Type_0 类型的，表明新的消息的起始。总结：RTMP协议是个比较啰嗦的协议，实现起来也比较复杂，但通信过程过程相对简单。在直播的实际工程应用中，协议上很多地方都没有详细说明，注意了以上提到几点，基本能够保证RTMP音视频的通信正常。以上就是对RTMP协议的简介和一些注意事项，希望能帮到有需要的朋友，另外本文难免有错误或说的不够详细的地方，欢迎指正，一起交流探讨。本篇文章2017年版本前一段时间写过一篇文章: iOS直播视频数据采集、硬编码保存h264文件，比较详细的记录了在做iOS端进行视频数据采集和编码的过程，下一步要做的就是RTMP协议推流。因为在公司将RTMP协议用Java 和 Swift 分别实现了一遍，所以对这块比较了解，中间遇到了不少坑，记录下来也怕自己忘掉。RTMP协议是 Adobe 公司开发的一个基于TCP的应用层协议，Adobe 公司也公布了关于RTMP的规范，但是这个协议规范介绍的有些地方非常模糊，很多东西和实际应用是有差别的。网上也有不少关于这个协议的介绍，但都不是太详细。我遇到的比较好的参考资料就是这篇：带你吃透RTMP, 这篇文章只是在理论上对RTMP进行了比较详细的解释，很多东西还是和实际应用有出入。我这篇文章只是把遇到的一些坑记录下来，并不是详解RTMP消息的。另外懂RTMP消息拆包分包，而不真正的写写的话是很难把RTMP协议弄得的很清楚，关于RTMP协议的实现也是比较麻烦的事，懂和做事两回事。另外用wireshark 抓一下包的话可以非常直观的看到RTMP通信的过程，对理解RTMP非常有帮助，在调试代码的时候也大量借助wireshark排错，是一个非常有用的工具。1. RTMP 握手RTMP 握手分为简单握手和复杂握手，现在Adobe公司使用RTMP协议的产品应该用的都是复杂握手，这里不介绍，只说简单握手。 按照网上的说法RTMP握手的过程如下      握手开始于客户端发送C0、C1块。服务器收到C0或C1后发送S0和S1。    当客户端收齐S0和S1后，开始发送C2。当服务器收齐C0和C1后，开始发送S2。  当客户端和服务器分别收到S2和C2后，握手完成。在实际工程应用中，一般是客户端先将C0, C1块同时发出，服务器在收到C1 之后同时将S0, S1, S2发给客户端。S2的内容就是收到的C1块的内容。之后客户端收到S1块，并原样返回给服务器，简单握手完成。按照RTMP协议个要求，客户端需要校验C1块的内容和S2块的内容是否相同，相同的话才彻底完成握手过程，实际编写程序用一般都不去做校验。RTMP握手的这个过程就是完成了两件事：1. 校验客户端和服务器端RTMP协议版本号，2. 是发了一堆数据，猜想应该是测试一下网络状况，看看有没有传错或者不能传的情况。RTMP握手是整个RTMP协议中最容易实现的一步，接下来才是大头。2. RTMP 分块创建RTMP连接算是比较难的地方，开始涉及消息分块（chunking）和 AFM（也是Adobe家的东西）格式数据的一些东西，在上面提到的文章中也有介绍为什要进行RTMP分块。Chunk SizeRTMP是按照chunk size进行分块，chunk size指的是 chunk的payload部分的大小，不包括chunk basic header 和 chunk message header，即chunk的body的大小。客户端和服务器端各自维护了两个chunk size, 分别是自身分块的chunk size 和 对端 的chunk size, 默认的这两个chunk size都是128字节。通过向对端发送set chunk size 消息告知对方更改了 chunk size的大小，即告诉对端：我接下来要以xxx个字节拆分RTMP消息，你在接收到消息的时候就按照新的chunk size 来组包。在实际写代码的时候一般会把chunk size设置的很大，有的会设置为4096，FFMPEG推流的时候设置的是 60*1000，这样设置的好处是避免了频繁的拆包组包，占用过多的CPU。设置太大的话也不好，一个很大的包如果发错了，或者丢失了，播放端就会出现长时间的花屏或者黑屏等现象。Chunk TypeRTMP 分成的Chunk有4中类型，可以通过 chunk basic header的 高两位指定，一般在拆包的时候会把一个RTMP消息拆成以 Type_0 类型开始的chunk，之后的包拆成 Type_3 类型的chunk，我查看了有不少代码也是这样实现的，这样也是最简单的实现。RTMP 中关于Message 分chunk只举了两个例子，这两个例子不是很具有代表性。假如第二个message和第一个message的message stream ID 相同，并且第二个message的长度也大于了chunk size，那么该如何拆包？当时查了很多资料，都没有介绍。后来看了一些源码，发现第二个message可以拆成Type_1类型一个chunk, message剩余的部分拆成Type_3类型的chunk。FFMPEG中好像就是这么做的。3. RTMP 消息关于推流的过程，RTMP的协议文档上给了一个示例，而真实的RTMP通信过程和它有较大的差异，只说推流，RTMP播放端我没有做过。Connect消息握手之后先发送一个connect 命令消息，命令里面包含什么东西，协议中没有说，真实通信中要指定一些编解码的信息，这些信息是以AMF格式发送的, 下面是用swift 写的connect命令包含的参数信息：       transactionID += 1 // 0x01        let command:RTMPCommandMessage = RTMPCommandMessage(commandName: \"connect\", transactionId: transactionID, messageStreamId: 0x00)        let objects:Amf0Object = Amf0Object()        objects.setProperties(\"app\", value: rtmpSocket.appName)        objects.setProperties(\"flashVer\",value: \"FMLE/3.0 (compatible; FMSc/1.0)\")        objects.setProperties(\"swfUrl\", value:\"\")        objects.setProperties(\"tcUrl\", value: \"rtmp://\" + rtmpSocket.hostname + \"/\" + rtmpSocket.appName)        objects.setProperties(\"fpad\", value: false)        objects.setProperties(\"capabilities\", value:239)        objects.setProperties(\"audioCodecs\", value:3575)        objects.setProperties(\"videoCodecs\", value:252)        objects.setProperties(\"videoFunction\",value: 1)        objects.setProperties(\"pageUrl\",value: \"\")        objects.setProperties(\"objectEncoding\",value: 0)这些信息具体什么意思我也不太明白，协议中也没有，都是我在看librtmp，srs-librtmp这些源码，以及用wireshark 抓包的时候看到的。其中参数少一两个貌似也没问题，但是audioCodecs和videoCodecs这两个指定音视频编码信息的不能少。服务器返回的是一个_result命令类型消息，这个消息的payload length一般不会大于128字节，但是在最新的nginx-rtmp中返回的消息长度会大于128字节，所以一定要做好收包，组包的工作。关于消息的transactionID是用来标识command类型的消息的，服务器返回的_result消息可以通过 transactionID来区分是对哪个命令的回应，connect 命令发完之后还要发送其他命令消息，要保证他们的transactionID不相同。发送完connect命令之后一般会发一个 set chunk size消息来设置chunk size 的大小，也可以不发。Window Acknowledgement Size 是设置接收端消息窗口大小，一般是2500000字节，即告诉客户端你在收到我设置的窗口大小的这么多数据之后给我返回一个ACK消息，告诉我你收到了这么多消息。在实际做推流的时候推流端要接收很少的服务器数据，远远到达不了窗口大小，所以基本不用考虑这点。而对于服务器返回的ACK消息一般也不做处理，我们默认服务器都已经收到了这么多消息。之后要等待服务器对于connect的回应的，一般是把服务器返回的chunk都读完组成完整的RTMP消息，没有错误就可以进行下一步了。Create Stream 消息创建完RTMP连接之后就可以创建RTMP流，客户端要想服务器发送一个releaseStream命令消息，之后是FCPublish命令消息，在之后是createStream命令消息。当发送完createStream消息之后，解析服务器返回的消息会得到一个stream ID, 这个ID也就是以后和服务器通信的 message stream ID, 一般返回的是1，不固定。Publish Stream推流准备工作的最后一步是 Publish Stream，即向服务器发一个publish命令，这个命令的message stream ID 就是上面 create stream 之后服务器返回的stream ID，发完这个命令一般不用等待服务器返回的回应，直接下一步发送音视频数据。有些rtmp库 还会发setMetaData消息，这个消息可以发也可以不发，里面包含了一些音视频编码的信息。4. 发布音视频当以上工作都完成的时候，就可以发送音视频了。音视频RTMP消息的Payload中都放的是按照FLV-TAG格式封的音视频包，具体可以参照FLV协议文档。5. 关于RTMP的时间戳RTMP的时间戳在发送音视频之前都为零，开始发送音视频消息的时候只要保证时间戳是单增的基本就可以正常播放音视频。我读Srs-librtmp的源码，发现他们是用h264的dts作为时间戳的。我在用java写的时候是先获取了下当前系统时间，然后每次发送消息的时候都与这个起始时间相减，得到时间戳。6. 关于Chunk Stream IDRTMP 的Chunk Steam ID是用来区分某一个chunk是属于哪一个message的 ,0和1是保留的。每次在发送一个不同类型的RTMP消息时都要有不用的chunk stream ID, 如上一个Message 是command类型的，之后要发送视频类型的消息，视频消息的chunk stream ID 要保证和上面 command类型的消息不同。每一种消息类型的起始chunk 的类型必须是 Type_0 类型的，表明我是一个新的消息的起始。另外这篇文章有些地方还是说的模糊，以后有时间慢慢丰富吧。"
   },
   
   {
-    "title": "适合个人的养胃禁忌",
-    "url": "/posts/Nourishing_the_stomach/",
-    "categories": "生活",
-    "tags": "生活",
-    "date": "2022-08-01 18:30:00 +0800",
+    "title": "Git开发提交和发版规范",
+    "url": "/git-kai-fa-ti-jiao-he-fa-ban-gui-fan.html",
+    "categories": "RTC",
+    "tags": "",
+    "date": "2023-03-12 21:33:36 +0800",
     
 
 
 
 
 
-    "snippet": "由于长期办公室办公，少运动，不少同行出现消化问题，不同程度的胃病，我也是其中之一，且感觉相对比较严重，个人总结了适合自己的养胃禁忌，严格遵守：禁忌：  坚决杜绝零食，各种类型，尤其是甜食（如巧克力，士力架），我吃这些，胃口会一点点变差，吃不下饭，或吃的很少；辛辣食品我是不敢碰的，比较伤胃而且易长痘；  禁忌白酒（虽然我从不喝，还是写上），尽量不喝啤酒和碳酸饮料；  少吃油炸食品，个人感觉比如..."
+    
+    "snippet": "一、 提交规范  修改一个 bug 或增加 feature 不要 commit 多次，合并成一次提交，便于追踪      使用 rebase 而非 merge，避免产生merge节点          拉取分支使用 git pull --rebase命令      合并分支使用 git rebase [branch name], 如 git rebase master (将mater分支合并...",
+    "content": "一、 提交规范  修改一个 bug 或增加 feature 不要 commit 多次，合并成一次提交，便于追踪      使用 rebase 而非 merge，避免产生merge节点          拉取分支使用 git pull --rebase命令      合并分支使用 git rebase [branch name], 如 git rebase master (将mater分支合并到当前所在分支)            commit log 增加分类，尽量解释详细，防止过后不清楚节点做了什么修改    [bugfix] : fix android rtmp video crash （修改bug）    [feature] : ios support screen share ( 增加新功能)    [refactor] : refine windows video capture module (重构模块)    [chore] : update readme doc （其他修改）  二、流程规范  仓库下必须有 master 和 dev 分支，dev分支用于日常开发，master 分支用于出版本;  dev 分支功能稳定后出版本，变更版本号，提交 Merge Request将 dev 分支合并到 master 分支，触发自动出包  master 分支只有仓库管理员有提交&amp;合并权限；三、版本号版本号由3位构成，如 2.3.1，递增规则如下第1位：产品改动较大，大的版本变更,可能无法向后兼容第2位：增加了新功能，向后兼容第3位：修复 BUG 或优化代码，向后兼容四、其他  Git GUI工具推荐：[fork] (https://git-fork.com) 或 [sourcetree] (https://www.sourcetreeapp.com)  Git Rebase 详解: https://www.cnblogs.com/TvvT-kevin/p/9611115.html  语义化版本：https//semver.org/lang/zh-CN/"
   },
   
   {
-    "title": "对抗负面情绪",
-    "url": "/posts/Fighting_Negative_Emotions/",
-    "categories": "生活",
-    "tags": "生活",
-    "date": "2022-08-01 18:22:00 +0800",
+    "title": "Mac M1编译WebRTC(105) Android",
+    "url": "/mac-m1bian-yiwebrtc105-android.html",
+    "categories": "RTC",
+    "tags": "M1, WebRTC",
+    "date": "2023-03-07 14:09:26 +0800",
     
 
 
 
 
 
-    "snippet": "  锻炼身体，如慢跑，强健的身体是一切的基石，基石吃东西，身体不好，吃的也不香；  读书，各种书，但有意义，不限于畅销书，经典，也可以是小说，故事，放松精神；  睡觉，一个恢复精气神的好方法，保证充足睡眠；  欲望节制，精神极简，自己脑补"
+    
+    "snippet": "因跨平台开发，安卓WebRTC之前在Ubuntu上编译，太麻烦，修改为Mac编译，针对M1，x86修改类似代码准备两份代码fetch webrtc_androidfetch webrtc_iosAndroid目录拷贝 webrtc_android/third_party 目录下的 android 开头的目录覆盖掉webrtc_ios/third_partyR8webrtc_android/t...",
+    "content": "因跨平台开发，安卓WebRTC之前在Ubuntu上编译，太麻烦，修改为Mac编译，针对M1，x86修改类似代码准备两份代码fetch webrtc_androidfetch webrtc_iosAndroid目录拷贝 webrtc_android/third_party 目录下的 android 开头的目录覆盖掉webrtc_ios/third_partyR8webrtc_android/third_party/r8 -&gt; webrtc_ios/third_party/r8NDK下载mac版 ndk，替换 webrtc_ios/third_party/android_ndk, 注意保留里面的 android_ndk 目录中的 BUILD.gnJDK手动下载 JDK, 需要11 或者以后的版本, 替换到 third_party/jdk/current 目录下LLVM拷贝Mac版android_ndk/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/12.0.9/lib/linux到third_party/llvm-build/Release+Asserts/lib/clang/15.0.0/lib脚本修改修改if (host_cpu == \"x64\") {    android_host_arch = \"x86_64\"} else if (host_cpu == \"x86\") {    android_host_arch = \"x86\"} else if (host_cpu == \"arm64\") {    android_host_arch = \"x86_64\"} else {    assert(false, \"Need Android toolchain support for your build CPU arch.\")}修改third_party/ijar/BUILD.gn 添加 || is_apple 判断if (is_linux || is_chromeos || is_apple) {  config(\"ijar_compiler_flags\") {    if (is_clang) {      cflags = [从 llvm 官网下载mac arm 15版本, 拷贝llvm-nmllvm-stripllvm-objcopy到third_party/llvm-build/Release+Asserts/bin若报错CalledProcessError注掉 build/android/gyp/util/build_utils.pyraise CalledProcessError(cwd, args, MSG.format(stream_string))其他错误到这因环境配置导致的编译错误已经很少了，如报错，具体问题具体分析，整体看修改的东西不是太多。编译gn gen out/armv8 --args='target_os=\"android\" target_cpu=\"arm64\" is_component_build=false is_debug=false rtc_enable_protobuf=false rtc_include_tests=false rtc_build_examples=false   rtc_enable_sctp=false rtc_enable_libevent=false rtc_build_tools=false disable_android_lint=false use_errorprone_java_compiler=false use_custom_libcxx=false android32_ndk_api_level=18'疑问NDK中有clang, llvm中有clang，究竟用哪个编译，两者关系是什么？参考  https://blog.csdn.net/liuwenchang1234/article/details/107559530  https://www.jianshu.com/p/a65545d37022"
   },
   
   {
-    "title": "升级MacOS Big Sur后GN生成WebRTC-iOS工程报错",
-    "url": "/posts/MacOS-Big-Sur_GN_WebRTC_iOS_error/",
-    "categories": "技术笔记",
-    "tags": "WebRTC",
-    "date": "2022-01-06 14:00:00 +0800",
+    "title": "SteerMouse 开心脚本",
+    "url": "/steermouse-kai-xin-jiao-ben.html",
+    "categories": "巧记",
+    "tags": "SteerMouse",
+    "date": "2023-03-07 09:49:02 +0800",
     
 
 
 
 
 
-    "snippet": "生成工程命令：  gn gen out/ios_64_debug –args=’target_os=”ios” target_cpu=”arm64” ios_enable_code_signing=false’ –ide=xcode报错如下:ERROR at //build/config/mac/mac_sdk.gni:106:7: Script returned non-zero exit..."
+    
+    "snippet": "SteerMouse开心脚本, 测试5.6.7可以用code :KMLH-JEEA-RKJM-NBGR-IXHH-LRAJ-POJK-BAFC-HHHH-LRFD#!pythonimport random id = 'ABCDEF-HIJKLM-(A)'code = 'KMLH-JEEA-RKJM-NBGR-IXHH-LRAJ-POJK-BAFC-HHHH-LRFD'  # 注册码  def...",
+    "content": "SteerMouse开心脚本, 测试5.6.7可以用code :KMLH-JEEA-RKJM-NBGR-IXHH-LRAJ-POJK-BAFC-HHHH-LRFD#!pythonimport random id = 'ABCDEF-HIJKLM-(A)'code = 'KMLH-JEEA-RKJM-NBGR-IXHH-LRAJ-POJK-BAFC-HHHH-LRFD'  # 注册码  def reverse_table(target_table):    ret_table = [0 for x in range(len(target_table))]    for i in range(160):        var = target_table[i // 8]        bit_value = (var &gt;&gt; (i % 8)) &amp; 0x1        index = i % 20        ret_table[index] = ret_table[index] | (bit_value &lt;&lt; i // 20)    return ret_table  def add_random():    return random.choice(['A', 'B', 'C', 'D', 'E'])  def integer_to_hex(int_array):    result = []    not_f_count = 0    for i in range(len(int_array)):        high = int_array[i] // 20        low = int_array[i] % 20        if i % 2 == 0 and i &gt; 0:            result.append('-')        if high == 0 and not_f_count &lt; 4:            result.append(add_random())            not_f_count += 1        else:            result.append(chr(high + 70))        if low == 0 and not_f_count &lt; 4:            result.append(add_random())            not_f_count += 1        else:            result.append(chr(low + 70))    return ''.join(result)  def gen_register_code(user_id):    init_table = [0 for x in range(20)]    init_table[-1] = 70    init_table[-2] = 85    for i in range(17):        init_table[i] = ord(user_id[i])    ret = reverse_table(init_table)    return integer_to_hex(ret)  def main():    print(gen_register_code(id))  if __name__ == '__main__':    main()"
   },
   
   {
-    "title": "RTMP直播协议实践经验总结",
-    "url": "/posts/Summary-of-the-rtmp-experience/",
-    "categories": "技术笔记",
-    "tags": "直播",
-    "date": "2021-01-05 14:00:00 +0800",
+    "title": "查找所有子目录或文件并执行操作",
+    "url": "/cha-zhao-suo-you-zi-mu-lu-huo-wen-jian-bing-zhi-xi.html",
+    "categories": "拙记",
+    "tags": "find",
+    "date": "2023-03-06 10:31:15 +0800",
     
 
 
 
 
 
-    "snippet": "2018年8月4日第三次更新，详细介绍了RTMP协议与遇到的坑，另外纯Java重写了RTMP协议，做了个Android 推流项目，包含安卓相机采集，编码和RTMP推流，上传到github了。项目地址：https://github.com/gezhaoyou/SimpleLivePublisherLite参考文章：      Android RTMP直播推流Demo： https://www...."
-  },
-  
-  {
-    "title": "Git开发流程规范",
-    "url": "/posts/Git_Commit_Specification/",
-    "categories": "技术笔记",
-    "tags": "git",
-    "date": "2021-01-04 10:34:00 +0800",
     
-
-
-
-
-
-    "snippet": "一、 提交规范      修改一个 bug 或增加 feature 不要 commit 多次，合并成一次提交，便于追踪    使用 rebase 而非 merge，避免产生merge节点          拉取分支使用 git pull --rebase命令      合并分支使用 git rebase [branch name], 如 git rebase master (将mater分支..."
+    "snippet": "例如： 查找所有.git目录并删除find . -name \"*.git\" -exec rm -rf {} \\;",
+    "content": "例如： 查找所有.git目录并删除find . -name \"*.git\" -exec rm -rf {} \\;"
   },
   
   {
-    "title": "text-and-typography",
+    "title": "Text and Typography",
     "url": "/posts/text-and-typography/",
-    "categories": "Blogging, Demo",
+    "categories": "拙记",
     "tags": "typography",
     "date": "2019-08-08 11:33:00 +0800",
     
@@ -297,7 +573,9 @@
 
 
 
-    "snippet": "This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.TitlesH1 - headingH2 - headingH3 - headingH4 ..."
+    
+    "snippet": "This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.TitlesH1 - headingH2 - headingH3 - headingH4 ...",
+    "content": "This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.TitlesH1 - headingH2 - headingH3 - headingH4 - headingParagraphQuisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilisis ac. Phasellus semper dui non purus ultrices sodales. Aliquam ante lorem, ornare a feugiat ac, finibus nec mauris. Vivamus ut tristique nisi. Sed vel leo vulputate, efficitur risus non, posuere mi. Nullam tincidunt bibendum rutrum. Proin commodo ornare sapien. Vivamus interdum diam sed sapien blandit, sit amet aliquam risus mattis. Nullam arcu turpis, mollis quis laoreet at, placerat id nibh. Suspendisse venenatis eros eros.ListsOrdered list  Firstly  Secondly  ThirdlyUnordered list  Chapter          Section                  Paragraph                    ToDo list  Job          Step 1      Step 2      Step 3      Description list  Sun  the star around which the earth orbits  Moon  the natural satellite of the earth, visible by reflected light from the sunBlock Quote  This line shows the block quote.Prompts  An example showing the tip type prompt.  An example showing the info type prompt.  An example showing the warning type prompt.  An example showing the danger type prompt.Tables            Company      Contact      Country                  Alfreds Futterkiste      Maria Anders      Germany              Island Trading      Helen Bennett      UK              Magazzini Alimentari Riuniti      Giovanni Rovelli      Italy      Linkshttp://127.0.0.1:4000FootnoteClick the hook will locate the footnote1, and here is another footnote2.Inline codeThis is an example of Inline Code.FilepathHere is the /path/to/the/file.extend.Code blocksCommonThis is a common code snippet, without syntax highlight and line number.Specific Languageif [ $? -ne 0 ]; then  echo \"The command was not successful.\";  #do the needful / exitfi;Specific filename@import  \"colors/light-typography\",  \"colors/dark-typography\"MathematicsThe mathematics powered by MathJax:\\[\\sum_{n=1}^\\infty 1/n^2 = \\frac{\\pi^2}{6}\\]When $a \\ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are\\[x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}\\]Mermaid SVG gantt  title  Adding GANTT diagram functionality to mermaid  apple :a, 2017-07-20, 1w  banana :crit, b, 2017-07-23, 1d  cherry :active, c, after b a, 1dImagesDefault (with caption)Full screen width and center alignmentLeft alignedFloat to leftPraesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.Float to rightPraesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.Dark/Light mode &amp; ShadowThe image below will toggle dark/light mode based on theme preference, notice it has shadows.VideoReverse Footnote            The footnote source &#8617;              The 2nd footnote source &#8617;      "
   }
   
 ]
