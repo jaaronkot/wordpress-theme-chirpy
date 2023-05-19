@@ -50,9 +50,26 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/dist/home.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/3party/localizedFormat.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/3party/bootstrap.bundle.min.js"></script>
+
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/lib/dayjs/dayjs.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/lib/dayjs/locale/en.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/lib/dayjs/plugin/relativeTime.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/lib/dayjs/plugin/localizedFormat.min.js"></script>
+<script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/dist/misc.min.js"></script>
+
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/lib/lazysizes/lazysizes.min.js"></script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/lib/clipboard/clipboard.min.js"></script>
+
+<script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/dist/post.min.js"></script>
+<!-- commons -->
+
+
+<!-- commons -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
