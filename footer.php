@@ -17,7 +17,7 @@
 
             <div class="footer-right">
                 <p class="mb-0">本站由 <a href="/" target="_blank" rel="noopener">wordpress</a> 生成，采用
-                    <a href="/" target="_blank" rel="noopener">Soda</a>
+                    <a href="https://fifo.site" target="_blank" rel="noopener">Soda</a>
                     主题。
                 </p>
             </div>
