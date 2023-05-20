@@ -1,14 +1,19 @@
-<!DOCTYPE html> 
-<html class="no-js" <?php language_attributes(); ?>>
-
 <head>
-	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+  >
+ 
+  <link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<?php endif; ?>
-	
+
 	<?php wp_head(); ?>
 
 
@@ -28,4 +33,5 @@
   <!-- Manific Popup -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/magnific-popup/magnific-popup.css">
  
+  <?php get_template_part('templates/mode','toggle'); ?>
 </head>
