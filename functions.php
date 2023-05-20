@@ -109,8 +109,9 @@ function content_img_add_alt_title($content)
    
     $content = str_replace('<pre class="wp-block-code"><code>', '<div class="language-bash highlighter-rouge"><div class="code-header">
     <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-  <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><pre><table class="rouge-table"><tbody><tr>', $content);
-    $content = str_replace('</code></pre>', '</tr></tbody></table></pre></code></div></div>', $content);
+  <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"></td><td class="rouge-code"><pre>
+', $content);
+    $content = str_replace('</code></pre>', '</pre></td></tr></tbody></table></code></div></div>', $content);
     return $content;
 }
 
@@ -146,29 +147,5 @@ function toc_replace_heading($content)
 
     return "<h{$content[1]} id=\"{$content[3]}\"> <span class=\"mr-{$content[1]}\">{$content[3]}</span> <a href=\"#{$content[3]}\" class=\"anchor text-muted\"><i class=\"fas fa-hashtag\"></i></a></h{$content[1]}>";
 }
-
-
-//对pre里面的内容进行转义
-function pk_tag_pre_encode($content)
-{
-    preg_match_all("/<pre.*?>(.+?)<\/pre>/is", $content, $matches);
-    if (isset($matches[1])) {
-        foreach ($matches[1] as $match) {
-            $m = trim($match);
-            if (!(substr($m, 0, strlen("<code")) === "<code")) {
-                $m = "<code class='language-default'>$m</code>";
-            }
-            if (substr($m, 0, strlen("<code>")) === "<code>") {
-                $m = "<code class='language-default'>" . substr($m, strlen("<code>"));
-            }
-            $content = str_replace($match, $m, $content);
-        }
-    }
-    return $content;
-}
-
-// add_filter('the_content', 'pk_tag_pre_encode');
-// add_filter('comment_text', 'pk_tag_pre_encode');
- 
 ?>
 

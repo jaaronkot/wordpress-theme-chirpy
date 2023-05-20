@@ -25,11 +25,13 @@
     </div>
     <?php wp_footer(); ?>
 </footer>
+
+
 <!-- code highlight -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function(){
         $("pre").addClass("prettyprint linenums");
         prettyPrint();
     });
-</script> -->
+</script>
 

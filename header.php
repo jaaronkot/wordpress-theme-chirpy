@@ -50,6 +50,9 @@
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/mathjax/tex-chtml.js"></script>
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/google-code-prettify/prettify.js"></script>
+
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/google-code-prettify/prettify.css">
 
   <?php get_template_part('templates/mode','toggle'); ?>
 </head>
