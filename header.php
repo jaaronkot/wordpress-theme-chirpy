@@ -20,8 +20,7 @@
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/jquery/jquery.min.js"></script>
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/bootstrap/bootstrap.min.css">
-
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/tocbot/tocbot.min.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
   
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/fontawesome-free/css/all.min.css">
 
@@ -39,7 +38,7 @@
 
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/mathjax/tex-chtml.js"></script>
 
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
+
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/google-code-prettify/prettify.js"></script>
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/google-code-prettify/tomorrow.css">

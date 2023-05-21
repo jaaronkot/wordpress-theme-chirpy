@@ -1,4 +1,4 @@
-<h1 data-toc-skip> <?php the_title('<h1>', '</h1>'); ?> </h1>
+<?php the_title('<h1 data-toc-skip>', '</h1>'); ?>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -53,27 +53,16 @@
               } ?>
   </div>
    
-
-  <!-- tags -->
-  
-  <div class="post-tags">
-    <i class="fa fa-tags fa-fw mr-1"></i>
-    <a href="/tags/opengl/"
-                               class="post-tag no-text-decoration">OpenGL</a>
-
-  </div>
+  <?php get_template_part('templates/post', 'tag') ?>
 
   <div class="post-tail-bottom
     d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
     <div class="license-wrapper">
-    本文由作者按照
-                                <a href="https://creativecommons.org/licenses/by/4.0/">
-                                    CC BY 4.0
-                                </a>
-                                进行授权
+    本文由作者按照 <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> 进行授权
     </div>
 
- 
+  <?php get_template_part('templates/post', 'sharing') ?>
+
   </div><!-- .post-tail-bottom -->
 
 </div><!-- div.post-tail-wrapper -->

@@ -48,7 +48,8 @@
 
     <script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/dist/post.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
-
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/tocbot/tocbot.min.css">
+  
   </body>
 
 </html>
