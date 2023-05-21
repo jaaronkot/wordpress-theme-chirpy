@@ -4,4 +4,4 @@
 </div>
 
   <!-- toc.js will be loaded at medium priority -->
-  <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/tocbot/tocbot.min.js"></script> -->
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/tocbot/tocbot.min.js"></script>
