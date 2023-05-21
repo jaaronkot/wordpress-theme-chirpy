@@ -35,6 +35,7 @@
   <?php 
   if (is_single() || is_page()) {
     get_template_part('templates/related','posts'); 
+    get_template_part('templates/post','nav'); 
   }
   ?>
   </div>
