@@ -106,12 +106,17 @@ add_filter("excerpt_length", "theme_excerpt_length");
 //给图片加上alt/title
 function content_img_add_alt_title($content)
 {
-   
+ 
+ 
     $content = str_replace('<pre class="wp-block-code"><code>', '<div class="language-bash highlighter-rouge"><div class="code-header">
-    <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+    <span data-label-text="code"><i class="fas fa-code small"></i></span>
   <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"></td><td class="rouge-code"><pre>
 ', $content);
+
     $content = str_replace('</code></pre>', '</pre></td></tr></tbody></table></code></div></div>', $content);
+ 
+    $pattern = '/<code>(?!<table)/';
+    $content = preg_replace($pattern, '<code class="language-plaintext highlighter-rouge">', $content);
     return $content;
 }
 
