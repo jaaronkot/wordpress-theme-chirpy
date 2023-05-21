@@ -20,30 +20,20 @@
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/jquery/jquery.min.js"></script>
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/bootstrap/bootstrap.min.css">
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/tocbot/tocbot.min.css">
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/tocbot/tocbot.min.js"></script>
-
+  
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/fontawesome-free/css/all.min.css">
 
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/simple-jekyll-search/simple-jekyll-search.min.js"></script>
 
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/mermaid/mermaid.min.js"></script>
 
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/dayjs/dayjs.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/dayjs/locale/en.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/dayjs/plugin/relativeTime.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/dayjs/plugin/localizedFormat.min.js"></script>
 
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/countup.js/countUp.min.js"></script>
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/magnific-popup/magnific-popup.css">
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/lazysizes/lazysizes.min.js"></script>
-
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/clipboard/clipboard.min.js"></script>
 
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/polyfill-v3-es6/polyfill.min.js"></script>
 
