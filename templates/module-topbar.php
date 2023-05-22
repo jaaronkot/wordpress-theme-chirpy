@@ -1,21 +1,22 @@
 <!-- The Top Bar -->
 <div id="topbar-wrapper">
-    <div id="topbar"
-         class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4">
+    <div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4">
     <span id="breadcrumb">
         <!-- 面包屑导航 -->
         <?php if(is_single()) {
             echo "<span><a href='";
             echo get_bloginfo('url');
-            echo "'>首页</a></span>";
+            echo "'>首页 </a></span>";
 
             echo "<span>";
-            the_title();
-            echo " </span>";          
+            echo " ";
+            echo the_title();
+            echo "</span>";          
         } else {
             echo "<span>首页</span>";  
         }?>   
-    </span><!-- endof #breadcrumb -->
+    </span>
+    <!-- endof #breadcrumb -->
 
         <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 

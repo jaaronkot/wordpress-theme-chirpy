@@ -47,10 +47,10 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     <?php foreach ((get_the_category()) as $category) {
-                  echo " <a href=''>";
-                  echo $category->cat_name;
-                  echo "</a>";
-              } ?>
+        $category_link = esc_url( get_category_link( $category->term_id ) );
+        $category_name = esc_html( $category->name );
+        echo '<a href="' . $category_link . '">' . $category_name. '</a>';
+    } ?>
   </div>
    
   <?php get_template_part('templates/post', 'tag') ?>
