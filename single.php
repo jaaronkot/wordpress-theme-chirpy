@@ -16,10 +16,11 @@
           <!-- core -->
           <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
             <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-              <?php soda_get_post_list();?>
+              <?php soda_get_post_content(); ?>
             </div>
           </div> <!-- #core-wrapper -->
           <?php get_template_part('templates/widget','panel'); ?>
+          <?php get_template_part('templates/post','tail'); ?>
         </div><!-- #row -->
       </div>
     </div> <!-- #main-wrapper -->
@@ -27,8 +28,8 @@
     <!-- The Footer -->
     <?php get_footer(); ?>
 
-    <?php get_template_part('templates/backtop','bar'); ?>
-    <?php get_template_part('templates/soda','notification'); ?>
+    <?php get_template_part('templates','backtop'); ?>
+    <?php get_template_part('templates','notification'); ?>
     <?php get_template_part('templates/js','selector'); ?>
   </body>
 </html>

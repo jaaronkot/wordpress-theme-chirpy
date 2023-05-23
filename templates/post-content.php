@@ -5,36 +5,31 @@
     <span>
       发表于: <?php the_time('Y/n/d'); ?>
     </span>
-
- 
- 
-
-  <div class="d-flex justify-content-between">
-    <!-- author(s) -->
-    <span>
-      作者:
-      <em>
-        <a href="<?php global $authordata;
-          if ($authordata) {
-            echo get_author_posts_url($authordata->ID,
-            $authordata->user_nicename);
-          } ?>">
-          <?php the_author() ?> </a>
-      </em>
-    </span>
-
-    <div>
-      <!-- page views -->
+    <div class="d-flex justify-content-between">
+      <!-- author(s) -->
       <span>
-        <em id="pv" class="pageviews">
-          <i class="fas fa-spinner fa-spin fa-fw"></i>
+        作者:
+        <em>
+          <a href="<?php global $authordata;
+            if ($authordata) {
+              echo get_author_posts_url($authordata->ID,
+              $authordata->user_nicename);
+            } ?>">
+            <?php the_author() ?> </a>
         </em>
-        <?php get_post_views($post -> ID); ?> 
       </span>
-    </div>
 
-  </div> <!-- .d-flex -->
+      <div>
+        <!-- page views -->
+        <span>
+          <em id="pv" class="pageviews">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </em>
+          <?php get_post_views($post -> ID); ?> 
+        </span>
+      </div>
 
+    </div> <!-- .d-flex -->
 </div> <!-- .post-meta -->
 
 <div class="post-content">

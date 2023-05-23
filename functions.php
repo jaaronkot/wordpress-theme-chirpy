@@ -152,5 +152,27 @@ function toc_replace_heading($content)
 
     return "<h{$content[1]} id=\"{$content[3]}\"> <span class=\"mr-{$content[1]}\">{$content[3]}</span> <a href=\"#{$content[3]}\" class=\"anchor text-muted\"><i class=\"fas fa-hashtag\"></i></a></h{$content[1]}>";
 }
+
+function soda_get_post_list() {
+    if ( have_posts() ) {
+        echo '<div id="post-list">';
+        while ( have_posts() ) {
+            the_post();             
+            get_template_part("templates/post", "list");
+        } // end while
+        soda_paging();
+        echo '</div>';
+    } // end if
+}
+
+function soda_get_post_content() {
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();             
+            get_template_part("templates/post", "content");
+        } // end while
+    } // end if
+}
+
 ?>
 
