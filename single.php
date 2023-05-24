@@ -28,7 +28,7 @@
     <!-- The Footer -->
     <?php get_footer(); ?>
 
-    <?php get_template_part('templates','backtop'); ?>
+    <?php get_template_part('templates/backtop','bar'); ?>
     <?php get_template_part('templates','notification'); ?>
     <?php get_template_part('templates/js','selector'); ?>
   </body>
