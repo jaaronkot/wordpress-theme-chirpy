@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: 标签归档
+*/
+?>
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <!DOCTYPE html>
@@ -17,7 +22,12 @@
           <!-- core -->
           <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
             <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-              <?php get_template_part("templates/tag", "list"); ?>
+              <h1 class="dynamic-title">
+                标签
+              </h1>
+              <div class="post-content">
+                <?php get_template_part('templates/tag','arch'); ?>
+              </div>
             </div>
           </div> <!-- #core-wrapper -->
           <?php get_template_part('templates/widget','panel'); ?>
