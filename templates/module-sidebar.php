@@ -69,55 +69,24 @@ The Side Bar
     </ul> <!-- ul.nav.flex-column -->
 
     <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
-
-
-        <button class="mode-toggle btn" aria-label="Switch Mode">
-            <i class="fas fa-adjust"></i>
-        </button>
-
-
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
         <span class="icon-border"></span>
-
-
-        <a href="https://github.com/gezhaoyou" aria-label="github"
-
-
-           target="_blank"
-
-
-           rel="noopener">
-            <i class="fab fa-github"></i>
-        </a>
-
-
-        <a href="https://twitter.com/" aria-label="twitter"
-
-
-           target="_blank"
-
-
-           rel="noopener">
-            <i class="fab fa-twitter"></i>
-        </a>
-
-
-        <a href="
-          javascript:location.href = 'mailto:' + ['gezhoayou','126.com'].join('@')" aria-label="email"
-
-
-        >
-            <i class="fas fa-envelope"></i>
-        </a>
-
-
-        <a href="/feed.xml" aria-label="rss"
-
-
-        >
-            <i class="fas fa-rss"></i>
-        </a>
-
-
-    </div> <!-- .sidebar-bottom -->
+      <a href="https://github.com/gezhaoyou" aria-label="github" target="_blank"
+        rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://stackoverflow.com/users/6187004/jaeyo-keh" aria-label="stack-overflow" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://space.bilibili.com/184789593" aria-label="bilibili" target="_blank"
+        rel="noopener noreferrer">
+        <i class="fa-brands fa-bilibili"></i>
+      </a>
+      <a href="javascript:location.href = 'mailto:' + ['gezhoayou','126.com'].join('@')" aria-label="email">
+        <i class="fas fa-envelope"></i>
+      </a>
+  </div> <!-- .sidebar-bottom -->
 
 </div><!-- #sidebar -->

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 标签归档
+Template Name: 归档
 */
 ?>
 
@@ -23,10 +23,10 @@ Template Name: 标签归档
           <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
             <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
               <h1 class="dynamic-title">
-              <?php echo wp_title('', false); ?>
+                <?php echo wp_title('', false); ?>
               </h1>
               <div class="post-content">
-                <?php get_template_part('templates/tag','arch'); ?>
+                <?php get_template_part('templates/post','arch'); ?>
               </div>
             </div>
           </div> <!-- #core-wrapper -->
