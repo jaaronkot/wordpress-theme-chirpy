@@ -50,45 +50,6 @@ if (!function_exists('soda_paging')) {
     }
 }
 
-// 获取文章的阅读次数
-function get_post_views ($post_id) {
-
-    $count_key = 'views';
-    $count = get_post_meta($post_id, $count_key, true);
-
-    if ($count == '') {
-        delete_post_meta($post_id, $count_key);
-        add_post_meta($post_id, $count_key, '0');
-        $count = '0';
-    }
-
-    echo number_format_i18n($count);
-
-}
-
-// 设置更新文章的阅读次数
-function set_post_views () {
-
-    global $post;
-
-    $post_id = $post -> ID;
-    $count_key = 'views';
-    $count = get_post_meta($post_id, $count_key, true);
-
-    if (is_single() || is_page()) {
-
-        if ($count == '') {
-            delete_post_meta($post_id, $count_key);
-            add_post_meta($post_id, $count_key, '0');
-        } else {
-            update_post_meta($post_id, $count_key, $count + 1);
-        }
-
-    }
-
-}
-add_action('get_header', 'set_post_views');
-
 // 去掉首页文章摘要的中括号
 function theme_excerpt_more($more) {
     return '...';
