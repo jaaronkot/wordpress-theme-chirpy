@@ -41,7 +41,5 @@
 
   <script src="<?php echo get_template_directory_uri(); ?>/assets/lib/google-code-prettify/prettify.js"></script>
 
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/lib/google-code-prettify/tomorrow.css">
-
   <?php get_template_part('templates/mode','toggle'); ?>
 </head>
