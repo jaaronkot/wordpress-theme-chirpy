@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: 标签归档
+*/
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <?php get_header(); ?>
@@ -15,17 +20,12 @@
           <!-- core -->
           <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
             <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-              <?php 
-                if ( have_posts() ) {
-                  echo '<div id="post-list">';
-                  while ( have_posts() ) {
-                      the_post();             
-                      get_template_part("templates/post", "list");
-                  } // end while
-                  get_template_part('templates/post', 'paginator');
-                  echo '</div>';
-              } // end if
-              ?>
+              <h1 class="dynamic-title">
+              <?php echo wp_title('', false); ?>
+              </h1>
+              <div class="post-content">
+               404
+              </div>
             </div>
           </div> <!-- #core-wrapper -->
           <?php get_template_part('templates/widget','panel'); ?>

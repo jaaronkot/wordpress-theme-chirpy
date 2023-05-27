@@ -50,6 +50,24 @@ if (!function_exists('soda_paging')) {
     }
 }
 
+// 获取文章的阅读次数
+function get_post_views ($post_id) {
+    if (empty($post_id))  {
+        return 0;
+    }
+    
+    $count_key = 'views';
+    $count = get_post_meta($post_id, $count_key, true);
+
+    if ($count == '') {
+        delete_post_meta($post_id, $count_key);
+        add_post_meta($post_id, $count_key, '0');
+        $count = '0';
+    }
+
+    echo number_format_i18n($count);
+}
+
 // 去掉首页文章摘要的中括号
 function theme_excerpt_more($more) {
     return '...';
@@ -114,26 +132,34 @@ function toc_replace_heading($content)
     return "<h{$content[1]} id=\"{$content[3]}\"> <span class=\"mr-{$content[1]}\">{$content[3]}</span> <a href=\"#{$content[3]}\" class=\"anchor text-muted\"><i class=\"fas fa-hashtag\"></i></a></h{$content[1]}>";
 }
 
-function soda_get_post_list() {
-    if ( have_posts() ) {
-        echo '<div id="post-list">';
-        while ( have_posts() ) {
-            the_post();             
-            get_template_part("templates/post", "list");
-        } // end while
-        soda_paging();
-        echo '</div>';
-    } // end if
+function soda_get_attachment_id ($img_url) {
+	$cache_key	= md5($img_url);
+	$post_id	= wp_cache_get($cache_key, 'wpjam_attachment_id' );
+	if($post_id == false){
+
+		$attr		= wp_upload_dir();
+		$base_url	= $attr['baseurl']."/";
+		$path = str_replace($base_url, "", $img_url);
+		if($path){
+			global $wpdb;
+			$post_id	= $wpdb->get_var("SELECT post_id FROM $wpdb->postmeta WHERE meta_value = '{$path}'");
+			$post_id	= $post_id?$post_id:'';
+		}else{
+			$post_id	= '';
+		}
+
+		wp_cache_set( $cache_key, $post_id, 'wpjam_attachment_id', 86400);
+	}
+	return $post_id;
 }
 
-function soda_get_post_content() {
-    if ( have_posts() ) {
-        while ( have_posts() ) {
-            the_post();             
-            get_template_part("templates/post", "content");
-        } // end while
-    } // end if
+function soda_gen_thumb_image ($post_id) {
+    $url = 'https://fifo.site/wp-content/uploads/2023/05/thumb-' . rand(1, 11) . '.jpg';
+    $attachment_id = soda_get_attachment_id($url);
+    set_post_thumbnail( $post_id, $attachment_id);
 }
 
+// 添加文章缩略图
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 180, 120, true );
 ?>
-

@@ -1,6 +1,16 @@
   <div class="card post-preview">
       <a href="<?php the_permalink() ?>">
       <div class="card-body">
+          <?php
+            if ( !has_post_thumbnail() ) {
+                soda_gen_thumb_image(get_the_ID());
+            }
+            if ( has_post_thumbnail() ) {
+                $thumb_id = get_post_thumbnail_id(); // 获取特色图片的 ID
+                $thumb_url = wp_get_attachment_image_src( $thumb_id, 'large' )[0]; // 获取特色图片的 URL
+                echo '<img class="card-thumb-small" src="' . $thumb_url . '" alt="' . get_the_title() . '">';
+            }
+          ?>
           <h1 class="card-title">
           <?php the_title() ?>
           </h1>
@@ -33,3 +43,4 @@
       </a>
   </div>
   <!-- .post-review -->
+  

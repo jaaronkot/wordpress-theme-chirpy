@@ -1,4 +1,3 @@
-<!-- `site.alt_lang` can specify a language different from the UI -->
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <?php get_header(); ?>
