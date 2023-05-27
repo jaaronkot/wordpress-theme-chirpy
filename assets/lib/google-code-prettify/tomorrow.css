@@ -41,7 +41,8 @@ li.L9 {
   /* keyword */
 
   .kwd {
-    color: #6b6bb8;
+    color: #252534;
+    font-weight: bold;
   }
 
   /* comment */
@@ -54,6 +55,7 @@ li.L9 {
 
   .typ {
     color: #257fad;
+    font-weight: bold;
   }
 
   /* literal value */
@@ -72,11 +74,13 @@ li.L9 {
 
   .opn {
     color: #161b1d;
+    font-weight: bold;
   }
 
   /* lisp close bracket */
 
   .clo {
+    font-weight: bold;
     color: #161b1d;
   }
 
