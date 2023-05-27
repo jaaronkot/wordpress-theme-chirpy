@@ -27,8 +27,11 @@
         <i id="search-trigger" class="fas fa-search fa-fw"></i>
         <span id="search-wrapper" class="align-items-center">
       <i class="fas fa-search fa-fw"></i>
-      <input class="form-control" id="search-input" type="search"
-             aria-label="search" autocomplete="off" placeholder="搜索...">
+      <?php 
+        echo '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+        <input class="form-control" id="search-input" type="text"  aria-label="search" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __('搜索...') . '" />
+        </form>';   
+        ?>
     </span>
         <span id="search-cancel">取消</span>
     </div>
