@@ -80,10 +80,8 @@ function theme_excerpt_length($length) {
 }
 add_filter("excerpt_length", "theme_excerpt_length");
 
-
-
-//给图片加上alt/title
-function content_img_add_alt_title($content)
+ 
+function soda_replace_pre($content)
 {
  
  
@@ -99,7 +97,7 @@ function content_img_add_alt_title($content)
     return $content;
 }
 
-add_filter('the_content', 'content_img_add_alt_title');
+add_filter('the_content', 'soda_replace_pre');
 
 
 // 文章目录功能
@@ -162,4 +160,59 @@ function soda_gen_thumb_image ($post_id) {
 // 添加文章缩略图
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 180, 120, true );
+
+// 短代码
+// 自定义短代码
+function soda_custom_shortcode_tip( $atts, $content = null ) {
+    return '<blockquote class="prompt-tip">' . $content . '</blockquote>';
+}
+add_shortcode( 'soda-sc-tip', 'soda_custom_shortcode_tip' );
+
+function soda_custom_shortcode_info( $atts, $content = null ) {
+    return '<blockquote class="prompt-info">' . $content . '</blockquote>';
+}
+add_shortcode( 'soda-sc-info', 'soda_custom_shortcode_info' );
+
+function soda_custom_shortcode_warning( $atts, $content = null ) {
+    return '<blockquote class="prompt-warning">' . $content . '</blockquote>';
+}
+add_shortcode( 'soda-sc-warning', 'soda_custom_shortcode_warning' );
+
+function soda_custom_shortcode_danger( $atts, $content = null ) {
+    return '<blockquote class="prompt-danger">' . $content . '</blockquote>';
+}
+add_shortcode( 'soda-sc-danger', 'soda_custom_shortcode_danger' );
+
+
+
+
+//给文章内容添加灯箱
+function light_box_text_replace($content)
+{
+    $pattern = "/<a(.*?)href=('|\")([A-Za-z0-9\/_\.\~\:-]*?)(\.bmp|\.gif|\.jpg|\.jpeg|\.png)('|\")([^\>]*?)>/i";
+    $replacement = '<a$1href=$2$3$4$5$6 class="popup" data-no-instant>';
+    $content = preg_replace($pattern, $replacement, $content);
+    return $content;
+}
+
+add_filter('the_content', 'light_box_text_replace', 99);
+
+
+//给图片加上alt/title
+function content_img_add_alt_title($content)
+{
+    global $post;
+    preg_match_all('/<img (.*?)\/>/', $content, $images);
+    if (!is_null($images)) {
+        $title = @$post->post_title;
+        foreach ($images[1] as $index => $value) {
+            $new_img = str_replace('<img', '<img title="' . $title . '"
+             alt="' . $title . '"', $images[0][$index]);
+            $content = str_replace($images[0][$index], $new_img, $content);
+        }
+    }
+    return $content;
+}
+
+add_filter('the_content', 'content_img_add_alt_title', 99);
 ?>
