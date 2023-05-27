@@ -33,9 +33,9 @@
         <!-- page views -->
         <span>
           <em id="pv" class="pageviews">
-            <i class="fas fa-spinner fa-spin fa-fw"></i>
+            <i class="fa fa-eye"></i>
           </em>
-          <?php get_post_views($post -> ID); ?> 
+          <?php echo soda_get_post_views(); ?> 
         </span>
       </div>
 

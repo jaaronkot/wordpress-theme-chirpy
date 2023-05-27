@@ -51,21 +51,33 @@ if (!function_exists('soda_paging')) {
 }
 
 // 获取文章的阅读次数
-function get_post_views ($post_id) {
-    if (empty($post_id))  {
-        return 0;
-    }
-    
-    $count_key = 'views';
-    $count = get_post_meta($post_id, $count_key, true);
+/* 访问计数 */
+function record_visitors()
+{
+	if (is_singular())
+	{
+	  global $post;
+	  $post_ID = $post->ID;
+	  if($post_ID)
+	  {
+		  $post_views = (int)get_post_meta($post_ID, 'views', true);
+		  if(!update_post_meta($post_ID, 'views', ($post_views+1)))
+		  {
+			add_post_meta($post_ID, 'views', 1, true);
+		  }
+	  }
+	}
+}
+add_action('wp_head', 'record_visitors');
 
-    if ($count == '') {
-        delete_post_meta($post_id, $count_key);
-        add_post_meta($post_id, $count_key, '0');
-        $count = '0';
-    }
-
-    echo number_format_i18n($count);
+/// 函数名称：soda_get_post_views
+/// 函数作用：取得文章的阅读次数
+function soda_get_post_views()
+{
+  global $post;
+  $post_ID = $post->ID;
+  $views = (int)get_post_meta($post_ID, 'views', true);
+  return $views;
 }
 
 // 去掉首页文章摘要的中括号
