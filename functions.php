@@ -95,6 +95,8 @@ add_filter("excerpt_length", "theme_excerpt_length");
  
 function soda_replace_pre($content)
 {
+    $content = str_replace('<pre class="wp-block-code"><code>', '<pre><code class="language-code">', $content);
+
     $content = preg_replace('/<pre><code class="([^"]+)">/', '<div class="$1 highlighter-rouge"><div class="code-header">
     <span data-label-text="$1"><i class="fas fa-code small"></i></span>
     <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"></td><td class="rouge-code"><pre>
