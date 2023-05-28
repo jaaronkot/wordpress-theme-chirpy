@@ -20,9 +20,6 @@ Template Name: 404
           <!-- core -->
           <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4">
             <div class="post pl-1 pr-1 pl-md-2 pr-md-2">
-              <h1 class="dynamic-title">
-              <?php echo wp_title('', false); ?>
-              </h1>
               <div class="post-content">
               <div class="page_not_found">
                 <h1>404: Page Not Found!</h1>

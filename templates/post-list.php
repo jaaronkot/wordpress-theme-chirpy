@@ -22,16 +22,11 @@
 
           <div class="post-meta text-muted d-flex">
           <div class="mr-auto">
-              <i class="fa-regular fa-eye"></i>
-              <span>
-              <?php echo soda_get_post_views(); ?>
-              </span>
               <!-- posted date -->
               <i class="far fa-calendar fa-fw"></i>
-              <span>
               <?php the_time('Y/n/d'); ?>
               <!-- categories -->
-              </span>
+
               <i class="far fa-folder-open fa-fw"></i>
               <span>
                   <?php  foreach((get_the_category()) as $category)  { 
