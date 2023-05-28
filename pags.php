@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Soda默认
+*/
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <?php get_header(); ?>
@@ -19,7 +24,7 @@
               <?php echo wp_title('', false); ?>
               </h1>
               <div class="post-content">
-
+              <?php the_content(); ?>
               </div>
             </div>
           </div> <!-- #core-wrapper -->
