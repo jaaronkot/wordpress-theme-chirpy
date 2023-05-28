@@ -33,7 +33,7 @@
         </form>';   
         ?>
     </span>
-        <span id="search-cancel">取消</span>
+        <i id="search-cancel" class="fa-solid fa-xmark"></i>
     </div>
 
 </div>
