@@ -123,7 +123,7 @@ function toc_content($content)
         $toc_count = 0;
         $toc_depth = 3;
 
-        $regex = '#<h([1-' . $toc_depth . '])(.*?)>(.*?)</h\\1>#';
+        $regex = '#<h([1-' . $toc_depth . '])(.*?).*>(.*?)</h\\1>#';
         $content = preg_replace_callback($regex, 'toc_replace_heading', $content);
     }
     return $content;
@@ -164,7 +164,7 @@ function soda_get_attachment_id ($img_url) {
 }
 
 function soda_gen_thumb_image ($post_id) {
-    $url = 'https://fifo.site/wp-content/uploads/2023/05/thumb-' . rand(1, 11) . '.jpg';
+    $url = 'https://fifo.site/wp-content/uploads/2023/05/thumb-' . rand(1, 36) . '.jpg';
     $attachment_id = soda_get_attachment_id($url);
     set_post_thumbnail( $post_id, $attachment_id);
 }
