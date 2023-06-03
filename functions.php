@@ -139,6 +139,7 @@ function toc_replace_heading($content)
 
     $toc[] = array('text' => trim(strip_tags($content[3])), 'depth' => $content[1], 'count' => $toc_count);
 
+
     return "<h{$content[1]} id=\"{$content[3]}\"> <span class=\"mr-{$content[1]}\">{$content[3]}</span> <a href=\"#{$content[3]}\" class=\"anchor text-muted\"><i class=\"fas fa-hashtag\"></i></a></h{$content[1]}>";
 }
 
@@ -201,8 +202,8 @@ add_shortcode( 'soda-sc-danger', 'soda_custom_shortcode_danger' );
 //给文章内容添加灯箱
 function light_box_text_replace($content)
 {
-    $pattern = "/<a(.*?)href=('|\")([A-Za-z0-9\/_\.\~\:-]*?)(\.bmp|\.gif|\.jpg|\.jpeg|\.png)('|\")([^\>]*?)>/i";
-    $replacement = '<a$1href=$2$3$4$5$6 class="popup" data-no-instant>';
+    $pattern = '/<img [\w\W]* src="(.*?)" [\w\W]*\/>/';
+    $replacement = '<a href="$1" class="popup img-link preview-img"> <img class="lazyload" src="$1" /></a>';
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 }
