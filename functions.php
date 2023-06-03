@@ -202,7 +202,7 @@ add_shortcode( 'soda-sc-danger', 'soda_custom_shortcode_danger' );
 //给文章内容添加灯箱
 function light_box_text_replace($content)
 {
-    $pattern = '/<img [\w\W]* src="(.*?)" [\w\W]*\/>/';
+    $pattern = '/<img [\w\W]*? src="(.*?)" [\w\W]*?\/>/';
     $replacement = '<a href="$1" class="popup img-link preview-img"> <img class="lazyload" src="$1" /></a>';
     $content = preg_replace($pattern, $replacement, $content);
     return $content;

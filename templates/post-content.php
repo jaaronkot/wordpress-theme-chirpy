@@ -1,5 +1,12 @@
 <?php the_title('<h1 data-toc-skip>', '</h1>'); ?>
-<div class="mt-3 mb-3">
+
+
+<div class="post-meta text-muted">
+    <!-- published date -->
+    <span>
+      发表于: <?php the_time('Y/n/d'); ?>
+    </span>
+    <div class="mt-3 mb-3">
       <?php
         if ( has_post_thumbnail() ) { // 判断当前文章是否有特色图片
             $thumb_id = get_post_thumbnail_id(); // 获取特色图片的 ID
@@ -8,13 +15,7 @@
             echo '<img class="lazyload" data-src="' . $thumb_url[0] . '" alt="' . get_the_title() . '" w="1200" h="630"></a>';
         }
       ?>
-</div>
-
-<div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      发表于: <?php the_time('Y/n/d'); ?>
-    </span>
+    </div>
     <div class="d-flex justify-content-between">
       <!-- author(s) -->
       <span>
