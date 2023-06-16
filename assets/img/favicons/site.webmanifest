@@ -1,23 +1,19 @@
-
-
 {
-  "name": "fifo.site",
-  "short_name": "fifo.site",
-  "description": "关注音视频开发的技术博客，包括音视频采集, 编码, 发送, 渲染开发, 涉及WebRTC, RTMP直播, 短视频, OpenGL, Android, iOS开发, 网络拥塞控制等.",
-  "icons": [
-    {
-      "src": "/assets/img/favicons/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/img/favicons/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }],
-  "start_url": "/index.html",
-  "theme_color": "#2a1e6b",
-  "background_color": "#ffffff",
-  "display": "fullscreen"
+    "name": "",
+    "short_name": "",
+    "icons": [
+        {
+            "src": "/wp-content/uploads/fbrfg/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/wp-content/uploads/fbrfg/android-chrome-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
 }
-
