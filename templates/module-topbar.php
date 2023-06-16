@@ -21,7 +21,9 @@
         <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
         <div id="topbar-title">
-            文章
+            <?php 
+            echo get_bloginfo('name');
+            ?>
         </div>
 
         <i id="search-trigger" class="fas fa-search fa-fw"></i>
