@@ -1,12 +1,12 @@
-# molly-theme
+# Molly-theme
 
 ![screenshot](./screenshot.png)
 
 #### 介绍
 
-（苏打）molly-theme: 
+molly-theme: 
 
-开发中，基本可用，bug还较多....
+开发中，基本可用
 
 
 
