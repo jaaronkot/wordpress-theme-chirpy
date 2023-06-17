@@ -18,40 +18,41 @@
   .year {
     height: 3.5rem;
     font-size: 1.5rem;
+    font-weight: 600;
     position: relative;
-    // left: -20px;
+    left: -15px;
     margin-left: -$timeline-width;
 
     &::before {
       @extend %timeline;
 
-      height: 72px;
-      left: 79px;
+      height: 75px;
+      left: 22px;
       bottom: 16px;
     }
 
     &:first-child::before {
       @extend %timeline;
 
-      height: 32px;
-      top: 24px;
+      height: 24px;
+      top: 34px;
     }
+  }
 
-    /* Year dot */
-    &::after {
-      content: '';
-      display: inline-block;
-      position: relative;
-      border-radius: 1%;
-      width: 12px;
-      height: 12px;
-      left: 21.5px;
-      border: 3px solid;
-      background-color: var(--timeline-year-dot-color);
-      border-color: var(--timeline-node-bg);
-      box-shadow: 0 0 2px 0 #c2c6cc;
-      z-index: 1;
-    }
+
+  .title-month {
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    right: 0.5rem;
+    left: -16px;
+    
+    font-size: 80%;
+    font-weight: 600;
+    width: 2.5rem;
+    text-align: center;
+    border-radius: 2px;
+    background-color: var(--timeline-color);
   }
 
   ul {
@@ -78,7 +79,7 @@
         @extend %timeline;
 
         top: 0;
-        left: 58px;
+        left: 6px;
         height: 3.1rem;
       }
     }
@@ -93,9 +94,10 @@
     display: inline-block;
     position: relative;
     right: 0.5rem;
-
+    left: 50px; // 日期位置
+    font-weight: 600;
     &.month {
-      width: 1.4rem;
+      width: 1.35rem;
       text-align: center;
     }
 
@@ -110,7 +112,7 @@
     margin-left: 2.5rem;
     position: relative;
     top: 0.1rem;
-
+    left: 30px; // 文章位置
     &:hover {
       border-bottom: none;
     }
@@ -120,12 +122,11 @@
       content: '';
       display: inline-block;
       position: relative;
-      border-radius: 50%;
       width: 5px;
-      height: 5px;
+      height: 1px;
       float: left;
       top: 1.35rem;
-      left: 55px;
+      left: 12px; // 文章标题短横线
       background-color: var(--timeline-node-bg);
       box-shadow: 0 0 3px 0 #c2c6cc;
       z-index: 1;
