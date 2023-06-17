@@ -1,4 +1,3 @@
-<div class="card categories">
   <!-- top-category -->
       <?php
       $categories = get_categories();
@@ -25,6 +24,7 @@
       }
     
       foreach ($parent_categories as $parent_category) {
+        echo '<div class="card categories">';
             echo '<div id="h_0" class="card-header d-flex justify-content-between hide-border-bottom">';
             echo '<span>';
             $sub_cats_count = $parent_category['count'];
@@ -53,7 +53,7 @@
               echo '<span data-toggle="collapse" class="category-trigger hide-border-bottom disabled">';
               echo '  <i class="fas fa-fw fa-angle-right"></i>';
               echo '</span>';
-          }
+            }
             echo ' </div>';
 
           foreach ($parent_category['children'] as $child_category) {
@@ -69,6 +69,6 @@
               echo '	</ul>';
               echo '</div>';
           }
+          echo '</div>';
       }
       ?>
-</div> <!-- .card -->
