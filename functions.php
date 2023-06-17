@@ -203,7 +203,7 @@ add_shortcode( 'soda-sc-danger', 'soda_custom_shortcode_danger' );
 function light_box_text_replace($content)
 {
     $pattern = '/<img [\w\W]*? src="(.*?)" [\w\W]*?\/>/';
-    $replacement = '<a href="$1" class="popup img-link"> <img src="$1" /></a>';
+    $replacement = '<a href="$1" class="popup img-link"> <img class="lazyload" data-src="$1" data-proofer-ignore></a>';
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 }

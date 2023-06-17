@@ -8,12 +8,14 @@
     </span>
     <div class="mt-3 mb-3">
       <?php
+      /*
         if ( has_post_thumbnail() ) { // 判断当前文章是否有特色图片
             $thumb_id = get_post_thumbnail_id(); // 获取特色图片的 ID
             $thumb_url = wp_get_attachment_image_src( $thumb_id, 'large' ); // 获取特色图片的 URL
             echo '<a href="' . $thumb_url[0] . '" class="popup img-link preview-img">';
             echo '<img class="lazyload" data-src="' . $thumb_url[0] . '" alt="' . get_the_title() . '" w="1200" h="630"></a>';
         }
+        */
       ?>
     </div>
     <div class="d-flex justify-content-between">
