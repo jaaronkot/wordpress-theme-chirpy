@@ -339,15 +339,20 @@ h1 + .post-meta {
     background-color: var(--card-bg);
     box-shadow: 0 0 5px 0 var(--card-box-shadow);
     transition: all 0.3s ease-in-out;
-
-    h3 {
+    border-radius: 8px;
+    h4 {
       @extend %text-color;
+      @extend %text-clip;
     }
 
     &:hover {
-      -webkit-transform: translate3d(0, -3px, 0);
-      transform: translate3d(0, -3px, 0);
-      box-shadow: 0 10px 15px -4px rgba(0, 0, 0, 0.15);
+      background-color: var(--card-box-shadow);//#F6F6F6;
+    }
+
+    .card-body {
+      min-height: 8.0rem;
+      padding: 1.0rem;
+      @extend %text-clip;
     }
   }
 }

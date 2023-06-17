@@ -20,7 +20,7 @@
             echo get_the_date('Y/m/d');
             echo '</em>';
            
-            echo '<h3 class="pt-0 mt-1 mb-3" data-toc-skip>' . get_the_title() . '</h3>';
+            echo '<h4 class="pt-0 my-2" data-toc-skip>' . get_the_title() . '</h4>';
             echo '<div class="text-muted small">';
             echo '<p>';
             echo get_the_excerpt();

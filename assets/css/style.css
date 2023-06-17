@@ -119,6 +119,14 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
   user-select: none;
 }
 
+#related-posts .card .card-body, #related-posts .card h4, #post-list .card-body .card-title {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 /* ---------- scss mixin --------- */
 /*
  * The SCSS variables
@@ -959,7 +967,7 @@ html {
     --card-bg: #212121;
     --card-hovor-bg: #3a3a3a;
     --card-border-color: rgb(53, 53, 60);
-    --card-box-shadow: var(--main-bg);
+    --card-box-shadow:#2a2c2d;
     --kbd-wrap-color: #6a6a6a;
     --kbd-text-color: #d3d3d3;
     --kbd-bg-color: #242424;
@@ -1087,7 +1095,7 @@ html {
     --card-bg: #212121;
     --card-hovor-bg: #3a3a3a;
     --card-border-color: rgb(53, 53, 60);
-    --card-box-shadow: var(--main-bg);
+    --card-box-shadow:#2a2c2d;
     --kbd-wrap-color: #6a6a6a;
     --kbd-text-color: #d3d3d3;
     --kbd-bg-color: #242424;
@@ -2807,7 +2815,7 @@ mjx-container {
 /*
   Post-specific style
 */
-#related-posts .card h3, h1 + .post-meta em a, h1 + .post-meta em, footer a {
+#related-posts .card h4, h1 + .post-meta em a, h1 + .post-meta em, footer a {
   color: var(--text-color);
 }
 
@@ -3042,11 +3050,14 @@ h1 + .post-meta span + span::before {
   background-color: var(--card-bg);
   box-shadow: 0 0 5px 0 var(--card-box-shadow);
   transition: all 0.3s ease-in-out;
+  border-radius: 8px;
 }
 #related-posts .card:hover {
-  -webkit-transform: translate3d(0, -3px, 0);
-  transform: translate3d(0, -3px, 0);
-  box-shadow: 0 10px 15px -4px rgba(0, 0, 0, 0.15);
+  background-color: var(--card-box-shadow);
+}
+#related-posts .card .card-body {
+  min-height: 8rem;
+  padding: 1rem;
 }
 
 #tail-wrapper {
