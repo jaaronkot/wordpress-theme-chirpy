@@ -2678,6 +2678,13 @@ mjx-container {
 #post-list a:hover {
   text-decoration: none;
 }
+#post-list .card-body {
+  min-height: 9.5rem;
+  padding: 1rem;
+}
+#post-list .card-body .card-title {
+  font-size: 1.25rem;
+}
 #post-list .post-preview {
   padding: 0.25rem;
   border-radius: 0.75rem;
@@ -3403,7 +3410,7 @@ h1 + .post-meta span + span::before {
 /* Sidebar is visible */
 @media all and (min-width: 831px) {
   .card-thumb-small {
-    width: 25%;
+    width: 26%;
   }
 }
 /******** 缩略图 end ********/

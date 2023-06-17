@@ -60,6 +60,15 @@
     text-decoration: none;
   }
 
+  .card-body {
+    min-height: 9.5rem;
+    padding: 1rem;
+
+    .card-title {
+      font-size: 1.25rem;
+    }
+  }
+
   .post-preview {
     padding: 0.25rem;
     border-radius: 0.75rem;
