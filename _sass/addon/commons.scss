@@ -805,6 +805,13 @@ $sidebar-display: 'sidebar-display';
     letter-spacing: 1px;
     display: table-cell;
     vertical-align: middle;
+
+    span {
+      &::before {
+        content: '';
+        padding-left: 0.8rem;
+      }
+    }
   }
 
   .nav-item {

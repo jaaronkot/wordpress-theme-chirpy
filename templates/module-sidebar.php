@@ -23,7 +23,7 @@ The Side Bar
         <!-- home -->
         <li class="nav-item">
             <a href="/" class="nav-link">
-                <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+                <i class="fa-fw fas fa-home"></i>
                 <span>首页</span>
             </a>
         </li>
@@ -31,28 +31,28 @@ The Side Bar
 
         <li class="nav-item">
             <a href="/categories/" class="nav-link">
-                <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
+                <i class="fa-fw fas fa-stream"></i>
                 <span>分类</span>
             </a>
         </li> <!-- .nav-item -->
 
         <li class="nav-item">
             <a href="/tags/" class="nav-link">
-                <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
+                <i class="fa-fw fas fa-tag"></i>
                 <span>标签</span>
             </a>
         </li> <!-- .nav-item -->
 
         <li class="nav-item">
             <a href="/archives/" class="nav-link">
-                <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
+                <i class="fa-fw fas fa-archive"></i>
                 <span>归档</span>
             </a>
         </li> <!-- .nav-item -->
 
         <li class="nav-item">
             <a href="/about/" class="nav-link">
-                <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
+                <i class="fa-fw fas fa-info-circle"></i>
                 <span>关于</span>
             </a>
         </li> <!-- .nav-item -->

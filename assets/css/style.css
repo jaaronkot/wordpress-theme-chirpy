@@ -1892,6 +1892,10 @@ mjx-container {
   display: table-cell;
   vertical-align: middle;
 }
+#sidebar .nav-link span::before {
+  content: "";
+  padding-left: 0.8rem;
+}
 #sidebar .nav-item {
   text-align: center;
   display: table;
