@@ -91,3 +91,17 @@ h1.dynamic-title {
   margin-top: 80px;
   text-align: center;
 }
+
+.search-highlight {
+  font-weight: bold;
+  background-color: #F4BF4F;
+}
+
+
+.btn-outline-primary {
+  &:not(.disabled):hover {
+    border-color: #007bff !important;
+    background-color: #007bff;
+  }
+  border-radius: 8px;
+}

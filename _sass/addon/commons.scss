@@ -1026,7 +1026,7 @@ $sidebar-display: 'sidebar-display';
   @extend %cursor-pointer;
 }
 
-#search-input {
+#search-input-top {
   background: center;
   border: 0;
   border-radius: 0;
@@ -1592,7 +1592,7 @@ $sidebar-display: 'sidebar-display';
     margin-right: 4rem;
   }
 
-  #search-input {
+  #search-input-top {
     transition: all 0.3s ease-in-out;
   }
 
