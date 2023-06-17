@@ -2381,12 +2381,15 @@ mjx-container {
   #tags {
     justify-content: center !important;
   }
+  /* disable by zhaoyou
   h1.dynamic-title {
     display: none;
+
+    ~ .post-content {
+      margin-top: 3rem;
+    }
   }
-  h1.dynamic-title ~ .post-content {
-    margin-top: 3rem;
-  }
+  */
 } /* max-width: 849px */
 @media all and (max-width: 849px) and (orientation: portrait) {
   [data-topbar-visible=false] #topbar-wrapper {
@@ -3424,5 +3427,13 @@ h1 + .post-meta span + span::before {
   }
 }
 /******** 缩略图 end ********/
+h1.dynamic-title {
+  text-align: center;
+}
+
+.page_not_found {
+  text-align: center;
+  margin-top: 200px;
+}
 
 /*# sourceMappingURL=style.css.map */

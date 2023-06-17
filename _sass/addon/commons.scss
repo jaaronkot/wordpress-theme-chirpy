@@ -1439,6 +1439,7 @@ $sidebar-display: 'sidebar-display';
     justify-content: center !important;
   }
 
+  /* disable by zhaoyou
   h1.dynamic-title {
     display: none;
 
@@ -1446,6 +1447,7 @@ $sidebar-display: 'sidebar-display';
       margin-top: 3rem;
     }
   }
+  */
 } /* max-width: 849px */
 
 @media all and (max-width: 849px) and (orientation: portrait) {
