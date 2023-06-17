@@ -3,6 +3,7 @@
     <?php 
         get_template_part('templates/related','posts'); 
         get_template_part('templates/post','nav'); 
+        get_template_part('templates/post','giscus'); 
     ?>
   </div>
 </div>
