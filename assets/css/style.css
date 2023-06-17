@@ -832,7 +832,7 @@ html {
       rgba(250, 250, 250, 0) 100%
     );
     /* Sidebar */
-    --sidebar-bg: #eeeeee;
+    --sidebar-bg: #F6F8FA;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #424242;
     --nav-cursor-color: #2F3F89;
@@ -1182,7 +1182,7 @@ html {
       rgba(250, 250, 250, 0) 100%
     );
     /* Sidebar */
-    --sidebar-bg: #eeeeee;
+    --sidebar-bg: #F6F8FA;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #424242;
     --nav-cursor-color: #2F3F89;
