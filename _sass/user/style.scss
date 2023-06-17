@@ -1,0 +1,84 @@
+/********* 代码高亮 begin ********/
+/* append your custom style below */
+.highlight {
+  .lineno {
+    color: #999999;
+  }
+}
+
+.code-header {
+  &::before {
+    $dot-size: 0.75rem;
+    $dot-margin: 0.5rem;
+
+    background-color: #ED6C5F;
+    box-shadow: ($dot-size + $dot-margin) 0 0 #F4BF4F,
+      ($dot-size + $dot-margin) * 2 0 0 #62C655;
+  }
+
+  /* the label block */
+  span {
+    /* label icon */
+    i {
+      color: #999999;
+    }
+    
+    /* label text */
+    &::after {
+      color: #999999;
+    }
+  }
+
+  button {
+    i {
+      color: #999999;
+    }
+  }
+}
+/********* 代码高亮 end ********/
+
+/********* 缩略图 begin *******/
+.card-thumb-small {
+  border-radius: 6px;
+  margin-right: 20px;
+  height: 125px;
+  display: block;
+  object-fit: cover;
+  float: left;
+}
+
+.card-thumb-medium {
+  width: 100%; 
+  margin-bottom: 15px;
+  border-radius: 6px;
+  max-height: 125px;
+  display: block;
+  object-fit: cover;
+  float: left;
+}
+
+.card-thumb-large {
+  width: 100%; 
+  margin-bottom: 15px;
+  border-radius: 6px;
+  max-height: 300px;
+  display: block;
+  object-fit: cover;
+  float: left;
+}
+
+/* Hide SideBar and TOC */
+@media all and (max-width: 830px) {
+  .card-thumb-small {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Sidebar is visible */
+@media all and (min-width: 831px) {
+  .card-thumb-small {
+    width: 25%;
+  }
+}
+/******** 缩略图 end ********/

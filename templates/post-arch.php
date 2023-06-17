@@ -12,7 +12,8 @@
     foreach ($years as $year) {
       echo '<div class="year lead">' . $year . '</div>';
       echo '<ul class="list-unstyled">';
-      for ($month = 1; $month <= 12; $month++) {
+      for ($i = 1; $i <= 12; $i++) {
+        $month = 13 - $i;
         $args = array(
             'post_type' => 'post',
             'posts_per_page' => -1, // 获取所有文章
@@ -36,8 +37,8 @@
             }
             // 重置查询
             wp_reset_postdata();
-            echo '</ul>';
       }
+      echo '</ul>';
     }
 ?>
 </div>

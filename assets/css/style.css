@@ -148,67 +148,8 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
  */
 @media (prefers-color-scheme: light) {
   html:not([data-mode]), html[data-mode=light] {
-    /* see: <https://raw.githubusercontent.com/jwarby/pygments-css/master/github.css> */
-    /* Comment */
-    /* Error */
-    /* Keyword */
-    /* Operator */
-    /* Comment.Multiline */
-    /* Comment.Preproc */
-    /* Comment.Single */
-    /* Comment.Special */
-    /* Generic.Deleted */
-    /* Generic.Emph */
-    /* Generic.Error */
-    /* Generic.Heading */
-    /* Generic.Inserted */
-    /* Generic.Output */
-    /* Generic.Prompt */
-    /* Generic.Strong */
-    /* Generic.Subheading */
-    /* Generic.Traceback */
-    /* Keyword.Constant */
-    /* Keyword.Declaration */
-    /* Keyword.Namespace */
-    /* Keyword.Pseudo */
-    /* Keyword.Reserved */
-    /* Keyword.Type */
-    /* Literal.Number */
-    /* Literal.String */
-    /* Name.Attribute */
-    /* Name.Builtin */
-    /* Name.Class */
-    /* Name.Constant */
-    /* Name.Decorator */
-    /* Name.Entity */
-    /* Name.Exception */
-    /* Name.Function */
-    /* Name.Label */
-    /* Name.Namespace */
-    /* Name.Tag */
-    /* Name.Variable */
-    /* Operator.Word */
-    /* Text.Whitespace */
-    /* Literal.Number.Float */
-    /* Literal.Number.Hex */
-    /* Literal.Number.Integer */
-    /* Literal.Number.Oct */
-    /* Literal.String.Backtick */
-    /* Literal.String.Char */
-    /* Literal.String.Doc */
-    /* Literal.String.Double */
-    /* Literal.String.Escape */
-    /* Literal.String.Heredoc */
-    /* Literal.String.Interpol */
-    /* Literal.String.Other */
-    /* Literal.String.Regex */
-    /* Literal.String.Single */
-    /* Literal.String.Symbol */
-    /* Name.Builtin.Pseudo */
-    /* Name.Variable.Class */
-    /* Name.Variable.Global */
-    /* Name.Variable.Instance */
-    /* Literal.Number.Integer.Long */
+    /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+    /* Specify class=linenums on a pre to get line numbering */
     /* --- custom light colors --- */
     --highlight-bg-color: #f7f7f7;
     --highlighter-rouge-color: #BF2D44;
@@ -219,214 +160,104 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
     --code-header-icon-color: #d1d1d1;
     --clipboard-checked-color: #43c743;
   }
-  html:not([data-mode]) .highlight .hll, html[data-mode=light] .highlight .hll {
-    background-color: #ffffcc;
+  html:not([data-mode]) .prettyprint, html[data-mode=light] .prettyprint {
+    background: #F7F7F7;
+    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+    border: 0 !important;
   }
-  html:not([data-mode]) .highlight .c, html[data-mode=light] .highlight .c {
-    color: #999988;
-    font-style: italic;
+  html:not([data-mode]) .pln, html[data-mode=light] .pln {
+    color: #4d4d4c;
   }
-  html:not([data-mode]) .highlight .err, html[data-mode=light] .highlight .err {
-    color: #a61717;
-    background-color: #e3d2d2;
+  html:not([data-mode]) ol.linenums, html[data-mode=light] ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #8e908c;
   }
-  html:not([data-mode]) .highlight .k, html[data-mode=light] .highlight .k {
-    color: #000000;
-    font-weight: bold;
+  html:not([data-mode]) li.L0,
+  html:not([data-mode]) li.L1,
+  html:not([data-mode]) li.L2,
+  html:not([data-mode]) li.L3,
+  html:not([data-mode]) li.L4,
+  html:not([data-mode]) li.L5,
+  html:not([data-mode]) li.L6,
+  html:not([data-mode]) li.L7,
+  html:not([data-mode]) li.L8,
+  html:not([data-mode]) li.L9, html[data-mode=light] li.L0,
+  html[data-mode=light] li.L1,
+  html[data-mode=light] li.L2,
+  html[data-mode=light] li.L3,
+  html[data-mode=light] li.L4,
+  html[data-mode=light] li.L5,
+  html[data-mode=light] li.L6,
+  html[data-mode=light] li.L7,
+  html[data-mode=light] li.L8,
+  html[data-mode=light] li.L9 {
+    padding-left: 1em;
+    background-color: #F7F7F7;
+    list-style-type: decimal;
   }
-  html:not([data-mode]) .highlight .o, html[data-mode=light] .highlight .o {
-    color: #000000;
-    font-weight: bold;
+}
+@media screen and (prefers-color-scheme: light) {
+  html:not([data-mode]), html[data-mode=light] {
+    /* string content */
+    /* keyword */
+    /* comment */
+    /* type name */
+    /* literal value */
+    /* punctuation */
+    /* lisp open bracket */
+    /* lisp close bracket */
+    /* markup tag name */
+    /* markup attribute name */
+    /* markup attribute value */
+    /* declaration */
+    /* variable name */
+    /* function name */
   }
-  html:not([data-mode]) .highlight .cm, html[data-mode=light] .highlight .cm {
-    color: #999988;
-    font-style: italic;
+  html:not([data-mode]) .str, html[data-mode=light] .str {
+    color: #718c00;
   }
-  html:not([data-mode]) .highlight .cp, html[data-mode=light] .highlight .cp {
-    color: #999999;
-    font-weight: bold;
-    font-style: italic;
+  html:not([data-mode]) .kwd, html[data-mode=light] .kwd {
+    color: #8959a8;
   }
-  html:not([data-mode]) .highlight .c1, html[data-mode=light] .highlight .c1 {
-    color: #999988;
-    font-style: italic;
+  html:not([data-mode]) .com, html[data-mode=light] .com {
+    color: #8e908c;
   }
-  html:not([data-mode]) .highlight .cs, html[data-mode=light] .highlight .cs {
-    color: #999999;
-    font-weight: bold;
-    font-style: italic;
+  html:not([data-mode]) .typ, html[data-mode=light] .typ {
+    color: #4271ae;
   }
-  html:not([data-mode]) .highlight .gd, html[data-mode=light] .highlight .gd {
-    color: #d01040;
-    background-color: #ffdddd;
+  html:not([data-mode]) .lit, html[data-mode=light] .lit {
+    color: #f5871f;
   }
-  html:not([data-mode]) .highlight .ge, html[data-mode=light] .highlight .ge {
-    color: #000000;
-    font-style: italic;
+  html:not([data-mode]) .pun, html[data-mode=light] .pun {
+    color: #4d4d4c;
   }
-  html:not([data-mode]) .highlight .gr, html[data-mode=light] .highlight .gr {
-    color: #aa0000;
+  html:not([data-mode]) .opn, html[data-mode=light] .opn {
+    color: #4d4d4c;
   }
-  html:not([data-mode]) .highlight .gh, html[data-mode=light] .highlight .gh {
-    color: #999999;
+  html:not([data-mode]) .clo, html[data-mode=light] .clo {
+    color: #4d4d4c;
   }
-  html:not([data-mode]) .highlight .gi, html[data-mode=light] .highlight .gi {
-    color: #008080;
-    background-color: #ddffdd;
+  html:not([data-mode]) .tag, html[data-mode=light] .tag {
+    color: #c82829;
   }
-  html:not([data-mode]) .highlight .go, html[data-mode=light] .highlight .go {
-    color: #888888;
+  html:not([data-mode]) .atn, html[data-mode=light] .atn {
+    color: #f5871f;
   }
-  html:not([data-mode]) .highlight .gp, html[data-mode=light] .highlight .gp {
-    color: #555555;
+  html:not([data-mode]) .atv, html[data-mode=light] .atv {
+    color: #3e999f;
   }
-  html:not([data-mode]) .highlight .gs, html[data-mode=light] .highlight .gs {
-    font-weight: bold;
+  html:not([data-mode]) .dec, html[data-mode=light] .dec {
+    color: #f5871f;
   }
-  html:not([data-mode]) .highlight .gu, html[data-mode=light] .highlight .gu {
-    color: #aaaaaa;
+  html:not([data-mode]) .var, html[data-mode=light] .var {
+    color: #c82829;
   }
-  html:not([data-mode]) .highlight .gt, html[data-mode=light] .highlight .gt {
-    color: #aa0000;
+  html:not([data-mode]) .fun, html[data-mode=light] .fun {
+    color: #4271ae;
   }
-  html:not([data-mode]) .highlight .kc, html[data-mode=light] .highlight .kc {
-    color: #000000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .kd, html[data-mode=light] .highlight .kd {
-    color: #000000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .kn, html[data-mode=light] .highlight .kn {
-    color: #000000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .kp, html[data-mode=light] .highlight .kp {
-    color: #000000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .kr, html[data-mode=light] .highlight .kr {
-    color: #000000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .kt, html[data-mode=light] .highlight .kt {
-    color: #445588;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .m, html[data-mode=light] .highlight .m {
-    color: #009999;
-  }
-  html:not([data-mode]) .highlight .s, html[data-mode=light] .highlight .s {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .na, html[data-mode=light] .highlight .na {
-    color: #008080;
-  }
-  html:not([data-mode]) .highlight .nb, html[data-mode=light] .highlight .nb {
-    color: #0086b3;
-  }
-  html:not([data-mode]) .highlight .nc, html[data-mode=light] .highlight .nc {
-    color: #445588;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .no, html[data-mode=light] .highlight .no {
-    color: #008080;
-  }
-  html:not([data-mode]) .highlight .nd, html[data-mode=light] .highlight .nd {
-    color: #3c5d5d;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .ni, html[data-mode=light] .highlight .ni {
-    color: #800080;
-  }
-  html:not([data-mode]) .highlight .ne, html[data-mode=light] .highlight .ne {
-    color: #990000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .nf, html[data-mode=light] .highlight .nf {
-    color: #990000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .nl, html[data-mode=light] .highlight .nl {
-    color: #990000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .nn, html[data-mode=light] .highlight .nn {
-    color: #555555;
-  }
-  html:not([data-mode]) .highlight .nt, html[data-mode=light] .highlight .nt {
-    color: #000080;
-  }
-  html:not([data-mode]) .highlight .nv, html[data-mode=light] .highlight .nv {
-    color: #008080;
-  }
-  html:not([data-mode]) .highlight .ow, html[data-mode=light] .highlight .ow {
-    color: #000000;
-    font-weight: bold;
-  }
-  html:not([data-mode]) .highlight .w, html[data-mode=light] .highlight .w {
-    color: #bbbbbb;
-  }
-  html:not([data-mode]) .highlight .mf, html[data-mode=light] .highlight .mf {
-    color: #009999;
-  }
-  html:not([data-mode]) .highlight .mh, html[data-mode=light] .highlight .mh {
-    color: #009999;
-  }
-  html:not([data-mode]) .highlight .mi, html[data-mode=light] .highlight .mi {
-    color: #009999;
-  }
-  html:not([data-mode]) .highlight .mo, html[data-mode=light] .highlight .mo {
-    color: #009999;
-  }
-  html:not([data-mode]) .highlight .sb, html[data-mode=light] .highlight .sb {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .sc, html[data-mode=light] .highlight .sc {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .sd, html[data-mode=light] .highlight .sd {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .s2, html[data-mode=light] .highlight .s2 {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .se, html[data-mode=light] .highlight .se {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .sh, html[data-mode=light] .highlight .sh {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .si, html[data-mode=light] .highlight .si {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .sx, html[data-mode=light] .highlight .sx {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .sr, html[data-mode=light] .highlight .sr {
-    color: #009926;
-  }
-  html:not([data-mode]) .highlight .s1, html[data-mode=light] .highlight .s1 {
-    color: #d01040;
-  }
-  html:not([data-mode]) .highlight .ss, html[data-mode=light] .highlight .ss {
-    color: #990073;
-  }
-  html:not([data-mode]) .highlight .bp, html[data-mode=light] .highlight .bp {
-    color: #999999;
-  }
-  html:not([data-mode]) .highlight .vc, html[data-mode=light] .highlight .vc {
-    color: #008080;
-  }
-  html:not([data-mode]) .highlight .vg, html[data-mode=light] .highlight .vg {
-    color: #008080;
-  }
-  html:not([data-mode]) .highlight .vi, html[data-mode=light] .highlight .vi {
-    color: #008080;
-  }
-  html:not([data-mode]) .highlight .il, html[data-mode=light] .highlight .il {
-    color: #009999;
-  }
+}
+@media (prefers-color-scheme: light) {
   html:not([data-mode]) [class^=prompt-], html[data-mode=light] [class^=prompt-] {
     --inline-code-bg: #fbfafa;
     --highlighter-rouge-color: rgb(82, 82, 82);
@@ -443,67 +274,8 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
     --filepath-text-color: #bdbdbd;
     /* override Bootstrap */
     /* syntax highlight colors from https://raw.githubusercontent.com/jwarby/pygments-css/master/monokai.css */
-    /* Comment */
-    /* Error */
-    /* Keyword */
-    /* Literal */
-    /* Name */
-    /* Operator */
-    /* Punctuation */
-    /* Comment.Multiline */
-    /* Comment.Preproc */
-    /* Comment.Single */
-    /* Comment.Special */
-    /* Generic.Emph */
-    /* Generic.Strong */
-    /* Keyword.Constant */
-    /* Keyword.Declaration */
-    /* Keyword.Namespace */
-    /* Keyword.Pseudo */
-    /* Keyword.Reserved */
-    /* Keyword.Type */
-    /* Literal.Date */
-    /* Literal.Number */
-    /* Literal.String */
-    /* Name.Attribute */
-    /* Name.Builtin */
-    /* Name.Class */
-    /* Name.Constant */
-    /* Name.Decorator */
-    /* Name.Entity */
-    /* Name.Exception */
-    /* Name.Function */
-    /* Name.Label */
-    /* Name.Namespace */
-    /* Name.Other */
-    /* Name.Property */
-    /* Name.Tag */
-    /* Name.Variable */
-    /* Operator.Word */
-    /* Text.Whitespace */
-    /* Literal.Number.Float */
-    /* Literal.Number.Hex */
-    /* Literal.Number.Integer */
-    /* Literal.Number.Oct */
-    /* Literal.String.Backtick */
-    /* Literal.String.Char */
-    /* Literal.String.Doc */
-    /* Literal.String.Double */
-    /* Literal.String.Escape */
-    /* Literal.String.Heredoc */
-    /* Literal.String.Interpol */
-    /* Literal.String.Other */
-    /* Literal.String.Regex */
-    /* Literal.String.Single */
-    /* Literal.String.Symbol */
-    /* Name.Builtin.Pseudo */
-    /* Name.Variable.Class */
-    /* Name.Variable.Global */
-    /* Name.Variable.Instance */
-    /* Literal.Number.Integer.Long */
-    /* Generic.Subheading & Diff Unified/Comment? */
-    /* Generic.Deleted & Diff Deleted */
-    /* Generic.Inserted & Diff Inserted */
+    /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+    /* Specify class=linenums on a pre to get line numbering */
   }
   html[data-mode=dark] pre {
     color: #bfbfbf;
@@ -511,198 +283,95 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
   html[data-mode=dark] .highlight .gp {
     color: #818c96;
   }
-  html[data-mode=dark] .highlight pre {
-    background-color: var(--highlight-bg-color);
+  html[data-mode=dark] .prettyprint {
+    background: #252525;
+    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+    border: 0 !important;
   }
-  html[data-mode=dark] .highlight .hll {
-    background-color: var(--highlight-bg-color);
+  html[data-mode=dark] .pln {
+    color: #e6e9ed;
   }
-  html[data-mode=dark] .highlight .c {
-    color: #75715e;
+  html[data-mode=dark] ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #656d78;
   }
-  html[data-mode=dark] .highlight .err {
-    color: #960050;
-    background-color: #1e0010;
+  html[data-mode=dark] li.L0,
+  html[data-mode=dark] li.L1,
+  html[data-mode=dark] li.L2,
+  html[data-mode=dark] li.L3,
+  html[data-mode=dark] li.L4,
+  html[data-mode=dark] li.L5,
+  html[data-mode=dark] li.L6,
+  html[data-mode=dark] li.L7,
+  html[data-mode=dark] li.L8,
+  html[data-mode=dark] li.L9 {
+    background-color: #252525;
+    list-style-type: decimal;
   }
-  html[data-mode=dark] .highlight .k {
-    color: #66d9ef;
+}
+@media screen and (prefers-color-scheme: light) {
+  html[data-mode=dark] {
+    /* string content */
+    /* keyword */
+    /* comment */
+    /* type name */
+    /* literal value */
+    /* punctuation */
+    /* lisp open bracket */
+    /* lisp close bracket */
+    /* markup tag name */
+    /* markup attribute name */
+    /* markup attribute value */
+    /* declaration */
+    /* variable name */
+    /* function name */
   }
-  html[data-mode=dark] .highlight .l {
-    color: #ae81ff;
+  html[data-mode=dark] .str {
+    color: #ffce54;
   }
-  html[data-mode=dark] .highlight .n {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .o {
-    color: #f92672;
-  }
-  html[data-mode=dark] .highlight .p {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .cm {
-    color: #75715e;
-  }
-  html[data-mode=dark] .highlight .cp {
-    color: #75715e;
-  }
-  html[data-mode=dark] .highlight .c1 {
-    color: #75715e;
-  }
-  html[data-mode=dark] .highlight .cs {
-    color: #75715e;
-  }
-  html[data-mode=dark] .highlight .ge {
-    color: inherit;
-    font-style: italic;
-  }
-  html[data-mode=dark] .highlight .gs {
+  html[data-mode=dark] .kwd {
+    color: #4fc1e9;
     font-weight: bold;
   }
-  html[data-mode=dark] .highlight .kc {
-    color: #66d9ef;
+  html[data-mode=dark] .com {
+    color: #656d78;
   }
-  html[data-mode=dark] .highlight .kd {
-    color: #66d9ef;
+  html[data-mode=dark] .typ {
+    color: #4fc1e9;
+    font-weight: bold;
   }
-  html[data-mode=dark] .highlight .kn {
-    color: #f92672;
+  html[data-mode=dark] .lit {
+    color: #ac92ec;
   }
-  html[data-mode=dark] .highlight .kp {
-    color: #66d9ef;
+  html[data-mode=dark] .pun {
+    color: #e6e9ed;
   }
-  html[data-mode=dark] .highlight .kr {
-    color: #66d9ef;
+  html[data-mode=dark] .opn {
+    color: #e6e9ed;
+    font-weight: bold;
   }
-  html[data-mode=dark] .highlight .kt {
-    color: #66d9ef;
+  html[data-mode=dark] .clo {
+    color: #e6e9ed;
+    font-weight: bold;
   }
-  html[data-mode=dark] .highlight .ld {
-    color: #e6db74;
+  html[data-mode=dark] .tag {
+    color: #ed5565;
   }
-  html[data-mode=dark] .highlight .m {
-    color: #ae81ff;
+  html[data-mode=dark] .atn {
+    color: #a0d468;
   }
-  html[data-mode=dark] .highlight .s {
-    color: #e6db74;
+  html[data-mode=dark] .atv {
+    color: #ffce54;
   }
-  html[data-mode=dark] .highlight .na {
-    color: #a6e22e;
+  html[data-mode=dark] .dec {
+    color: #ac92ec;
   }
-  html[data-mode=dark] .highlight .nb {
-    color: #f8f8f2;
+  html[data-mode=dark] .var {
+    color: #e6e9ed;
   }
-  html[data-mode=dark] .highlight .nc {
-    color: #a6e22e;
-  }
-  html[data-mode=dark] .highlight .no {
-    color: #66d9ef;
-  }
-  html[data-mode=dark] .highlight .nd {
-    color: #a6e22e;
-  }
-  html[data-mode=dark] .highlight .ni {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .ne {
-    color: #a6e22e;
-  }
-  html[data-mode=dark] .highlight .nf {
-    color: #a6e22e;
-  }
-  html[data-mode=dark] .highlight .nl {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .nn {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .nx {
-    color: #a6e22e;
-  }
-  html[data-mode=dark] .highlight .py {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .nt {
-    color: #f92672;
-  }
-  html[data-mode=dark] .highlight .nv {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .ow {
-    color: #f92672;
-  }
-  html[data-mode=dark] .highlight .w {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .mf {
-    color: #ae81ff;
-  }
-  html[data-mode=dark] .highlight .mh {
-    color: #ae81ff;
-  }
-  html[data-mode=dark] .highlight .mi {
-    color: #ae81ff;
-  }
-  html[data-mode=dark] .highlight .mo {
-    color: #ae81ff;
-  }
-  html[data-mode=dark] .highlight .sb {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .sc {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .sd {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .s2 {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .se {
-    color: #ae81ff;
-  }
-  html[data-mode=dark] .highlight .sh {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .si {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .sx {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .sr {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .s1 {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .ss {
-    color: #e6db74;
-  }
-  html[data-mode=dark] .highlight .bp {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .vc {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .vg {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .vi {
-    color: #f8f8f2;
-  }
-  html[data-mode=dark] .highlight .il {
-    color: #ae81ff;
-  }
-  html[data-mode=dark] .highlight .gu {
-    color: #75715e;
-  }
-  html[data-mode=dark] .highlight .gd {
-    color: #f92672;
-    background-color: #561c08;
-  }
-  html[data-mode=dark] .highlight .gi {
-    color: #a6e22e;
-    background-color: #0b5858;
+  html[data-mode=dark] .fun {
+    color: #e6e9ed;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -718,67 +387,8 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
     --filepath-text-color: #bdbdbd;
     /* override Bootstrap */
     /* syntax highlight colors from https://raw.githubusercontent.com/jwarby/pygments-css/master/monokai.css */
-    /* Comment */
-    /* Error */
-    /* Keyword */
-    /* Literal */
-    /* Name */
-    /* Operator */
-    /* Punctuation */
-    /* Comment.Multiline */
-    /* Comment.Preproc */
-    /* Comment.Single */
-    /* Comment.Special */
-    /* Generic.Emph */
-    /* Generic.Strong */
-    /* Keyword.Constant */
-    /* Keyword.Declaration */
-    /* Keyword.Namespace */
-    /* Keyword.Pseudo */
-    /* Keyword.Reserved */
-    /* Keyword.Type */
-    /* Literal.Date */
-    /* Literal.Number */
-    /* Literal.String */
-    /* Name.Attribute */
-    /* Name.Builtin */
-    /* Name.Class */
-    /* Name.Constant */
-    /* Name.Decorator */
-    /* Name.Entity */
-    /* Name.Exception */
-    /* Name.Function */
-    /* Name.Label */
-    /* Name.Namespace */
-    /* Name.Other */
-    /* Name.Property */
-    /* Name.Tag */
-    /* Name.Variable */
-    /* Operator.Word */
-    /* Text.Whitespace */
-    /* Literal.Number.Float */
-    /* Literal.Number.Hex */
-    /* Literal.Number.Integer */
-    /* Literal.Number.Oct */
-    /* Literal.String.Backtick */
-    /* Literal.String.Char */
-    /* Literal.String.Doc */
-    /* Literal.String.Double */
-    /* Literal.String.Escape */
-    /* Literal.String.Heredoc */
-    /* Literal.String.Interpol */
-    /* Literal.String.Other */
-    /* Literal.String.Regex */
-    /* Literal.String.Single */
-    /* Literal.String.Symbol */
-    /* Name.Builtin.Pseudo */
-    /* Name.Variable.Class */
-    /* Name.Variable.Global */
-    /* Name.Variable.Instance */
-    /* Literal.Number.Integer.Long */
-    /* Generic.Subheading & Diff Unified/Comment? */
-    /* Generic.Deleted & Diff Deleted */
-    /* Generic.Inserted & Diff Inserted */
+    /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+    /* Specify class=linenums on a pre to get line numbering */
   }
   html:not([data-mode]) pre, html[data-mode=dark] pre {
     color: #bfbfbf;
@@ -786,261 +396,110 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
   html:not([data-mode]) .highlight .gp, html[data-mode=dark] .highlight .gp {
     color: #818c96;
   }
-  html:not([data-mode]) .highlight pre, html[data-mode=dark] .highlight pre {
-    background-color: var(--highlight-bg-color);
+  html:not([data-mode]) .prettyprint, html[data-mode=dark] .prettyprint {
+    background: #252525;
+    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+    border: 0 !important;
   }
-  html:not([data-mode]) .highlight .hll, html[data-mode=dark] .highlight .hll {
-    background-color: var(--highlight-bg-color);
+  html:not([data-mode]) .pln, html[data-mode=dark] .pln {
+    color: #e6e9ed;
   }
-  html:not([data-mode]) .highlight .c, html[data-mode=dark] .highlight .c {
-    color: #75715e;
+  html:not([data-mode]) ol.linenums, html[data-mode=dark] ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #656d78;
   }
-  html:not([data-mode]) .highlight .err, html[data-mode=dark] .highlight .err {
-    color: #960050;
-    background-color: #1e0010;
+  html:not([data-mode]) li.L0,
+  html:not([data-mode]) li.L1,
+  html:not([data-mode]) li.L2,
+  html:not([data-mode]) li.L3,
+  html:not([data-mode]) li.L4,
+  html:not([data-mode]) li.L5,
+  html:not([data-mode]) li.L6,
+  html:not([data-mode]) li.L7,
+  html:not([data-mode]) li.L8,
+  html:not([data-mode]) li.L9, html[data-mode=dark] li.L0,
+  html[data-mode=dark] li.L1,
+  html[data-mode=dark] li.L2,
+  html[data-mode=dark] li.L3,
+  html[data-mode=dark] li.L4,
+  html[data-mode=dark] li.L5,
+  html[data-mode=dark] li.L6,
+  html[data-mode=dark] li.L7,
+  html[data-mode=dark] li.L8,
+  html[data-mode=dark] li.L9 {
+    background-color: #252525;
+    list-style-type: decimal;
   }
-  html:not([data-mode]) .highlight .k, html[data-mode=dark] .highlight .k {
-    color: #66d9ef;
+}
+@media screen and (prefers-color-scheme: dark) {
+  html:not([data-mode]), html[data-mode=dark] {
+    /* string content */
+    /* keyword */
+    /* comment */
+    /* type name */
+    /* literal value */
+    /* punctuation */
+    /* lisp open bracket */
+    /* lisp close bracket */
+    /* markup tag name */
+    /* markup attribute name */
+    /* markup attribute value */
+    /* declaration */
+    /* variable name */
+    /* function name */
   }
-  html:not([data-mode]) .highlight .l, html[data-mode=dark] .highlight .l {
-    color: #ae81ff;
+  html:not([data-mode]) .str, html[data-mode=dark] .str {
+    color: #ffce54;
   }
-  html:not([data-mode]) .highlight .n, html[data-mode=dark] .highlight .n {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .o, html[data-mode=dark] .highlight .o {
-    color: #f92672;
-  }
-  html:not([data-mode]) .highlight .p, html[data-mode=dark] .highlight .p {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .cm, html[data-mode=dark] .highlight .cm {
-    color: #75715e;
-  }
-  html:not([data-mode]) .highlight .cp, html[data-mode=dark] .highlight .cp {
-    color: #75715e;
-  }
-  html:not([data-mode]) .highlight .c1, html[data-mode=dark] .highlight .c1 {
-    color: #75715e;
-  }
-  html:not([data-mode]) .highlight .cs, html[data-mode=dark] .highlight .cs {
-    color: #75715e;
-  }
-  html:not([data-mode]) .highlight .ge, html[data-mode=dark] .highlight .ge {
-    color: inherit;
-    font-style: italic;
-  }
-  html:not([data-mode]) .highlight .gs, html[data-mode=dark] .highlight .gs {
+  html:not([data-mode]) .kwd, html[data-mode=dark] .kwd {
+    color: #4fc1e9;
     font-weight: bold;
   }
-  html:not([data-mode]) .highlight .kc, html[data-mode=dark] .highlight .kc {
-    color: #66d9ef;
+  html:not([data-mode]) .com, html[data-mode=dark] .com {
+    color: #656d78;
   }
-  html:not([data-mode]) .highlight .kd, html[data-mode=dark] .highlight .kd {
-    color: #66d9ef;
+  html:not([data-mode]) .typ, html[data-mode=dark] .typ {
+    color: #4fc1e9;
+    font-weight: bold;
   }
-  html:not([data-mode]) .highlight .kn, html[data-mode=dark] .highlight .kn {
-    color: #f92672;
+  html:not([data-mode]) .lit, html[data-mode=dark] .lit {
+    color: #ac92ec;
   }
-  html:not([data-mode]) .highlight .kp, html[data-mode=dark] .highlight .kp {
-    color: #66d9ef;
+  html:not([data-mode]) .pun, html[data-mode=dark] .pun {
+    color: #e6e9ed;
   }
-  html:not([data-mode]) .highlight .kr, html[data-mode=dark] .highlight .kr {
-    color: #66d9ef;
+  html:not([data-mode]) .opn, html[data-mode=dark] .opn {
+    color: #e6e9ed;
+    font-weight: bold;
   }
-  html:not([data-mode]) .highlight .kt, html[data-mode=dark] .highlight .kt {
-    color: #66d9ef;
+  html:not([data-mode]) .clo, html[data-mode=dark] .clo {
+    color: #e6e9ed;
+    font-weight: bold;
   }
-  html:not([data-mode]) .highlight .ld, html[data-mode=dark] .highlight .ld {
-    color: #e6db74;
+  html:not([data-mode]) .tag, html[data-mode=dark] .tag {
+    color: #ed5565;
   }
-  html:not([data-mode]) .highlight .m, html[data-mode=dark] .highlight .m {
-    color: #ae81ff;
+  html:not([data-mode]) .atn, html[data-mode=dark] .atn {
+    color: #a0d468;
   }
-  html:not([data-mode]) .highlight .s, html[data-mode=dark] .highlight .s {
-    color: #e6db74;
+  html:not([data-mode]) .atv, html[data-mode=dark] .atv {
+    color: #ffce54;
   }
-  html:not([data-mode]) .highlight .na, html[data-mode=dark] .highlight .na {
-    color: #a6e22e;
+  html:not([data-mode]) .dec, html[data-mode=dark] .dec {
+    color: #ac92ec;
   }
-  html:not([data-mode]) .highlight .nb, html[data-mode=dark] .highlight .nb {
-    color: #f8f8f2;
+  html:not([data-mode]) .var, html[data-mode=dark] .var {
+    color: #e6e9ed;
   }
-  html:not([data-mode]) .highlight .nc, html[data-mode=dark] .highlight .nc {
-    color: #a6e22e;
+  html:not([data-mode]) .fun, html[data-mode=dark] .fun {
+    color: #e6e9ed;
   }
-  html:not([data-mode]) .highlight .no, html[data-mode=dark] .highlight .no {
-    color: #66d9ef;
-  }
-  html:not([data-mode]) .highlight .nd, html[data-mode=dark] .highlight .nd {
-    color: #a6e22e;
-  }
-  html:not([data-mode]) .highlight .ni, html[data-mode=dark] .highlight .ni {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .ne, html[data-mode=dark] .highlight .ne {
-    color: #a6e22e;
-  }
-  html:not([data-mode]) .highlight .nf, html[data-mode=dark] .highlight .nf {
-    color: #a6e22e;
-  }
-  html:not([data-mode]) .highlight .nl, html[data-mode=dark] .highlight .nl {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .nn, html[data-mode=dark] .highlight .nn {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .nx, html[data-mode=dark] .highlight .nx {
-    color: #a6e22e;
-  }
-  html:not([data-mode]) .highlight .py, html[data-mode=dark] .highlight .py {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .nt, html[data-mode=dark] .highlight .nt {
-    color: #f92672;
-  }
-  html:not([data-mode]) .highlight .nv, html[data-mode=dark] .highlight .nv {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .ow, html[data-mode=dark] .highlight .ow {
-    color: #f92672;
-  }
-  html:not([data-mode]) .highlight .w, html[data-mode=dark] .highlight .w {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .mf, html[data-mode=dark] .highlight .mf {
-    color: #ae81ff;
-  }
-  html:not([data-mode]) .highlight .mh, html[data-mode=dark] .highlight .mh {
-    color: #ae81ff;
-  }
-  html:not([data-mode]) .highlight .mi, html[data-mode=dark] .highlight .mi {
-    color: #ae81ff;
-  }
-  html:not([data-mode]) .highlight .mo, html[data-mode=dark] .highlight .mo {
-    color: #ae81ff;
-  }
-  html:not([data-mode]) .highlight .sb, html[data-mode=dark] .highlight .sb {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .sc, html[data-mode=dark] .highlight .sc {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .sd, html[data-mode=dark] .highlight .sd {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .s2, html[data-mode=dark] .highlight .s2 {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .se, html[data-mode=dark] .highlight .se {
-    color: #ae81ff;
-  }
-  html:not([data-mode]) .highlight .sh, html[data-mode=dark] .highlight .sh {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .si, html[data-mode=dark] .highlight .si {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .sx, html[data-mode=dark] .highlight .sx {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .sr, html[data-mode=dark] .highlight .sr {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .s1, html[data-mode=dark] .highlight .s1 {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .ss, html[data-mode=dark] .highlight .ss {
-    color: #e6db74;
-  }
-  html:not([data-mode]) .highlight .bp, html[data-mode=dark] .highlight .bp {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .vc, html[data-mode=dark] .highlight .vc {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .vg, html[data-mode=dark] .highlight .vg {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .vi, html[data-mode=dark] .highlight .vi {
-    color: #f8f8f2;
-  }
-  html:not([data-mode]) .highlight .il, html[data-mode=dark] .highlight .il {
-    color: #ae81ff;
-  }
-  html:not([data-mode]) .highlight .gu, html[data-mode=dark] .highlight .gu {
-    color: #75715e;
-  }
-  html:not([data-mode]) .highlight .gd, html[data-mode=dark] .highlight .gd {
-    color: #f92672;
-    background-color: #561c08;
-  }
-  html:not([data-mode]) .highlight .gi, html[data-mode=dark] .highlight .gi {
-    color: #a6e22e;
-    background-color: #0b5858;
-  }
+}
+@media (prefers-color-scheme: dark) {
   html[data-mode=light] {
-    /* see: <https://raw.githubusercontent.com/jwarby/pygments-css/master/github.css> */
-    /* Comment */
-    /* Error */
-    /* Keyword */
-    /* Operator */
-    /* Comment.Multiline */
-    /* Comment.Preproc */
-    /* Comment.Single */
-    /* Comment.Special */
-    /* Generic.Deleted */
-    /* Generic.Emph */
-    /* Generic.Error */
-    /* Generic.Heading */
-    /* Generic.Inserted */
-    /* Generic.Output */
-    /* Generic.Prompt */
-    /* Generic.Strong */
-    /* Generic.Subheading */
-    /* Generic.Traceback */
-    /* Keyword.Constant */
-    /* Keyword.Declaration */
-    /* Keyword.Namespace */
-    /* Keyword.Pseudo */
-    /* Keyword.Reserved */
-    /* Keyword.Type */
-    /* Literal.Number */
-    /* Literal.String */
-    /* Name.Attribute */
-    /* Name.Builtin */
-    /* Name.Class */
-    /* Name.Constant */
-    /* Name.Decorator */
-    /* Name.Entity */
-    /* Name.Exception */
-    /* Name.Function */
-    /* Name.Label */
-    /* Name.Namespace */
-    /* Name.Tag */
-    /* Name.Variable */
-    /* Operator.Word */
-    /* Text.Whitespace */
-    /* Literal.Number.Float */
-    /* Literal.Number.Hex */
-    /* Literal.Number.Integer */
-    /* Literal.Number.Oct */
-    /* Literal.String.Backtick */
-    /* Literal.String.Char */
-    /* Literal.String.Doc */
-    /* Literal.String.Double */
-    /* Literal.String.Escape */
-    /* Literal.String.Heredoc */
-    /* Literal.String.Interpol */
-    /* Literal.String.Other */
-    /* Literal.String.Regex */
-    /* Literal.String.Single */
-    /* Literal.String.Symbol */
-    /* Name.Builtin.Pseudo */
-    /* Name.Variable.Class */
-    /* Name.Variable.Global */
-    /* Name.Variable.Instance */
-    /* Literal.Number.Integer.Long */
+    /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+    /* Specify class=linenums on a pre to get line numbering */
     /* --- custom light colors --- */
     --highlight-bg-color: #f7f7f7;
     --highlighter-rouge-color: #BF2D44;
@@ -1051,214 +510,95 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
     --code-header-icon-color: #d1d1d1;
     --clipboard-checked-color: #43c743;
   }
-  html[data-mode=light] .highlight .hll {
-    background-color: #ffffcc;
+  html[data-mode=light] .prettyprint {
+    background: #F7F7F7;
+    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+    border: 0 !important;
   }
-  html[data-mode=light] .highlight .c {
-    color: #999988;
-    font-style: italic;
+  html[data-mode=light] .pln {
+    color: #4d4d4c;
   }
-  html[data-mode=light] .highlight .err {
-    color: #a61717;
-    background-color: #e3d2d2;
+  html[data-mode=light] ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #8e908c;
   }
-  html[data-mode=light] .highlight .k {
-    color: #000000;
-    font-weight: bold;
+  html[data-mode=light] li.L0,
+  html[data-mode=light] li.L1,
+  html[data-mode=light] li.L2,
+  html[data-mode=light] li.L3,
+  html[data-mode=light] li.L4,
+  html[data-mode=light] li.L5,
+  html[data-mode=light] li.L6,
+  html[data-mode=light] li.L7,
+  html[data-mode=light] li.L8,
+  html[data-mode=light] li.L9 {
+    padding-left: 1em;
+    background-color: #F7F7F7;
+    list-style-type: decimal;
   }
-  html[data-mode=light] .highlight .o {
-    color: #000000;
-    font-weight: bold;
+}
+@media screen and (prefers-color-scheme: dark) {
+  html[data-mode=light] {
+    /* string content */
+    /* keyword */
+    /* comment */
+    /* type name */
+    /* literal value */
+    /* punctuation */
+    /* lisp open bracket */
+    /* lisp close bracket */
+    /* markup tag name */
+    /* markup attribute name */
+    /* markup attribute value */
+    /* declaration */
+    /* variable name */
+    /* function name */
   }
-  html[data-mode=light] .highlight .cm {
-    color: #999988;
-    font-style: italic;
+  html[data-mode=light] .str {
+    color: #718c00;
   }
-  html[data-mode=light] .highlight .cp {
-    color: #999999;
-    font-weight: bold;
-    font-style: italic;
+  html[data-mode=light] .kwd {
+    color: #8959a8;
   }
-  html[data-mode=light] .highlight .c1 {
-    color: #999988;
-    font-style: italic;
+  html[data-mode=light] .com {
+    color: #8e908c;
   }
-  html[data-mode=light] .highlight .cs {
-    color: #999999;
-    font-weight: bold;
-    font-style: italic;
+  html[data-mode=light] .typ {
+    color: #4271ae;
   }
-  html[data-mode=light] .highlight .gd {
-    color: #d01040;
-    background-color: #ffdddd;
+  html[data-mode=light] .lit {
+    color: #f5871f;
   }
-  html[data-mode=light] .highlight .ge {
-    color: #000000;
-    font-style: italic;
+  html[data-mode=light] .pun {
+    color: #4d4d4c;
   }
-  html[data-mode=light] .highlight .gr {
-    color: #aa0000;
+  html[data-mode=light] .opn {
+    color: #4d4d4c;
   }
-  html[data-mode=light] .highlight .gh {
-    color: #999999;
+  html[data-mode=light] .clo {
+    color: #4d4d4c;
   }
-  html[data-mode=light] .highlight .gi {
-    color: #008080;
-    background-color: #ddffdd;
+  html[data-mode=light] .tag {
+    color: #c82829;
   }
-  html[data-mode=light] .highlight .go {
-    color: #888888;
+  html[data-mode=light] .atn {
+    color: #f5871f;
   }
-  html[data-mode=light] .highlight .gp {
-    color: #555555;
+  html[data-mode=light] .atv {
+    color: #3e999f;
   }
-  html[data-mode=light] .highlight .gs {
-    font-weight: bold;
+  html[data-mode=light] .dec {
+    color: #f5871f;
   }
-  html[data-mode=light] .highlight .gu {
-    color: #aaaaaa;
+  html[data-mode=light] .var {
+    color: #c82829;
   }
-  html[data-mode=light] .highlight .gt {
-    color: #aa0000;
+  html[data-mode=light] .fun {
+    color: #4271ae;
   }
-  html[data-mode=light] .highlight .kc {
-    color: #000000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .kd {
-    color: #000000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .kn {
-    color: #000000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .kp {
-    color: #000000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .kr {
-    color: #000000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .kt {
-    color: #445588;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .m {
-    color: #009999;
-  }
-  html[data-mode=light] .highlight .s {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .na {
-    color: #008080;
-  }
-  html[data-mode=light] .highlight .nb {
-    color: #0086b3;
-  }
-  html[data-mode=light] .highlight .nc {
-    color: #445588;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .no {
-    color: #008080;
-  }
-  html[data-mode=light] .highlight .nd {
-    color: #3c5d5d;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .ni {
-    color: #800080;
-  }
-  html[data-mode=light] .highlight .ne {
-    color: #990000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .nf {
-    color: #990000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .nl {
-    color: #990000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .nn {
-    color: #555555;
-  }
-  html[data-mode=light] .highlight .nt {
-    color: #000080;
-  }
-  html[data-mode=light] .highlight .nv {
-    color: #008080;
-  }
-  html[data-mode=light] .highlight .ow {
-    color: #000000;
-    font-weight: bold;
-  }
-  html[data-mode=light] .highlight .w {
-    color: #bbbbbb;
-  }
-  html[data-mode=light] .highlight .mf {
-    color: #009999;
-  }
-  html[data-mode=light] .highlight .mh {
-    color: #009999;
-  }
-  html[data-mode=light] .highlight .mi {
-    color: #009999;
-  }
-  html[data-mode=light] .highlight .mo {
-    color: #009999;
-  }
-  html[data-mode=light] .highlight .sb {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .sc {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .sd {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .s2 {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .se {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .sh {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .si {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .sx {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .sr {
-    color: #009926;
-  }
-  html[data-mode=light] .highlight .s1 {
-    color: #d01040;
-  }
-  html[data-mode=light] .highlight .ss {
-    color: #990073;
-  }
-  html[data-mode=light] .highlight .bp {
-    color: #999999;
-  }
-  html[data-mode=light] .highlight .vc {
-    color: #008080;
-  }
-  html[data-mode=light] .highlight .vg {
-    color: #008080;
-  }
-  html[data-mode=light] .highlight .vi {
-    color: #008080;
-  }
-  html[data-mode=light] .highlight .il {
-    color: #009999;
-  }
+}
+@media (prefers-color-scheme: dark) {
   html[data-mode=light] [class^=prompt-] {
     --inline-code-bg: #fbfafa;
     --highlighter-rouge-color: rgb(82, 82, 82);
@@ -1271,7 +611,7 @@ figure.highlight, .highlight, .highlighter-rouge {
 }
 
 td.rouge-code {
-  padding-left: 1rem;
+  padding-left: 0.25rem;
   padding-right: 1.5rem;
 }
 
@@ -3995,5 +3335,77 @@ h1 + .post-meta span + span::before {
     text-overflow: ellipsis;
   }
 }
+/********* 代码高亮 begin ********/
+/* append your custom style below */
+.highlight .lineno {
+  color: #999999;
+}
+
+.code-header {
+  /* the label block */
+}
+.code-header::before {
+  background-color: #ED6C5F;
+  box-shadow: 1.25rem 0 0 #F4BF4F, 2.5rem 0 0 #62C655;
+}
+.code-header span {
+  /* label icon */
+  /* label text */
+}
+.code-header span i {
+  color: #999999;
+}
+.code-header span::after {
+  color: #999999;
+}
+.code-header button i {
+  color: #999999;
+}
+
+/********* 代码高亮 end ********/
+/********* 缩略图 begin *******/
+.card-thumb-small {
+  border-radius: 6px;
+  margin-right: 20px;
+  height: 125px;
+  display: block;
+  object-fit: cover;
+  float: left;
+}
+
+.card-thumb-medium {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  max-height: 125px;
+  display: block;
+  object-fit: cover;
+  float: left;
+}
+
+.card-thumb-large {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  max-height: 300px;
+  display: block;
+  object-fit: cover;
+  float: left;
+}
+
+/* Hide SideBar and TOC */
+@media all and (max-width: 830px) {
+  .card-thumb-small {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+/* Sidebar is visible */
+@media all and (min-width: 831px) {
+  .card-thumb-small {
+    width: 25%;
+  }
+}
+/******** 缩略图 end ********/
 
 /*# sourceMappingURL=style.css.map */
