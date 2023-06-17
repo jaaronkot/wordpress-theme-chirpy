@@ -215,10 +215,11 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
     /* function name */
   }
   html:not([data-mode]) .str, html[data-mode=light] .str {
-    color: #718c00;
+    color: #d01040;
   }
   html:not([data-mode]) .kwd, html[data-mode=light] .kwd {
-    color: #8959a8;
+    color: #000000;
+    font-weight: bold;
   }
   html:not([data-mode]) .com, html[data-mode=light] .com {
     color: #8e908c;
@@ -227,34 +228,38 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
     color: #4271ae;
   }
   html:not([data-mode]) .lit, html[data-mode=light] .lit {
-    color: #f5871f;
+    color: #009999;
   }
   html:not([data-mode]) .pun, html[data-mode=light] .pun {
     color: #4d4d4c;
   }
   html:not([data-mode]) .opn, html[data-mode=light] .opn {
     color: #4d4d4c;
+    font-weight: bold;
   }
   html:not([data-mode]) .clo, html[data-mode=light] .clo {
     color: #4d4d4c;
+    font-weight: bold;
   }
   html:not([data-mode]) .tag, html[data-mode=light] .tag {
     color: #c82829;
   }
   html:not([data-mode]) .atn, html[data-mode=light] .atn {
-    color: #f5871f;
+    color: #008080;
   }
   html:not([data-mode]) .atv, html[data-mode=light] .atv {
     color: #3e999f;
   }
   html:not([data-mode]) .dec, html[data-mode=light] .dec {
-    color: #f5871f;
+    color: #000000;
+    font-weight: bold;
   }
   html:not([data-mode]) .var, html[data-mode=light] .var {
-    color: #c82829;
+    color: #008080;
   }
   html:not([data-mode]) .fun, html[data-mode=light] .fun {
-    color: #4271ae;
+    color: #990000;
+    font-weight: bold;
   }
 }
 @media (prefers-color-scheme: light) {
@@ -556,10 +561,11 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
     /* function name */
   }
   html[data-mode=light] .str {
-    color: #718c00;
+    color: #d01040;
   }
   html[data-mode=light] .kwd {
-    color: #8959a8;
+    color: #000000;
+    font-weight: bold;
   }
   html[data-mode=light] .com {
     color: #8e908c;
@@ -568,34 +574,38 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
     color: #4271ae;
   }
   html[data-mode=light] .lit {
-    color: #f5871f;
+    color: #009999;
   }
   html[data-mode=light] .pun {
     color: #4d4d4c;
   }
   html[data-mode=light] .opn {
     color: #4d4d4c;
+    font-weight: bold;
   }
   html[data-mode=light] .clo {
     color: #4d4d4c;
+    font-weight: bold;
   }
   html[data-mode=light] .tag {
     color: #c82829;
   }
   html[data-mode=light] .atn {
-    color: #f5871f;
+    color: #008080;
   }
   html[data-mode=light] .atv {
     color: #3e999f;
   }
   html[data-mode=light] .dec {
-    color: #f5871f;
+    color: #000000;
+    font-weight: bold;
   }
   html[data-mode=light] .var {
-    color: #c82829;
+    color: #008080;
   }
   html[data-mode=light] .fun {
-    color: #4271ae;
+    color: #990000;
+    font-weight: bold;
   }
 }
 @media (prefers-color-scheme: dark) {

@@ -41,13 +41,14 @@
     /* string content */
 
     .str {
-      color: #718c00;
+      color: #d01040;
     }
 
     /* keyword */
 
     .kwd {
-      color: #8959a8;
+      color: #000000;
+      font-weight: bold;
     }
 
     /* comment */
@@ -65,7 +66,7 @@
     /* literal value */
 
     .lit {
-      color: #f5871f;
+      color: #009999;
     }
 
     /* punctuation */
@@ -78,12 +79,14 @@
 
     .opn {
       color: #4d4d4c;
+      font-weight: bold;
     }
 
     /* lisp close bracket */
 
     .clo {
       color: #4d4d4c;
+      font-weight: bold;
     }
 
     /* markup tag name */
@@ -95,7 +98,7 @@
     /* markup attribute name */
 
     .atn {
-      color: #f5871f;
+      color: #008080;
     }
 
     /* markup attribute value */
@@ -107,19 +110,21 @@
     /* declaration */
 
     .dec {
-      color: #f5871f;
+      color: #000000;
+      font-weight: bold;
     }
 
     /* variable name */
 
     .var {
-      color: #c82829;
+      color: #008080;
     }
 
     /* function name */
 
     .fun {
-      color: #4271ae;
+      color: #990000;
+      font-weight: bold;
     }
   }
 
