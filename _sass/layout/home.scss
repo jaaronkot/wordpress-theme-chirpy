@@ -59,7 +59,14 @@
   a:hover {
     text-decoration: none;
   }
-  
+
+  .card-body {
+    .card-title {
+      // @extend %text-clip;
+      font-size: 1.25rem;
+    }
+  }
+
   .post-preview {
     padding: 0.25rem;
     border-radius: 0.75rem;

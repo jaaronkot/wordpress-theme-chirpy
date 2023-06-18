@@ -2707,6 +2707,9 @@ mjx-container {
 #post-list a:hover {
   text-decoration: none;
 }
+#post-list .card-body .card-title {
+  font-size: 1.25rem;
+}
 #post-list .post-preview {
   padding: 0.25rem;
   border-radius: 0.75rem;
@@ -3399,7 +3402,7 @@ h1 + .post-meta span + span::before {
 .card-thumb-small {
   border-radius: 6px;
   margin-right: 20px;
-  height: 125px;
+  height: 120px;
   display: block;
   object-fit: cover;
   float: left;
