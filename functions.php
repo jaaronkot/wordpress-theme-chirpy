@@ -88,7 +88,7 @@ add_filter('excerpt_more', 'theme_excerpt_more');
 
 // 文章摘要长度
 function theme_excerpt_length($length) {
-    return 100;
+    return 150;
 }
 add_filter("excerpt_length", "theme_excerpt_length");
 
