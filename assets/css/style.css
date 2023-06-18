@@ -843,7 +843,7 @@ html {
     --sidebar-bg: #F6F8FA;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #424242;
-    --nav-cursor-color: #2F3F89;
+    --nav-cursor-color: #007bff;
     --sidebar-btn-bg: white;
     /* Topbar */
     --topbar-text-color: rgb(78, 78, 78);
@@ -1193,7 +1193,7 @@ html {
     --sidebar-bg: #F6F8FA;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #424242;
-    --nav-cursor-color: #2F3F89;
+    --nav-cursor-color: #007bff;
     --sidebar-btn-bg: white;
     /* Topbar */
     --topbar-text-color: rgb(78, 78, 78);
@@ -1459,8 +1459,8 @@ footer .footer-right {
   margin: 0 0.35rem 0.5rem 0;
 }
 #panel-wrapper .post-tag:hover {
-  background-color: #2a408e;
-  border-color: #2a408e;
+  background-color: #007bff;
+  border-color: #007bff;
   color: #ffffff;
   transition: none;
 }
