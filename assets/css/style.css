@@ -119,7 +119,7 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
   user-select: none;
 }
 
-#related-posts .card .card-body, #related-posts .card h4, #post-list .card-body .card-title {
+#related-posts .card .card-body, #related-posts .card h4 {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2706,13 +2706,6 @@ mjx-container {
 }
 #post-list a:hover {
   text-decoration: none;
-}
-#post-list .card-body {
-  min-height: 9.5rem;
-  padding: 1rem;
-}
-#post-list .card-body .card-title {
-  font-size: 1.25rem;
 }
 #post-list .post-preview {
   padding: 0.25rem;
