@@ -3,7 +3,9 @@
     <?php 
         get_template_part('templates/related','posts'); 
         get_template_part('templates/post','nav'); 
-        get_template_part('templates/post','giscus'); 
+        if ( comments_open() || get_comments_number() ) :
+          comments_template();
+        endif; 
     ?>
   </div>
 </div>
