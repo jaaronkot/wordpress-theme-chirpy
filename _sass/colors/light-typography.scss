@@ -10,11 +10,11 @@
 
   /* Common color */
   --text-color: #34343c;
-  --text-muted-color: gray;
+  --text-muted-color: #8e8e8e;
   --heading-color: black;
   --blockquote-border-color: #eeeeee;
   --blockquote-text-color: #9a9a9a;
-  --link-color: #2a408e;
+  --link-color: #0153ab;
   --link-underline-color: #dee2e6;
   --button-bg: #ffffff;
   --btn-border-color: #e9ecef;
@@ -26,7 +26,7 @@
   --img-bg: radial-gradient(
     circle,
     rgb(255, 255, 255) 0%,
-    rgb(249, 249, 249) 100%
+    rgb(239, 239, 239) 100%
   );
   --shimmer-bg: linear-gradient(
     90deg,
@@ -36,10 +36,10 @@
   );
 
   /* Sidebar */
-  --sidebar-bg: #F6F8FA;
+  --sidebar-bg: #f6f8fa;
   --sidebar-muted-color: #a2a19f;
   --sidebar-active-color: #424242;
-  --nav-cursor-color: #007bff;
+  --nav-cursor-color: #0153ab;
   --sidebar-btn-bg: white;
 
   /* Topbar */
@@ -47,6 +47,7 @@
   --topbar-wrapper-bg: white;
   --search-wrapper-bg: rgb(245, 245, 245, 0.5);
   --search-wrapper-border-color: rgb(245, 245, 245);
+  --search-wrapper-border-color: rgb(240, 240, 240);
   --search-tag-bg: #f8f9fa;
   --search-icon-color: #c2c6cc;
   --input-focus-border-color: var(--btn-border-color);
@@ -98,6 +99,7 @@
   }
 
   /* Categories */
+  --categories-border: rgba(0, 0, 0, 0.125);
   --categories-hover-bg: var(--btn-border-color);
   --categories-icon-hover-color: darkslategray;
 
