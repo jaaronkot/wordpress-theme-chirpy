@@ -23,7 +23,7 @@ The Side Bar
         <!-- home -->
         <li class="nav-item">
             <a href="/" class="nav-link">
-                <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+                <i class="fa-fw fas fa-home"></i>
                 <span>首页</span>
             </a>
         </li>
@@ -31,36 +31,28 @@ The Side Bar
 
         <li class="nav-item">
             <a href="/categories/" class="nav-link">
-                <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
-
-
+                <i class="fa-fw fas fa-stream"></i>
                 <span>分类</span>
             </a>
         </li> <!-- .nav-item -->
 
         <li class="nav-item">
             <a href="/tags/" class="nav-link">
-                <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
-
-
+                <i class="fa-fw fas fa-tag"></i>
                 <span>标签</span>
             </a>
         </li> <!-- .nav-item -->
 
         <li class="nav-item">
             <a href="/archives/" class="nav-link">
-                <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
-
-
+                <i class="fa-fw fas fa-archive"></i>
                 <span>归档</span>
             </a>
         </li> <!-- .nav-item -->
 
         <li class="nav-item">
             <a href="/about/" class="nav-link">
-                <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
-
-
+                <i class="fa-fw fas fa-info-circle"></i>
                 <span>关于</span>
             </a>
         </li> <!-- .nav-item -->
@@ -69,55 +61,24 @@ The Side Bar
     </ul> <!-- ul.nav.flex-column -->
 
     <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
-
-
-        <button class="mode-toggle btn" aria-label="Switch Mode">
-            <i class="fas fa-adjust"></i>
-        </button>
-
-
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
         <span class="icon-border"></span>
-
-
-        <a href="https://github.com/gezhaoyou" aria-label="github"
-
-
-           target="_blank"
-
-
-           rel="noopener">
-            <i class="fab fa-github"></i>
-        </a>
-
-
-        <a href="https://twitter.com/" aria-label="twitter"
-
-
-           target="_blank"
-
-
-           rel="noopener">
-            <i class="fab fa-twitter"></i>
-        </a>
-
-
-        <a href="
-          javascript:location.href = 'mailto:' + ['gezhoayou','126.com'].join('@')" aria-label="email"
-
-
-        >
-            <i class="fas fa-envelope"></i>
-        </a>
-
-
-        <a href="/feed.xml" aria-label="rss"
-
-
-        >
-            <i class="fas fa-rss"></i>
-        </a>
-
-
-    </div> <!-- .sidebar-bottom -->
+      <a href="https://github.com/gezhaoyou" aria-label="github" target="_blank"
+        rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://stackoverflow.com/users/6187004/jaeyo-keh" aria-label="stack-overflow" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+      <a href="https://space.bilibili.com/184789593" aria-label="bilibili" target="_blank"
+        rel="noopener noreferrer">
+        <i class="fa-brands fa-bilibili"></i>
+      </a>
+      <a href="javascript:location.href = 'mailto:' + ['gezhoayou','126.com'].join('@')" aria-label="email">
+        <i class="fas fa-envelope"></i>
+      </a>
+  </div> <!-- .sidebar-bottom -->
 
 </div><!-- #sidebar -->

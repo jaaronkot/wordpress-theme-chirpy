@@ -4,9 +4,11 @@
             <div class="footer-left">
                 <p class="mb-0">
                     <!-- 网站备案信息 -->
-                    <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">京ICP备2023001817号 </a>
-
-                    © 2023
+                    <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener nofollow">京ICP备2023001817号 </a>
+                    <?php 
+                        $current_year = date( 'Y' ); 
+                        echo '© '. $current_year;
+                    ?>
                     <a href="<?php echo get_bloginfo('url'); ?>"><?php echo get_bloginfo('name'); ?></a>.
 
                     <span data-toggle="tooltip" data-placement="top"
@@ -16,20 +18,29 @@
             </div>
 
             <div class="footer-right">
-                <p class="mb-0">本站由 <a href="/" target="_blank" rel="noopener">wordpress</a> 生成，采用
-                    <a href="https://fifo.site" target="_blank" rel="noopener">Soda</a>
+                <p class="mb-0">本站由 <a href="https://wordpress.org/" target="_blank" rel="noopener nofollow">WordPress</a> 生成，采用
+                    <a href="https://github.com/gezhaoyou/wordpress-theme-molly" target="_blank" rel="noopener nofollow">Molly</a>
                     主题。
                 </p>
             </div>
         </div>
     </div>
     <?php wp_footer(); ?>
-</footer>
-<!-- code highlight -->
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("pre").addClass("prettyprint linenums");
-        prettyPrint();
-    });
-</script>
+    <!-- code highlight | Add by zhaoyou -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("pre").addClass("prettyprint linenums");
+            prettyPrint();
+        });
+    </script>
 
+    <!-- Google tag (gtag.js) | Add by zhaoyou -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDXWE8K8LF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TDXWE8K8LF');
+    </script>
+</footer>
