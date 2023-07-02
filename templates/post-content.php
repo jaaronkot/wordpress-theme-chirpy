@@ -38,7 +38,7 @@
           <em id="pv" class="pageviews">
             <i class="fa-regular fa-eye"></i>
           </em>
-          <?php echo soda_get_post_views(); ?> 
+          <?php echo molly_get_post_views(); ?> 
         </span>
       </div>
 
