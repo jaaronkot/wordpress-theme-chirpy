@@ -105,3 +105,10 @@ h1.dynamic-title {
   }
   border-radius: 8px;
 }
+// 视频等嵌入 iframe 16:10比例
+iframe {
+  display: block;
+  border: none;
+  height: 60vh;/*设置高度百分比,一直调到只有一个滚动调为止*/
+  width: 100%;
+}
