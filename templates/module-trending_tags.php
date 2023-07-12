@@ -4,7 +4,9 @@
             <?php 
             $count = 0;
             $tags = get_tags( array(
-                'number' => 10
+                'number' => 10,
+                'orderby' => 'count', // 按文章数量排序
+                'order' => 'DESC' // 以递减顺序（从高到低）排序
             ) );
             foreach ( $tags as $tag ) {
                 $tag_name = $tag->name;
