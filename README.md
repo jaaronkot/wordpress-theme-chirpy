@@ -23,4 +23,4 @@ sh build.sh
 
 ## How to use
 
-Zip all file  and upload to WordPress.
+Download file from [release page](https://github.com/gezhaoyou/wordpress-theme-molly/releases)  and upload to WordPress.
