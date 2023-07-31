@@ -53,6 +53,12 @@ h5 .anchor, h4 .anchor, h3 .anchor, h2 .anchor {
   transition: background 0.35s ease-in-out;
 }
 
+.table-wrapper > table tbody tr td, .table-wrapper > table thead th {
+  padding: 0.4rem 1rem;
+  font-size: 95%;
+  white-space: nowrap;
+}
+
 #page-category a:hover,
 #page-tag a:hover, .post-tail-wrapper .license-wrapper > a:hover, #search-results a:hover, #topbar #breadcrumb a:hover, .post-content a:not(.img-link):hover, .post-meta a:not([class]):hover, #access-lastmod a:hover, footer a:hover {
   color: #d2603a !important;
@@ -1527,76 +1533,31 @@ a.reversefootnote {
   border-bottom-style: none !important;
 }
 
-/* --- Begin of wordpress table style --- */
-/* it will be created by wordpress */
-table, .wp-block-table {
-  width: 100%;
+/* --- Begin of Markdown table style --- */
+/* it will be created by Liquid */
+.table-wrapper {
   overflow-x: auto;
   margin-bottom: 1.5rem;
   /* table */
 }
-
-table th, .wp-block-table th,
-table td,
-.wp-block-table td {
-  padding: 0.35rem;
-  vertical-align: middle;
-}
-
-table, .wp-block-table table {
+.table-wrapper > table {
   min-width: 100%;
   overflow-x: auto;
   border-spacing: 0;
   /* tbody */
 }
-
-table thead, .wp-block-table table thead {
-  text-align: left;
+.table-wrapper > table thead {
   border-bottom: solid 2px rgba(210, 215, 217, 0.75);
 }
-
-table tbody tr, .wp-block-table table tbody tr {
+.table-wrapper > table tbody tr {
   border-bottom: 1px solid var(--tb-border-color);
 }
-
-table th, .wp-block-table th,
-table td, .wp-block-table td {
-  border: 1px solid var(--tb-border-color);
-}
-
-table tbody tr:nth-child(2n), .wp-block-table table tbody tr:nth-child(2n) {
+.table-wrapper > table tbody tr:nth-child(2n) {
   background-color: var(--tb-even-bg);
 }
-
-table tbody tr:nth-child(2n+1), .wp-block-table table tbody tr:nth-child(2n+1) {
+.table-wrapper > table tbody tr:nth-child(2n+1) {
   background-color: var(--tb-odd-bg);
 }
-
-.highlight table td {
-  padding: 0rem;
-  padding-left: 0.2rem;
-}
-
-.highlight table {
-  min-width: 100%;
-  overflow-x: auto;
-  border-spacing: 0;
-  margin-bottom: 0rem;
-}
-
-.highlight table tbody tr {
-  border-bottom: 0px;
-}
-
-.highlight table th,
-.highlight table td {
-  border: 0px;
-}
-
-.highlight table tbody tr:nth-child(2n+1) {
-  /*background-color: red;*/
-}
-
 /* --- post --- */
 .post h1 {
   margin-top: 3rem;
@@ -2480,7 +2441,7 @@ mjx-container {
     margin-top: 3rem;
     max-width: 1250px;
   }
-  div.post-content .wp-block-table > table {
+  div.post-content .table-wrapper > table {
     min-width: 70%;
   }
   /* button 'back-to-Top' position */

@@ -1,37 +1,26 @@
-# soda-theme
+# WordPress Theme Molly
 
-#### 介绍
-soda-theme
-
-#### 软件架构
-软件架构说明
+## Intro
+A clean and simple WordPress blog theme **Molly**,  port from [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)
 
 
-#### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+##  Preview
 
-#### 使用说明
+Site: [fifo.site](https://fifo.site)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+![screenshot](http://io.fifo.site/screenshot.png-fifo)
 
-#### 参与贡献
+## Build
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+Run `build.sh` build `_sass/jekyll-theme-chirpy.scss` to `assets/css/style.css`
+
+```bash
+sh build.sh
+```
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+## How to use
+
+Zip all file  and upload to WordPress.
