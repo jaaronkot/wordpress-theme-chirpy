@@ -9,7 +9,7 @@ A clean and simple WordPress blog theme **Molly**,  port from [jekyll-theme-chir
 
 Site: [fifo.site](https://fifo.site)
 
-![screenshot](http://io.fifo.site/screenshot.png-fifo)
+![screenshot](./screenshot.png)
 
 ## Build
 
