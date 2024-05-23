@@ -1,7 +1,7 @@
-# WordPress Theme Molly
+# WordPress Theme Chirpy
 
 ## Intro
-A clean and simple WordPress blog theme **Molly**,  port from [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)
+A clean and simple WordPress blog theme **Chirpy**,  port from [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)
 
 
 
@@ -23,4 +23,4 @@ sh build.sh
 
 ## How to use
 
-Download file from [release page](https://github.com/gezhaoyou/wordpress-theme-molly/releases)  and upload to WordPress.
+Download file from [release page](https://github.com/gezhaoyou/wordpress-theme-chirpy/releases)  and upload to WordPress.
